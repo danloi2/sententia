@@ -111,7 +111,7 @@ podman-compose up -d --build
 
 ### 🌐 Despliegue
 
-Se recomienda un host que soporte Docker-Compose o contenedores PHP/MariaDB, como:
+Se recomienda un host que soporte Docker Compose o contenedores PHP/MariaDB, como:
 
 - [Railway](https://railway.app/)
 - [Render](https://render.com/)
