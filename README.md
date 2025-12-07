@@ -5,13 +5,13 @@
 ![Docker](https://img.shields.io/badge/Docker-Container-blue?logo=docker)
 ![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-lightgrey)
 
-**Sententia diei** es una aplicación web en PHP que muestra **citas históricas en latín** y su traducción, junto con información sobre autores, época, nación e idioma.  
+**Sententia diei** es una aplicación web en PHP que muestra **citas históricas en latín** y su traducción, junto con información sobre autores, época, nación e idioma.
 
 ---
 
 ## 🌟 Capturas de pantalla
 
-<!-- Sustituye con tus propias imágenes -->
+<!-- Sustituye con tus propias imágenes en assets/ -->
 ![Página principal](assets/screenshot-home.png)
 ![phpMyAdmin](assets/screenshot-phpmyadmin.png)
 
@@ -20,16 +20,27 @@
 ## 📂 Estructura del proyecto
 
 /
+
 ├─ Dockerfile
+
 ├─ docker-compose.yml
+
 ├─ index.php
+
 ├─ assets/
+
 │ └─ style.css
+
 ├─ include/
+
 │ ├─ db.php
+
 │ └─ functions.php
+
 ├─ templates/
+
 │ └─ citas.php
+
 └─ .env.example
 
 
@@ -58,9 +69,11 @@
 ```bash
 git clone https://github.com/danloi2/sententia.git
 cd sententia
+```
 
-Crea tu archivo .env basado en .env.example:
+2. Crea tu archivo .env basado en .env.example:
 
+```env
 MARIADB_ROOT_PASSWORD=tu_contraseña_segura
 MARIADB_DATABASE=esaldi
 MARIADB_USER=danloi
@@ -68,57 +81,50 @@ MARIADB_PASSWORD=tu_contraseña_segura
 PMA_HOST=mariadb2
 PMA_USER=danloi
 PMA_PASSWORD=tu_contraseña_segura
+```
+3. Levanta los contenedores:
 
-
-Levanta los contenedores:
-
+```bash
 docker-compose up -d --build
 # o con podman
 podman-compose up -d --build
+```
 
+4. Accede desde el navegador:
 
-Accede desde el navegador:
+- **Web:** [http://localhost:8000](http://localhost:8000)  
+- **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)  
+  - **Usuario:** `danloi`  
+  - **Contraseña:** la definida en `.env`
 
-Web: http://localhost:8000
+### 📝 Uso
 
-phpMyAdmin: http://localhost:8081
+- La página principal muestra una cita aleatoria con su traducción, autor y detalles históricos.
+- Funciones auxiliares para fechas, números romanos y biografías.
+- Agrega nuevas citas directamente desde **phpMyAdmin** en la base de datos `esaldi`.
 
-Usuario: danloi
+### 💻 Desarrollo
 
-Contraseña: la definida en .env
+- Monta tu carpeta de desarrollo en `./web` dentro del contenedor.
+- Se recomienda usar **VS Code + Dev Containers** para desarrollo dentro del contenedor.
+- Nunca subas tu `.env` real; usa `.env.example` para compartir.
 
-📝 Uso
-
-Página principal muestra una cita aleatoria con su traducción, autor y detalles históricos.
-
-Funciones auxiliares para fechas, números romanos y biografías.
-
-Agrega nuevas citas directamente desde phpMyAdmin en la base de datos esaldi.
-
-💻 Desarrollo
-
-Monta tu carpeta de desarrollo en ./web dentro del contenedor.
-
-Recomiendo usar VS Code + Dev Containers para desarrollo dentro del contenedor.
-
-Nunca subas tu .env real; usa .env.example para compartir.
-
-🌐 Despliegue
+### 🌐 Despliegue
 
 Se recomienda un host que soporte Docker Compose o contenedores PHP/MariaDB, como:
 
-Railway
+- [Railway](https://railway.app/)
+- [Render](https://render.com/)
 
-Render
+> ⚠️ GitHub Pages NO soporta PHP ni bases de datos, solo HTML estático.
 
-GitHub Pages NO soporta PHP ni bases de datos, solo HTML estático.
+### 📜 Licencia
 
-📜 Licencia
+Este proyecto está bajo **[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**.
 
-Este proyecto está bajo Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
-Más info
+### 👤 Autor
 
-👤 Autor
 
-Daniel Losada – GitHub
- – Investigador
+[![GitHub](https://img.shields.io/badge/GitHub-Daniel_Losada-181717?logo=github&logoColor=white)](https://github.com/danloi2)  
+[![Investigador](https://img.shields.io/badge/Investigador-EHU-blue?logo=researchgate)](https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle)
+
