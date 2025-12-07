@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  mariadb2:
+    image: docker.io/library/mariadb:12.1
+    container_name: mariadb2
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${MARIADB_DATABASE}
+      MARIADB_USER: ${MARIADB_USER}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
+    volumes:
+      - mariadb_data2:/var/lib/mysql:z
+    networks:
+      - internal
+    ports:
+      - "3307:3306"
+
+  phpmyadmin2:
+    image: docker.io/library/phpmyadmin:5.2
+    container_name: phpmyadmin2
+    environment:
+      PMA_HOST: ${PMA_HOST}
+      PMA_USER: ${PMA_USER}
+      PMA_PASSWORD: ${PMA_PASSWORD}
+    ports:
+      - "8081:80"
+    networks:
+      - internal
+    depends_on:
+      - mariadb2
+
+  web:
+    build: ./
+    container_name: php_web
+    ports:
+      - "8000:80"
+    networks:
+      - internal
+    volumes:
+      - ./:/var/www/html:z
+    env_file:
+      - .env
+    depends_on:
+      - mariadb2
+
+volumes:
+  mariadb_data2:
+
+networks:
+  internal:
+
+
+

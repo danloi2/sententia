@@ -1,0 +1,23 @@
+{
+    "name": "PHP + MariaDB Dev Container",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "web",
+    "workspaceFolder": "/var/www/html",
+    "shutdownAction": "stopCompose",
+    "forwardPorts": [8000, 8081, 3307],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "felixfbecker.php-intellisense",
+                "ms-azuretools.vscode-docker",
+                "bmewburn.vscode-intelephense-client"
+            ],
+            "settings": {
+                "php.validate.executablePath": "/usr/local/bin/php",
+                "files.autoSave": "afterDelay",
+                "workbench.colorTheme": "Default Light Modern"
+            }
+        }
+    },
+    "remoteUser": "root"
+}
