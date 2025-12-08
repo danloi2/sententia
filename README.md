@@ -19,28 +19,20 @@
 
 ## 📂 Estructura del proyecto
 
+
 /
-
 ├─ Dockerfile
-
 ├─ docker-compose.yml
-
 ├─ index.php
-
 ├─ assets/
-
 │ └─ style.css
-
 ├─ include/
-
 │ ├─ db.php
-
 │ └─ functions.php
-
 ├─ templates/
-
 │ └─ citas.php
-
+├─ db/
+│ └─ esaldi.sql
 └─ .env.example
 
 
@@ -50,6 +42,7 @@
 - `assets/`: CSS y recursos estáticos.  
 - `include/`: Conexión a base de datos y funciones auxiliares.  
 - `templates/`: Plantillas HTML.  
+- `db/esaldi.sql`: Dump de la base de datos con estructura y datos de ejemplo.  
 - `.env.example`: Variables de entorno de configuración (NO subir `.env` real).
 
 ---
@@ -96,6 +89,19 @@ podman-compose up -d --build
 - **phpMyAdmin:** [http://localhost:8081](http://localhost:8081)  
   - **Usuario:** `danloi`  
   - **Contraseña:** la definida en `.env`
+
+🗄 Base de datos
+
+Se incluye un dump db/esaldi.sql con la estructura y datos de ejemplo.
+
+Para restaurarlo:
+
+```bash
+docker exec -i mariadb2 mysql -u danloi -p esaldi < db/esaldi.sql
+# o con podman
+podman exec -i mariadb2 mysql -u danloi -p esaldi < db/esaldi.sql
+```
+
 
 ### 📝 Uso
 
