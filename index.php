@@ -19,6 +19,7 @@ try {
     die("Error de conexión: " . $e->getMessage());
 }
 
+// Función para obtener la fecha en latín
 $fecha_hoy = fechaHoyLatina();
 
 // Consulta para obtener una cita aleatoria
@@ -50,6 +51,7 @@ $cita = $pdo->query($sql)->fetch();
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
 <div class="container">
     <h1>Sententia diei</h1>
     <div class="fecha"><?php echo $fecha_hoy; ?></div>
@@ -101,6 +103,18 @@ $cita = $pdo->query($sql)->fetch();
     <?php else: ?>
         <p>No hay citas disponibles.</p>
     <?php endif; ?>
+
+    <!-- Footer centrado (ahora dentro del container) -->
+    <div class="site-footer">
+        <a href="https://github.com/danloi2?tab=repositories">Cita del Día</a> © 2025 by 
+        <a href="https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle">Daniel Losada</a> 
+        is licensed under 
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="">
+    </div>
 </div>
+
 </body>
 </html>

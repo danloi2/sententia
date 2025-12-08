@@ -12,8 +12,8 @@
 ## 🌟 Capturas de pantalla
 
 <!-- Sustituye con tus propias imágenes en assets/ -->
-![Página principal](assets/screenshot-home.png)
-![phpMyAdmin](assets/screenshot-phpmyadmin.png)
+![Página principal](assets/home.png)
+![phpMyAdmin](assets/php_admin.png)
 
 ---
 
