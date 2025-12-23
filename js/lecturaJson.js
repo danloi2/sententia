@@ -17,16 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `<img src="https://img.shields.io/badge/Idioma-${encodeURIComponent(cita.idioma)}-blue" alt="Idioma: ${cita.idioma}" style="margin-left:0.5em;">`
         : '';
 
-      const html = `
+const html = `
   <blockquote class="cita-block">
     ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
     ${cita.cita_original ? `<p class="cita-original">${cita.cita_original}</p>` : ''}
-    ${cita.cita_la ? `<p class="cita-latina">${cita.cita_la}</p>` : ''}
-    ${cita.biografia_la || cita.autor ? `<footer>${cita.biografia_la || ''} ${cita.autor ? `${cita.autor} (${numeroRomano(cita.nacimiento_ano || 0)}${cita.fallecimiento_ano ? ' - ' + numeroRomano(cita.fallecimiento_ano) : ''})` : ''}</footer>` : ''}
-    ${cita.categorias ? `<div class="categorias">Categorias: ${cita.categorias.join(', ')}</div>` : ''}
+    ${cita.cita_la ? `<p class="cita-la">${cita.cita_la}</p>` : ''}
+    ${cita.biografia_la || cita.autor ? `<footer>${cita.biografia_la ? cita.biografia_la + ' ' : ''}${cita.autor ? `${cita.autor} (${cita.nacimiento_ano || ''}${cita.fallecimiento_ano ? ' - ' + cita.fallecimiento_ano : ''})` : ''}</footer>` : ''}
+    ${cita.categorias ? `<div class="categorias info-boxes">${cita.categorias.map(cat => `<div class="info-box">${cat}</div>`).join('')}</div>` : ''}
+    ${cita.idioma ? `<span class="idioma-badge">${cita.idioma}</span>` : ''}
+    ${cita.cita_la ? `<span class="badge-la">${cita.cita_la}</span>` : ''}
   </blockquote>
-`;
-
       `;
 
       document.getElementById('cita-container').innerHTML = html;
