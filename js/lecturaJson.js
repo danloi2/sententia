@@ -10,8 +10,6 @@ fetch("./db/esaldi.json")
 
     const cita = data.citas[Math.floor(Math.random() * data.citas.length)];
 
-    // Mostrar fecha actual en latín
-    document.getElementById("fecha").textContent = fechaHoyLatina();
 
     // Construir HTML de la cita
     const html = `
