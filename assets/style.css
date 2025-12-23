@@ -1,129 +1,142 @@
+/* ===== Reset y base ===== */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-body {
     font-family: 'Georgia', serif;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
+    color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Contenedor principal */
+/* ===== Contenedor principal ===== */
 .container {
     max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    flex-grow: 1; /* ocupa espacio restante */
+    width: 90%;
+    margin: 20px auto;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-/* Contenido de la cita */
+/* ===== Título y versión ===== */
 h1 {
     text-align: center;
-    font-size: 2em;
+    font-size: 2.2em;
     margin-bottom: 5px;
-}
-
-.fecha {
-    text-align: center;
-    font-size: 1.3em;
-    color: #555;
-    margin-bottom: 15px;
+    color: #004080;
 }
 
 .version {
     text-align: center;
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 20px;
-}
-
-blockquote {
-    background-color: #fff;
-    padding: 20px;
-    margin: 0 0 15px 0;
-    border-left: 6px solid #0077cc;
-    border-radius: 10px;
-}
-
-.cita-traducida {
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.cita-original, .cita-la {
-    font-size: 1em;
-    font-style: italic;
-    color: #333;
+    font-size: 0.95em;
+    color: #555;
     margin-bottom: 5px;
 }
 
+#fecha {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ===== Bloque de cita ===== */
+blockquote.cita-block {
+    background-color: #fff;
+    padding: 20px;
+    border-left: 6px solid #0077cc;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Traducción y cita original ===== */
+.cita-traducida {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+.cita-original {
+    font-size: 1em;
+    font-style: italic;
+    color: #333;
+}
+
+.cita-la {
+    font-size: 0.95em;
+    font-style: italic;
+    color: #004080;
+}
+
+/* ===== Etiquetas ===== */
 .idioma-badge, .badge-la {
     display: inline-block;
-    background-color: #0077cc;
-    color: #fff;
+    font-size: 0.85em;
     padding: 2px 8px;
     border-radius: 5px;
-    font-size: 0.9em;
-    margin-left: 10px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.idioma-badge {
+    background-color: #0077cc;
+    color: #fff;
 }
 
 .badge-la {
     background-color: #004080;
+    color: #fff;
 }
 
-footer {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 10px;
+/* ===== Biografía del autor ===== */
+.biografia {
+    background-color: #eef5ff;
+    border-left: 4px solid #0077cc;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    color: #222;
 }
 
+/* ===== Información adicional ===== */
 .info-boxes {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin-top: 10px;
-    flex-wrap: wrap;
 }
 
 .info-box {
     background-color: #0077cc;
     color: #fff;
-    padding: 10px;
+    padding: 8px 12px;
     border-radius: 8px;
     text-align: center;
     font-weight: bold;
     flex: 1;
-    min-width: 100px;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.biografia {
-    background-color: #eef;
-    border-left: 4px solid #0077cc;
-    padding: 10px 15px;
-    margin-top: 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    color: #222;
-}
-
-/* Footer principal centrado */
+/* ===== Footer ===== */
 .site-footer {
-    width: 100%;       /* importante */
-    text-align: center; /* centra todo el contenido */
+    width: 100%;
+    text-align: center;
     font-size: 0.85em;
     color: #555;
     padding: 15px 0;
     border-top: 1px solid #ddd;
-    box-sizing: border-box; /* evita overflow en Firefox */
+    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 
-/* Enlaces e iconos del footer */
 .site-footer a {
     color: #0077cc;
     text-decoration: none;
@@ -135,4 +148,17 @@ footer {
     max-width: 1em;
     max-height: 1em;
     margin-left: 0.2em;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 600px) {
+    blockquote.cita-block {
+        padding: 15px;
+    }
+    .cita-traducida {
+        font-size: 1.1em;
+    }
+    .info-box {
+        min-width: 100%;
+    }
 }
