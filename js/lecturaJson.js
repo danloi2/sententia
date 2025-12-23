@@ -10,11 +10,15 @@ fetch('./db/esaldi.json')
     const nacimiento = Utils.numeroRomano(cita.nacimiento_ano);
     const fallecimiento = Utils.numeroRomano(cita.fallecimiento_ano);
 
+    const idiomaBadge = cita.idioma
+      ? `<img src="https://img.shields.io/badge/${encodeURIComponent(cita.idioma)}-blue?style=flat&logo=appveyor" alt="${cita.idioma}" style="margin-left: 5px;">`
+      : '';
+
     const html = `
       <blockquote class="cita-block">
         ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
         <p class="cita-original">
-          ${cita.cita_original} <br>
+          ${cita.cita_original} ${idiomaBadge} <br>
           ${cita.cita_la ? `<span class="badge-la">${cita.cita_la}</span>` : ''}
         </p>
         <footer>
@@ -24,7 +28,6 @@ fetch('./db/esaldi.json')
         <div class="info-boxes">
           ${cita.epoca ? `<div class="info-box">${cita.epoca}</div>` : ''}
           ${cita.nacion ? `<div class="info-box">${cita.nacion}</div>` : ''}
-          ${cita.idioma ? `<div class="info-box">${cita.idioma}</div>` : ''}
         </div>
       </blockquote>
     `;
