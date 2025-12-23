@@ -16,7 +16,7 @@
   <script>
     function formatoAno(año) { return año ? año : ''; }
 
-    fetch('./data/esaldi.json')   // <- importante la ruta relativa
+    fetch('./db/esaldi.json')   // <- importante la ruta relativa
       .then(res => res.json())
       .then(data => {
         if (!data.citas || data.citas.length === 0) {
