@@ -18,23 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
         : '';
 
       const html = `
-        <blockquote class="cita-block">
-          ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
-          <p class="cita-original">
-            ${cita.cita_original}
-            ${idiomaBadge}
-          </p>
-          ${cita.cita_la ? `<p class="cita-latina">${cita.cita_la}</p>` : ''}
-          <footer>
-            ${cita.autor || ''}
-            ${cita.nacimiento_ano || cita.fallecimiento_ano
-              ? ` (${numeroRomano(cita.nacimiento_ano || 0)}${cita.fallecimiento_ano ? ' - ' + numeroRomano(cita.fallecimiento_ano) : ''})`
-              : ''}
-          </footer>
-          ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
-          ${cita.categorias ? `<div class="categorias">Categorias: ${cita.categorias.join(', ')}</div>` : ''}
-          ${cita.fuente ? `<div class="fuente">Fuente: ${cita.fuente}</div>` : ''}
-        </blockquote>
+  <blockquote class="cita-block">
+    ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
+    ${cita.cita_original ? `<p class="cita-original">${cita.cita_original}</p>` : ''}
+    ${cita.cita_la ? `<p class="cita-latina">${cita.cita_la}</p>` : ''}
+    ${cita.biografia_la || cita.autor ? `<footer>${cita.biografia_la || ''} ${cita.autor ? `${cita.autor} (${numeroRomano(cita.nacimiento_ano || 0)}${cita.fallecimiento_ano ? ' - ' + numeroRomano(cita.fallecimiento_ano) : ''})` : ''}</footer>` : ''}
+    ${cita.categorias ? `<div class="categorias">Categorias: ${cita.categorias.join(', ')}</div>` : ''}
+  </blockquote>
+`;
+
       `;
 
       document.getElementById('cita-container').innerHTML = html;
