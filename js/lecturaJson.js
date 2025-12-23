@@ -10,9 +10,9 @@ fetch('./db/esaldi.json')
     const nacimiento = Utils.numeroRomano(cita.nacimiento_ano);
     const fallecimiento = Utils.numeroRomano(cita.fallecimiento_ano);
 
-    const idiomaBadge = cita.idioma
-      ? `<img src="https://img.shields.io/badge/Idioma-${encodeURIComponent(cita.idioma)}-blue?style=flat&logo=appveyor" alt="${cita.idioma}" style="margin-left: 5px;">`
-      : '';
+    const idiomaBadge = cita.idioma 
+        ? `<img src="https://img.shields.io/badge/Idioma-${encodeURIComponent(cita.idioma)}-blue" alt="Idioma: ${cita.idioma}" style="margin-left:0.5em;">`
+        : '';
 
     const html = `
       <blockquote class="cita-block">
