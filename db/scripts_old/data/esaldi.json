@@ -1,0 +1,2279 @@
+{
+  "citas": [
+    {
+      "id": 37,
+      "cita_original": "La vie est belle",
+      "cita_traducida": "La vida es bella",
+      "autor_id": 25,
+      "tipo_id": 1,
+      "idioma_id": 3,
+      "fuente": "Refrán francés",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Vita pulchra est."
+    },
+    {
+      "id": 38,
+      "cita_original": "A caballo regalado, no le mires el diente",
+      "cita_traducida": "A caballo regalado, no le mires el diente",
+      "autor_id": 27,
+      "tipo_id": 1,
+      "idioma_id": 1,
+      "fuente": "Uso popular",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Equi dati dentes non inspiciuntur."
+    },
+    {
+      "id": 40,
+      "cita_original": "十人十色",
+      "cita_traducida": "Cada persona es diferente",
+      "autor_id": 23,
+      "tipo_id": 1,
+      "idioma_id": 7,
+      "fuente": "Uso popular Japonés",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Quot homines, tot sententiae."
+    },
+    {
+      "id": 41,
+      "cita_original": "Без труда не выловишь и рыбку из пруда",
+      "cita_traducida": "Sin esfuerzo no se consigue nada",
+      "autor_id": 26,
+      "tipo_id": 1,
+      "idioma_id": 8,
+      "fuente": "Refrán ruso",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Sine labore nihil obtinetur."
+    },
+    {
+      "id": 42,
+      "cita_original": "生命在于运动",
+      "cita_traducida": "La vida está en el movimiento",
+      "autor_id": 21,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Vita in motu est."
+    },
+    {
+      "id": 43,
+      "cita_original": "עַיִן תַּחַת עַיִן שֵׁן תַּחַת שֵׁן",
+      "cita_traducida": "Ojo por ojo, diente por diente",
+      "autor_id": 19,
+      "tipo_id": 2,
+      "idioma_id": 14,
+      "fuente": "Éxodo 21,24",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Oculum pro oculo, dentem pro dente."
+    },
+    {
+      "id": 44,
+      "cita_original": "El amor es fuerte como la muerte; los celos son crueles como la tumba",
+      "cita_traducida": "El amor es fuerte como la muerte; los celos son crueles como la tumba",
+      "autor_id": 19,
+      "tipo_id": 2,
+      "idioma_id": 2,
+      "fuente": "Salomón",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Fortis est amor sicut mors; dura est aemulatio sicut infernus."
+    },
+    {
+      "id": 45,
+      "cita_original": "Cogito ergo sum",
+      "cita_traducida": "Pienso, luego existo",
+      "autor_id": 15,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "René Descartes",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Cogito, ergo sum."
+    },
+    {
+      "id": 46,
+      "cita_original": "Knowledge is power",
+      "cita_traducida": "El conocimiento es poder",
+      "autor_id": 16,
+      "tipo_id": 3,
+      "idioma_id": 2,
+      "fuente": "Francis Bacon",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Scientia potentia est."
+    },
+    {
+      "id": 47,
+      "cita_original": "Vera felicitas in bono faciendo consistit",
+      "cita_traducida": "La verdadera felicidad consiste en hacer el bien",
+      "autor_id": 17,
+      "tipo_id": 4,
+      "idioma_id": 5,
+      "fuente": "San Agustín",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Vera felicitas in bonis operibus consistit."
+    },
+    {
+      "id": 48,
+      "cita_original": "Recuerda que la felicidad no depende de quién eres o qué tienes; depende únicamente de lo que piensas",
+      "cita_traducida": "Recuerda que la felicidad no depende de quién eres o qué tienes; depende únicamente de lo que piensas",
+      "autor_id": 20,
+      "tipo_id": 4,
+      "idioma_id": 2,
+      "fuente": "Dale Carnegie",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Memento felicitatem non pendere ab eo quod es aut habes, sed ab iis quae cogitas."
+    },
+    {
+      "id": 49,
+      "cita_original": "No dejes para mañana lo que puedas hacer hoy",
+      "cita_traducida": "No dejes para mañana lo que puedas hacer hoy",
+      "autor_id": 27,
+      "tipo_id": 5,
+      "idioma_id": 1,
+      "fuente": "Uso popular",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Noli in crastinum differre quod hodie facere potes."
+    },
+    {
+      "id": 50,
+      "cita_original": "Carpe diem",
+      "cita_traducida": "Aprovecha el día",
+      "autor_id": 14,
+      "tipo_id": 6,
+      "idioma_id": 5,
+      "fuente": "Horacio",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Carpe diem."
+    },
+    {
+      "id": 51,
+      "cita_original": "To be, or not to be, that is the question",
+      "cita_traducida": "Ser o no ser, esa es la cuestión",
+      "autor_id": 18,
+      "tipo_id": 6,
+      "idioma_id": 2,
+      "fuente": "Shakespeare",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Esse aut non esse, haec est quaestio."
+    },
+    {
+      "id": 52,
+      "cita_original": "No es lo mismo fracasar que estrellarse",
+      "cita_traducida": "No es lo mismo fracasar que estrellarse",
+      "autor_id": 27,
+      "tipo_id": 7,
+      "idioma_id": 1,
+      "fuente": "Uso popular",
+      "fecha_creacion": "2025-11-29 23:54:02",
+      "cita_la": "Non idem est cadere ac collidi."
+    },
+    {
+      "id": 53,
+      "cita_original": "女人悄然抹去的岁月，并未真被时光吞没 而是悄悄落在了她闺中好友的眉眼之间",
+      "cita_traducida": "Los años que una mujer borra en silencio no son devorados por el tiempo; se posan, suavemente, en los rasgos de sus amigas más íntimas",
+      "autor_id": 22,
+      "tipo_id": 7,
+      "idioma_id": 4,
+      "fuente": null,
+      "fecha_creacion": "2025-12-06 20:14:54",
+      "cita_la": "Anni quos femina silentio delet non a tempore devorantur, sed in vultibus amicorum quiescunt."
+    },
+    {
+      "id": 54,
+      "cita_original": "Alea iacta est",
+      "cita_traducida": "La suerte está echada",
+      "autor_id": 30,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": null,
+      "fecha_creacion": "2025-12-06 20:18:22",
+      "cita_la": "Alea iacta est."
+    },
+    {
+      "id": 55,
+      "cita_original": "Ex nihilo nihil fit",
+      "cita_traducida": "Nada surge de la nada",
+      "autor_id": 31,
+      "tipo_id": 6,
+      "idioma_id": 5,
+      "fuente": "Parménides",
+      "fecha_creacion": "2025-12-06 21:05:09",
+      "cita_la": "Ex nihilo nihil fit."
+    },
+    {
+      "id": 56,
+      "cita_original": "人皆有智慧 只是早晚而已",
+      "cita_traducida": "Todos los hombres son sabios; unos antes, los otros después.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:08:03",
+      "cita_la": "Omnes homines sapientes sunt, alii citius, alii postea."
+    },
+    {
+      "id": 57,
+      "cita_original": "知之者不如好之者 好之者不如乐之者",
+      "cita_traducida": "El que sabe de ello no se compara con el que lo ama; el que lo ama no se compara con el que se deleita en ello.",
+      "autor_id": 32,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Confucio",
+      "fecha_creacion": "2025-12-06 21:11:14",
+      "cita_la": "Qui scit non aequatur ei qui amat; qui amat non aequatur ei qui delectatur."
+    },
+    {
+      "id": 58,
+      "cita_original": "学而不思则罔 思而不学则殆",
+      "cita_traducida": "Aprender sin reflexionar es inútil; reflexionar sin aprender es peligroso.",
+      "autor_id": 32,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Confucio",
+      "fecha_creacion": "2025-12-06 21:11:14",
+      "cita_la": "Discere sine cogitatione inutile est; cogitare sine doctrina periculosum est."
+    },
+    {
+      "id": 59,
+      "cita_original": "己所不欲 勿施于人",
+      "cita_traducida": "No hagas a otros lo que no deseas para ti mismo.",
+      "autor_id": 32,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Confucio",
+      "fecha_creacion": "2025-12-06 21:11:14",
+      "cita_la": "Quod tibi non vis, alteri ne feceris."
+    },
+    {
+      "id": 61,
+      "cita_original": "Amor vincit omnia.",
+      "cita_traducida": "El amor lo conquista todo.",
+      "autor_id": 17,
+      "tipo_id": 6,
+      "idioma_id": 5,
+      "fuente": "San Agustín",
+      "fecha_creacion": "2025-12-06 21:15:55",
+      "cita_la": "Amor omnia vincit."
+    },
+    {
+      "id": 62,
+      "cita_original": "Fides quaerens intellectum.",
+      "cita_traducida": "La fe busca el entendimiento.",
+      "autor_id": 17,
+      "tipo_id": 6,
+      "idioma_id": 5,
+      "fuente": "San Agustín",
+      "fecha_creacion": "2025-12-06 21:15:55",
+      "cita_la": "Fides intellectum quaerit."
+    },
+    {
+      "id": 72,
+      "cita_original": "Omnia tempus habent.",
+      "cita_traducida": "Todo tiene su tiempo.",
+      "autor_id": 33,
+      "tipo_id": 4,
+      "idioma_id": 5,
+      "fuente": "Isidoro de Sevilla",
+      "fecha_creacion": "2025-12-06 21:18:52",
+      "cita_la": "Omnia tempus habent."
+    },
+    {
+      "id": 73,
+      "cita_original": "Verba volant, scripta manent.",
+      "cita_traducida": "Las palabras vuelan, lo escrito permanece.",
+      "autor_id": 33,
+      "tipo_id": 6,
+      "idioma_id": 5,
+      "fuente": "Isidoro de Sevilla",
+      "fecha_creacion": "2025-12-06 21:18:52",
+      "cita_la": "Verba volant, scripta manent."
+    },
+    {
+      "id": 74,
+      "cita_original": "Ignorantia legis non excusat.",
+      "cita_traducida": "La ignorancia de la ley no excusa.",
+      "autor_id": 33,
+      "tipo_id": 6,
+      "idioma_id": 5,
+      "fuente": "Isidoro de Sevilla",
+      "fecha_creacion": "2025-12-06 21:18:52",
+      "cita_la": "Ignorantia legis non excusat."
+    },
+    {
+      "id": 75,
+      "cita_original": "Scientia potentia est.",
+      "cita_traducida": "El conocimiento es poder.",
+      "autor_id": 33,
+      "tipo_id": 5,
+      "idioma_id": 5,
+      "fuente": "Isidoro de Sevilla",
+      "fecha_creacion": "2025-12-06 21:18:52",
+      "cita_la": "Scientia est potestas."
+    },
+    {
+      "id": 76,
+      "cita_original": "不耻下问",
+      "cita_traducida": "Aquel que pregunta es un tonto por cinco minutos, pero el que no pregunta permanece tonto por siempre.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:22:02",
+      "cita_la": "Qui rogat stultus est ad horam; qui non rogat stultus manet in aeternum."
+    },
+    {
+      "id": 77,
+      "cita_original": "千里之行，始于足下。",
+      "cita_traducida": "Un viaje de mil millas comienza con un solo paso.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:22:02",
+      "cita_la": "Iter mille milium uno passu incipit."
+    },
+    {
+      "id": 78,
+      "cita_original": "授人以鱼不如授人以渔。",
+      "cita_traducida": "Dar un pez a alguien no es tan bueno como enseñarle a pescar.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:22:02",
+      "cita_la": "Potius est docere piscari quam piscem dare."
+    },
+    {
+      "id": 79,
+      "cita_original": "知足常乐。",
+      "cita_traducida": "Quien se conforma, siempre es feliz.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:22:02",
+      "cita_la": "Qui contentus est, semper beatus est."
+    },
+    {
+      "id": 80,
+      "cita_original": "海纳百川，有容乃大。",
+      "cita_traducida": "El mar acepta todos los ríos; así se hace grande.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:22:02",
+      "cita_la": "Mare omnes fluvios recipit et ideo magnum est."
+    },
+    {
+      "id": 81,
+      "cita_original": "学而不思则罔，思而不学则殆。",
+      "cita_traducida": "Aprender sin reflexionar es inútil; reflexionar sin aprender es peligroso.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:22:02",
+      "cita_la": "Discere sine cogitatione inutile est; cogitare sine doctrina periculosum est."
+    },
+    {
+      "id": 82,
+      "cita_original": "三人行，必有我师焉。",
+      "cita_traducida": "Si tres caminan juntos, siempre hay algo que puedo aprender de ellos.",
+      "autor_id": 22,
+      "tipo_id": 2,
+      "idioma_id": 4,
+      "fuente": "Proverbio chino",
+      "fecha_creacion": "2025-12-06 21:22:03",
+      "cita_la": "Inter tres ambulantes, semper magister est."
+    },
+    {
+      "id": 83,
+      "cita_original": "七転び八起き",
+      "cita_traducida": "Cae siete veces, levántate ocho.",
+      "autor_id": 23,
+      "tipo_id": 2,
+      "idioma_id": 7,
+      "fuente": "Proverbio japonés",
+      "fecha_creacion": "2025-12-06 21:23:25",
+      "cita_la": "Septies cade, octies surge."
+    },
+    {
+      "id": 84,
+      "cita_original": "猿も木から落ちる",
+      "cita_traducida": "Hasta los monos se caen de los árboles.",
+      "autor_id": 23,
+      "tipo_id": 2,
+      "idioma_id": 7,
+      "fuente": "Proverbio japonés",
+      "fecha_creacion": "2025-12-06 21:23:25",
+      "cita_la": "Etiam simiae ex arboribus cadunt."
+    },
+    {
+      "id": 85,
+      "cita_original": "急がば回れ",
+      "cita_traducida": "Más vale dar un rodeo que precipitarse.",
+      "autor_id": 23,
+      "tipo_id": 2,
+      "idioma_id": 7,
+      "fuente": "Proverbio japonés",
+      "fecha_creacion": "2025-12-06 21:23:25",
+      "cita_la": "Qui festinat circuit."
+    },
+    {
+      "id": 86,
+      "cita_original": "石の上にも三年",
+      "cita_traducida": "Incluso sobre una piedra, tres años.",
+      "autor_id": 23,
+      "tipo_id": 2,
+      "idioma_id": 7,
+      "fuente": "Proverbio japonés",
+      "fecha_creacion": "2025-12-06 21:23:25",
+      "cita_la": "Etiam super lapidem, triennium."
+    },
+    {
+      "id": 87,
+      "cita_original": "雨降って地固まる",
+      "cita_traducida": "Después de la lluvia, la tierra se endurece.",
+      "autor_id": 23,
+      "tipo_id": 2,
+      "idioma_id": 7,
+      "fuente": "Proverbio japonés",
+      "fecha_creacion": "2025-12-06 21:23:25",
+      "cita_la": "Post pluviam terra confirmatur."
+    },
+    {
+      "id": 88,
+      "cita_original": "袖振り合うも多生の縁",
+      "cita_traducida": "Incluso rozarse las mangas es el resultado de muchas vidas de destino.",
+      "autor_id": 23,
+      "tipo_id": 2,
+      "idioma_id": 7,
+      "fuente": "Proverbio japonés",
+      "fecha_creacion": "2025-12-06 21:23:26",
+      "cita_la": "Etiam leviter contingere manicas est fatum multarum vitarum."
+    },
+    {
+      "id": 89,
+      "cita_original": "口は災いの元",
+      "cita_traducida": "La boca es la fuente del desastre.",
+      "autor_id": 23,
+      "tipo_id": 2,
+      "idioma_id": 7,
+      "fuente": "Proverbio japonés",
+      "fecha_creacion": "2025-12-06 21:23:26",
+      "cita_la": "Os est fons calamitatis."
+    },
+    {
+      "id": 90,
+      "cita_original": "Vita sine litteris mors est.",
+      "cita_traducida": "La vida sin estudio es una muerte.",
+      "autor_id": 34,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Séneca",
+      "fecha_creacion": "2025-12-06 21:30:34",
+      "cita_la": "Vita sine litteris mors est."
+    },
+    {
+      "id": 91,
+      "cita_original": "Non est ad astra mollis e terris via.",
+      "cita_traducida": "No hay camino fácil de la tierra a las estrellas.",
+      "autor_id": 34,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Séneca",
+      "fecha_creacion": "2025-12-06 21:30:34",
+      "cita_la": "Non est ad astra mollis e terris via."
+    },
+    {
+      "id": 92,
+      "cita_original": "Dum inter homines sumus, colamus humanitatem.",
+      "cita_traducida": "Mientras estemos entre hombres, cultivemos la humanidad.",
+      "autor_id": 34,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Séneca",
+      "fecha_creacion": "2025-12-06 21:30:34",
+      "cita_la": "Dum inter homines sumus, humanitatem colamus."
+    },
+    {
+      "id": 93,
+      "cita_original": "Faber est suae quisque fortunae.",
+      "cita_traducida": "Cada uno es artífice de su propia fortuna.",
+      "autor_id": 34,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Séneca",
+      "fecha_creacion": "2025-12-06 21:30:34",
+      "cita_la": "Quisque est faber fortunae suae."
+    },
+    {
+      "id": 94,
+      "cita_original": "Sine ira et studio.",
+      "cita_traducida": "Sin ira ni pasión.",
+      "autor_id": 34,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Séneca",
+      "fecha_creacion": "2025-12-06 21:30:34",
+      "cita_la": "Sine ira et studio."
+    },
+    {
+      "id": 95,
+      "cita_original": "Veritas est adaequatio rei et intellectus.",
+      "cita_traducida": "La verdad es la adecuación del intelecto con la realidad.",
+      "autor_id": 37,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Santo Tomás de Aquino",
+      "fecha_creacion": "2025-12-06 21:32:33",
+      "cita_la": "Veritas est adaequatio rei et intellectus."
+    },
+    {
+      "id": 96,
+      "cita_original": "Amor dei et proximi.",
+      "cita_traducida": "Amor a Dios y al prójimo.",
+      "autor_id": 37,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Santo Tomás de Aquino",
+      "fecha_creacion": "2025-12-06 21:32:33",
+      "cita_la": "Amor Dei et proximi."
+    },
+    {
+      "id": 97,
+      "cita_original": "Fides et ratio concordant.",
+      "cita_traducida": "La fe y la razón están en armonía.",
+      "autor_id": 37,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Santo Tomás de Aquino",
+      "fecha_creacion": "2025-12-06 21:32:33",
+      "cita_la": "Fides et ratio concordant."
+    },
+    {
+      "id": 98,
+      "cita_original": "Bonum commune praefertur bono singulari.",
+      "cita_traducida": "El bien común debe prevalecer sobre el bien individual.",
+      "autor_id": 37,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Santo Tomás de Aquino",
+      "fecha_creacion": "2025-12-06 21:32:33",
+      "cita_la": "Bonum commune praeferendum est bono singulari."
+    },
+    {
+      "id": 99,
+      "cita_original": "Homo est summum bonum quaerens.",
+      "cita_traducida": "El hombre busca el bien supremo.",
+      "autor_id": 37,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Santo Tomás de Aquino",
+      "fecha_creacion": "2025-12-06 21:32:33",
+      "cita_la": "Homo summum bonum quaerit."
+    },
+    {
+      "id": 100,
+      "cita_original": "Gott ist tot.",
+      "cita_traducida": "Dios ha muerto.",
+      "autor_id": 38,
+      "tipo_id": 3,
+      "idioma_id": 9,
+      "fuente": "Friedrich Nietzsche",
+      "fecha_creacion": "2025-12-06 21:34:35",
+      "cita_la": "Deus mortuus est."
+    },
+    {
+      "id": 101,
+      "cita_original": "Was mich nicht umbringt, macht mich stärker.",
+      "cita_traducida": "Lo que no me mata, me hace más fuerte.",
+      "autor_id": 38,
+      "tipo_id": 3,
+      "idioma_id": 9,
+      "fuente": "Friedrich Nietzsche",
+      "fecha_creacion": "2025-12-06 21:34:35",
+      "cita_la": "Quod me non necat, fortiorem me facit."
+    },
+    {
+      "id": 102,
+      "cita_original": "Ohne Musik wäre das Leben ein Irrtum.",
+      "cita_traducida": "Sin música, la vida sería un error.",
+      "autor_id": 38,
+      "tipo_id": 3,
+      "idioma_id": 9,
+      "fuente": "Friedrich Nietzsche",
+      "fecha_creacion": "2025-12-06 21:34:35",
+      "cita_la": "Sine musica vita error esset."
+    },
+    {
+      "id": 103,
+      "cita_original": "Der Mensch ist etwas, das überwunden werden soll.",
+      "cita_traducida": "El hombre es algo que debe ser superado.",
+      "autor_id": 38,
+      "tipo_id": 3,
+      "idioma_id": 9,
+      "fuente": "Friedrich Nietzsche",
+      "fecha_creacion": "2025-12-06 21:34:35",
+      "cita_la": "Homo est aliquid quod superandum est."
+    },
+    {
+      "id": 104,
+      "cita_original": "Es gibt immer etwas Wahnsinn in der Liebe. Aber es gibt auch immer etwas Vernunft im Wahnsinn.",
+      "cita_traducida": "Siempre hay algo de locura en el amor. Pero también hay algo de razón en la locura.",
+      "autor_id": 38,
+      "tipo_id": 3,
+      "idioma_id": 9,
+      "fuente": "Friedrich Nietzsche",
+      "fecha_creacion": "2025-12-06 21:34:35",
+      "cita_la": "Semper aliquid insaniae in amore est, sed etiam aliquid rationis in insania."
+    },
+    {
+      "id": 105,
+      "cita_original": "The true soldier fights not because he hates what is in front of him, but because he loves what is behind him.",
+      "cita_traducida": "El verdadero soldado lucha no porque odie lo que tiene delante, sino porque ama lo que tiene detrás.",
+      "autor_id": 39,
+      "tipo_id": 3,
+      "idioma_id": 2,
+      "fuente": "G. K. Chesterton",
+      "fecha_creacion": "2025-12-06 21:36:33",
+      "cita_la": "Verus miles pugnat non quia odit quod ante se est, sed quia amat quod post se est."
+    },
+    {
+      "id": 106,
+      "cita_original": "An adventure is only an inconvenience rightly considered. An inconvenience is only an adventure wrongly considered.",
+      "cita_traducida": "Una aventura es solo un inconveniente correctamente considerado. Un inconveniente es solo una aventura mal considerada.",
+      "autor_id": 39,
+      "tipo_id": 3,
+      "idioma_id": 2,
+      "fuente": "G. K. Chesterton",
+      "fecha_creacion": "2025-12-06 21:36:33",
+      "cita_la": "Aventura est incommodum recte consideratum; incommodum est aventura male considerata."
+    },
+    {
+      "id": 107,
+      "cita_original": "There are no rules of architecture for a castle in the clouds.",
+      "cita_traducida": "No hay reglas de arquitectura para un castillo en las nubes.",
+      "autor_id": 39,
+      "tipo_id": 3,
+      "idioma_id": 2,
+      "fuente": "G. K. Chesterton",
+      "fecha_creacion": "2025-12-06 21:36:33",
+      "cita_la": "Nullae sunt regulae architecturae pro castello in nubibus."
+    },
+    {
+      "id": 108,
+      "cita_original": "The way to love anything is to realize that it may be lost.",
+      "cita_traducida": "La manera de amar algo es darse cuenta de que puede perderse.",
+      "autor_id": 39,
+      "tipo_id": 3,
+      "idioma_id": 2,
+      "fuente": "G. K. Chesterton",
+      "fecha_creacion": "2025-12-06 21:36:33",
+      "cita_la": "Via ad amandum est intellegere posse amitti."
+    },
+    {
+      "id": 109,
+      "cita_original": "Fallacies do not cease to be fallacies because they become fashions.",
+      "cita_traducida": "Las falacias no dejan de ser falacias porque se conviertan en modas.",
+      "autor_id": 39,
+      "tipo_id": 3,
+      "idioma_id": 2,
+      "fuente": "G. K. Chesterton",
+      "fecha_creacion": "2025-12-06 21:36:33",
+      "cita_la": "Fallaciae non desinunt fallaciae esse quia fiunt consuetudines."
+    },
+    {
+      "id": 110,
+      "cita_original": "Veritatem defendere oportet omni pretio, etiam si solum duodecim restemus.",
+      "cita_traducida": "Tenemos que defender la verdad a toda costa, aunque volvamos a ser solamente doce.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:42:20",
+      "cita_la": "Veritatem defendere oportet omni pretio, etiam si soli duodecim maneamus."
+    },
+    {
+      "id": 111,
+      "cita_original": "Fides est lux quae tenebras illuminat.",
+      "cita_traducida": "La fe es la luz que ilumina las tinieblas.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Fides est lux quae tenebras illuminat."
+    },
+    {
+      "id": 112,
+      "cita_original": "Caritas omnia vincit.",
+      "cita_traducida": "El amor todo lo vence.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Caritas omnia vincit."
+    },
+    {
+      "id": 113,
+      "cita_original": "Pacem in terris quaerimus.",
+      "cita_traducida": "Buscamos la paz en la tierra.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Pacem in terris quaerimus."
+    },
+    {
+      "id": 114,
+      "cita_original": "Spiritus Sanctus nos ducit ad veritatem.",
+      "cita_traducida": "El Espíritu Santo nos guía hacia la verdad.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Spiritus Sanctus nos ad veritatem ducit."
+    },
+    {
+      "id": 115,
+      "cita_original": "Veritas vos liberabit.",
+      "cita_traducida": "La verdad os hará libres.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Veritas vos liberabit."
+    },
+    {
+      "id": 116,
+      "cita_original": "Omnia opera nostra in Deo ponamus.",
+      "cita_traducida": "Todas nuestras obras pongamos en Dios.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Omnia opera nostra in Deo ponamus."
+    },
+    {
+      "id": 117,
+      "cita_original": "Fidei virtus semper vincit timorem.",
+      "cita_traducida": "La fuerza de la fe siempre vence al miedo.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Virtus fidei timorem semper vincit."
+    },
+    {
+      "id": 118,
+      "cita_original": "Homines dignitatem suam servare debent.",
+      "cita_traducida": "Los hombres deben preservar su dignidad.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Homines dignitatem suam servare debent."
+    },
+    {
+      "id": 119,
+      "cita_original": "Amor Dei et proximi est fundamentum vitae.",
+      "cita_traducida": "El amor a Dios y al prójimo es el fundamento de la vida.",
+      "autor_id": 40,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Juan Pablo II",
+      "fecha_creacion": "2025-12-06 21:43:32",
+      "cita_la": "Amor Dei et proximi est fundamentum vitae."
+    },
+    {
+      "id": 120,
+      "cita_original": "Homo sine litteris mors est.",
+      "cita_traducida": "El hombre sin educación es como un cadáver.",
+      "autor_id": 41,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "San Juan Bautista de La Salle",
+      "fecha_creacion": "2025-12-06 21:44:32",
+      "cita_la": "Homo sine litteris quasi cadaver est."
+    },
+    {
+      "id": 121,
+      "cita_original": "الصبر مفتاح الفرج",
+      "cita_traducida": "La paciencia es la llave para la solución.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Patientia clavis liberationis est."
+    },
+    {
+      "id": 122,
+      "cita_original": "من جد وجد",
+      "cita_traducida": "Quien se esfuerza, encuentra.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Qui laborat invenit."
+    },
+    {
+      "id": 123,
+      "cita_original": "العقل زينة",
+      "cita_traducida": "La mente es un adorno.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Mens ornamentum est."
+    },
+    {
+      "id": 124,
+      "cita_original": "الصديق وقت الضيق",
+      "cita_traducida": "El amigo se conoce en la adversidad.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Amicus in angustiis cognoscitur."
+    },
+    {
+      "id": 125,
+      "cita_original": "العلم نور",
+      "cita_traducida": "El conocimiento es luz.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Scientia lux est."
+    },
+    {
+      "id": 126,
+      "cita_original": "من حفر حفرة لأخيه وقع فيها",
+      "cita_traducida": "Quien cava un hoyo para su hermano, caerá en él.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Qui foveam fratri fodit in eam cadit."
+    },
+    {
+      "id": 127,
+      "cita_original": "يد واحدة لا تصفق",
+      "cita_traducida": "Una sola mano no aplaude.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Una manus non plausum facit."
+    },
+    {
+      "id": 128,
+      "cita_original": "التجربة خير معلم",
+      "cita_traducida": "La experiencia es el mejor maestro.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Experientia optimus magister est."
+    },
+    {
+      "id": 129,
+      "cita_original": "الوقت كالسيف إن لم تقطعه قطعك",
+      "cita_traducida": "El tiempo es como una espada; si no lo cortas, te corta.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Tempus sicut gladius est: si non id caedis, te caedit."
+    },
+    {
+      "id": 130,
+      "cita_original": "الكتاب خير جليس",
+      "cita_traducida": "El libro es el mejor compañero.",
+      "autor_id": 42,
+      "tipo_id": 2,
+      "idioma_id": 12,
+      "fuente": "Proverbio Árabe",
+      "fecha_creacion": "2025-12-06 21:52:00",
+      "cita_la": "Liber optimus comes est."
+    },
+    {
+      "id": 131,
+      "cita_original": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
+      "cita_traducida": "Tu derecho es actuar, no los frutos de la acción.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Tuum ius est agere, non fructus actionis."
+    },
+    {
+      "id": 132,
+      "cita_original": "योगः कर्मसु कौशलम्",
+      "cita_traducida": "Yoga es perfección en la acción.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Yoga est perfectio in operatione."
+    },
+    {
+      "id": 133,
+      "cita_original": "अहिंसा परमोधर्मः",
+      "cita_traducida": "La no violencia es la máxima virtud.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Non violentia summa virtus est."
+    },
+    {
+      "id": 134,
+      "cita_original": "सत्यं वद",
+      "cita_traducida": "Di la verdad.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Veritatem dic."
+    },
+    {
+      "id": 135,
+      "cita_original": "तपो न हि विजितम्",
+      "cita_traducida": "La disciplina conduce a la victoria.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Disciplina ad victoriam ducit."
+    },
+    {
+      "id": 136,
+      "cita_original": "विद्या ददाति विनयम्",
+      "cita_traducida": "La educación da humildad.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Doctrina humilitatem dat."
+    },
+    {
+      "id": 137,
+      "cita_original": "सुखं वा दुःखं वा जीवनम्",
+      "cita_traducida": "La vida tiene placer y dolor.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Vita gaudium et dolorem habet."
+    },
+    {
+      "id": 138,
+      "cita_original": "न मित्रस्य वियोगः दुःखः",
+      "cita_traducida": "La separación de un amigo duele.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Amici separatio dolet."
+    },
+    {
+      "id": 139,
+      "cita_original": "आत्मनः प्रतिपालने शान्ति",
+      "cita_traducida": "La paz viene del cuidado de uno mismo.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Pax ex cura sui venit."
+    },
+    {
+      "id": 140,
+      "cita_original": "शुद्धमनसा कर्म करोति",
+      "cita_traducida": "Actúa con mente pura.",
+      "autor_id": 45,
+      "tipo_id": 2,
+      "idioma_id": 13,
+      "fuente": "Proverbio Hindú",
+      "fecha_creacion": "2025-12-06 21:57:54",
+      "cita_la": "Mente pura age."
+    },
+    {
+      "id": 146,
+      "cita_original": "Die Kultur ist die Seele einer Zivilisation.",
+      "cita_traducida": "La cultura es el alma de una civilización.",
+      "autor_id": 48,
+      "tipo_id": 6,
+      "idioma_id": 9,
+      "fuente": "Oswald Spengler",
+      "fecha_creacion": "2025-12-06 22:02:31",
+      "cita_la": "Cultura anima est civilisationis."
+    },
+    {
+      "id": 147,
+      "cita_original": "Jede Zivilisation hat ihren Zyklus von Geburt, Wachstum und Verfall.",
+      "cita_traducida": "Cada civilización tiene su ciclo de nacimiento, crecimiento y decadencia.",
+      "autor_id": 48,
+      "tipo_id": 6,
+      "idioma_id": 9,
+      "fuente": "Oswald Spengler",
+      "fecha_creacion": "2025-12-06 22:02:31",
+      "cita_la": "Unaquaeque civilizatio habet цикл natalis, crescentiae et ruinae."
+    },
+    {
+      "id": 148,
+      "cita_original": "Die Geschichte schreitet nicht voran, Kulturen entstehen, blühen und sterben.",
+      "cita_traducida": "La historia no progresa, sino que las culturas nacen, florecen y mueren.",
+      "autor_id": 48,
+      "tipo_id": 6,
+      "idioma_id": 9,
+      "fuente": "Oswald Spengler",
+      "fecha_creacion": "2025-12-06 22:02:31",
+      "cita_la": "Historia non progreditur, sed culturae nascuntur, florent et moriuntur."
+    },
+    {
+      "id": 149,
+      "cita_original": "Die westliche Zivilisation ist in ihre Endphase des Niedergangs eingetreten.",
+      "cita_traducida": "La civilización occidental ha entrado en su fase final de declive.",
+      "autor_id": 48,
+      "tipo_id": 6,
+      "idioma_id": 9,
+      "fuente": "Oswald Spengler",
+      "fecha_creacion": "2025-12-06 22:02:31",
+      "cita_la": "Civilizatio occidentalis in ultimam declinationis phasein intravit."
+    },
+    {
+      "id": 150,
+      "cita_original": "Politik und Wirtschaft sind Manifestationen der Kultur, nicht ihr Bestimmungsfaktor.",
+      "cita_traducida": "La política y la economía son manifestaciones de la cultura, no la determinan.",
+      "autor_id": 48,
+      "tipo_id": 6,
+      "idioma_id": 9,
+      "fuente": "Oswald Spengler",
+      "fecha_creacion": "2025-12-06 22:02:31",
+      "cita_la": "Politica et oeconomia sunt manifestationes culturae, non eius factores."
+    },
+    {
+      "id": 151,
+      "cita_original": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme...",
+      "cita_traducida": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme...",
+      "autor_id": 49,
+      "tipo_id": 1,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "In loco Manche, cuius nomen nolo meminisse..."
+    },
+    {
+      "id": 152,
+      "cita_original": "El que lee mucho y anda mucho, ve mucho y sabe mucho.",
+      "cita_traducida": "El que lee mucho y anda mucho, ve mucho y sabe mucho.",
+      "autor_id": 49,
+      "tipo_id": 6,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Qui multum legit et multum ambulat, multum videt et multum scit."
+    },
+    {
+      "id": 153,
+      "cita_original": "La pluma es la lengua del alma.",
+      "cita_traducida": "La pluma es la lengua del alma.",
+      "autor_id": 49,
+      "tipo_id": 6,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Calamus lingua animae est."
+    },
+    {
+      "id": 154,
+      "cita_original": "Nunca pares de procurar ser mejor.",
+      "cita_traducida": "Nunca pares de procurar ser mejor.",
+      "autor_id": 49,
+      "tipo_id": 5,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Numquam desine melius esse quaerere."
+    },
+    {
+      "id": 155,
+      "cita_original": "Cada uno es como Dios le hizo, y aun peor muchas veces.",
+      "cita_traducida": "Cada uno es como Dios le hizo, y aun peor muchas veces.",
+      "autor_id": 49,
+      "tipo_id": 6,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Unusquisque est sicut Deus fecit, et saepe peior."
+    },
+    {
+      "id": 156,
+      "cita_original": "No es más que un sueño lo que se sueña en la vida.",
+      "cita_traducida": "No es más que un sueño lo que se sueña en la vida.",
+      "autor_id": 49,
+      "tipo_id": 6,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Somnium solum est quod in vita somniatur."
+    },
+    {
+      "id": 157,
+      "cita_original": "La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos.",
+      "cita_traducida": "La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos.",
+      "autor_id": 49,
+      "tipo_id": 6,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Libertas, Sancho, donum pretiosissimum est quod caelum hominibus dedit."
+    },
+    {
+      "id": 158,
+      "cita_original": "El que lee mucho y anda mucho, ve mucho y sabe mucho.",
+      "cita_traducida": "El que lee mucho y anda mucho, ve mucho y sabe mucho.",
+      "autor_id": 49,
+      "tipo_id": 6,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Qui multum legit et multum ambulat, multum videt et multum scit."
+    },
+    {
+      "id": 159,
+      "cita_original": "Dulcinea del Toboso, señora de mi pensamiento.",
+      "cita_traducida": "Dulcinea del Toboso, señora de mi pensamiento.",
+      "autor_id": 49,
+      "tipo_id": null,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Dulcinea Tobosi, domina cogitationum mearum."
+    },
+    {
+      "id": 160,
+      "cita_original": "Cambiar la tristeza en contento es la más sabrosa medicina del alma.",
+      "cita_traducida": "Cambiar la tristeza en contento es la más sabrosa medicina del alma.",
+      "autor_id": 49,
+      "tipo_id": 6,
+      "idioma_id": 1,
+      "fuente": "Don Quijote de la Mancha",
+      "fecha_creacion": "2025-12-06 22:29:54",
+      "cita_la": "Tristitiam in laetitiam mutare est medicamentum animae sapidissimum."
+    },
+    {
+      "id": 161,
+      "cita_original": "Nosce te, accipe te, supera te.",
+      "cita_traducida": "Conócete, acéptate, supérate.",
+      "autor_id": 17,
+      "tipo_id": 3,
+      "idioma_id": 5,
+      "fuente": "Atribuido a San Agustín",
+      "fecha_creacion": "2025-12-06 22:37:03",
+      "cita_la": "Nosce te, accipe te, supera te."
+    },
+    {
+      "id": 162,
+      "cita_original": "Education is the most powerful weapon which you can use to change the world.",
+      "cita_traducida": "La educación es el arma más poderosa que puedes usar para cambiar el mundo.",
+      "autor_id": 50,
+      "tipo_id": 5,
+      "idioma_id": 2,
+      "fuente": "Nelson Mandela",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Educatio potentissimum telum est ad mundum mutandum."
+    },
+    {
+      "id": 163,
+      "cita_original": "The true education consists in getting the best out of oneself.",
+      "cita_traducida": "La verdadera educación consiste en obtener lo mejor de uno mismo.",
+      "autor_id": 51,
+      "tipo_id": 6,
+      "idioma_id": 2,
+      "fuente": "Mahatma Gandhi",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Vera educatio consistit in optimo ex se ipsis obtinendo."
+    },
+    {
+      "id": 164,
+      "cita_original": "Education is what remains after one has forgotten what one has learned in school.",
+      "cita_traducida": "La educación es lo que queda después de olvidar lo que se ha aprendido en la escuela.",
+      "autor_id": 52,
+      "tipo_id": 6,
+      "idioma_id": 2,
+      "fuente": "Albert Einstein",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Educatio remanet postquam obliviscimur quod in schola didicimus."
+    },
+    {
+      "id": 165,
+      "cita_original": "The function of education is to teach one to think intensively and to think critically. Intelligence plus character – that is the goal of true education.",
+      "cita_traducida": "La función de la educación es enseñar a pensar intensamente y críticamente. Inteligencia más carácter: ese es el objetivo de la verdadera educación.",
+      "autor_id": 53,
+      "tipo_id": 6,
+      "idioma_id": 2,
+      "fuente": "Martin Luther King Jr.",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Munus educationis est docere cogitare intense et critice. Ingenium cum moribus – hoc est finis verae educationis."
+    },
+    {
+      "id": 166,
+      "cita_original": "Education is not preparation for life; education is life itself.",
+      "cita_traducida": "La educación no es preparación para la vida; la educación es la vida en sí misma.",
+      "autor_id": 54,
+      "tipo_id": 6,
+      "idioma_id": 2,
+      "fuente": "John Dewey",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Educatio non est praeparatio ad vitam; educatio ipsa vita est."
+    },
+    {
+      "id": 167,
+      "cita_original": "An investment in knowledge pays the best interest.",
+      "cita_traducida": "Una inversión en conocimiento paga el mejor interés.",
+      "autor_id": 55,
+      "tipo_id": 5,
+      "idioma_id": 2,
+      "fuente": "Benjamin Franklin",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Investitio in scientia optimum redditum praestat."
+    },
+    {
+      "id": 168,
+      "cita_original": "Disciplina animi numquam defatigat.",
+      "cita_traducida": "El aprendizaje nunca cansa a la mente.",
+      "autor_id": 56,
+      "tipo_id": 6,
+      "idioma_id": 5,
+      "fuente": "Leonardo Da Vinci",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Disciplina animi numquam defatigat."
+    },
+    {
+      "id": 169,
+      "cita_original": "學而不思則罔，思而不學則殆。",
+      "cita_traducida": "Aprender sin pensar es esfuerzo perdido; pensar sin aprender, peligroso.",
+      "autor_id": 32,
+      "tipo_id": 6,
+      "idioma_id": 4,
+      "fuente": "Confucio",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Discere sine cogitatione inutile est; cogitare sine discendo periculosum est."
+    },
+    {
+      "id": 170,
+      "cita_original": "ཕྱི་ལོག་མི་སློབ་དང་མི་བྱེད་པ་ནི་སྤྱོད་པ་མ་འགྱོ་བའི་བྱེད་སྒོ་འདུག",
+      "cita_traducida": "Un niño sin educación es como un pájaro sin alas.",
+      "autor_id": 57,
+      "tipo_id": 2,
+      "idioma_id": 1,
+      "fuente": "Proverbio tibetano",
+      "fecha_creacion": "2025-12-06 22:43:23",
+      "cita_la": "Infans sine educatione quasi avis sine alis est."
+    }
+  ],
+  "autores": [
+    {
+      "id": 14,
+      "nombre": "Horacio",
+      "nacimiento_ano": -65,
+      "nacimiento_mes": 12,
+      "nacimiento_dia": 8,
+      "nacimiento_str": "65 a.C.",
+      "fallecimiento_ano": -8,
+      "fallecimiento_mes": 11,
+      "fallecimiento_dia": 27,
+      "fallecimiento_str": "8 a.C.",
+      "biografia": "Poeta lírico romano, autor de \"Carpe diem\".",
+      "nombre_la": "Quintus Horatius Flaccus",
+      "epoca_id": 5,
+      "nacion_id": 2,
+      "biografia_la": "Poeta lyricus Romanus, auctor \"Carpe diem\"."
+    },
+    {
+      "id": 15,
+      "nombre": "René Descartes",
+      "nacimiento_ano": 1596,
+      "nacimiento_mes": 3,
+      "nacimiento_dia": 31,
+      "nacimiento_str": "31/03/1596",
+      "fallecimiento_ano": 1650,
+      "fallecimiento_mes": 2,
+      "fallecimiento_dia": 11,
+      "fallecimiento_str": "11/02/1650",
+      "biografia": "Filósofo y matemático francés.",
+      "nombre_la": "Renatus Cartesius",
+      "epoca_id": 7,
+      "nacion_id": 9,
+      "biografia_la": "Philosophus et mathematicus Francogallicus."
+    },
+    {
+      "id": 16,
+      "nombre": "Francis Bacon",
+      "nacimiento_ano": 1561,
+      "nacimiento_mes": 1,
+      "nacimiento_dia": 22,
+      "nacimiento_str": "22/01/1561",
+      "fallecimiento_ano": 1626,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 9,
+      "fallecimiento_str": "09/04/1626",
+      "biografia": "Filósofo y estadista inglés, autor de \"El conocimiento es poder\".",
+      "nombre_la": "Franciscus Bacon",
+      "epoca_id": 7,
+      "nacion_id": 6,
+      "biografia_la": "Philosophus et civis Anglicus, auctor \"Scientia potentia est\"."
+    },
+    {
+      "id": 17,
+      "nombre": "San Agustín",
+      "nacimiento_ano": 354,
+      "nacimiento_mes": 11,
+      "nacimiento_dia": 13,
+      "nacimiento_str": "13/11/354",
+      "fallecimiento_ano": 430,
+      "fallecimiento_mes": 8,
+      "fallecimiento_dia": 28,
+      "fallecimiento_str": "28/08/430",
+      "biografia": "Filósofo y teólogo cristiano.",
+      "nombre_la": "Aurelius Augustinus",
+      "epoca_id": 5,
+      "nacion_id": 2,
+      "biografia_la": "Philosophus et theologus Christianus."
+    },
+    {
+      "id": 18,
+      "nombre": "Shakespeare",
+      "nacimiento_ano": 1564,
+      "nacimiento_mes": 4,
+      "nacimiento_dia": 23,
+      "nacimiento_str": "23/04/1564",
+      "fallecimiento_ano": 1616,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 23,
+      "fallecimiento_str": "23/04/1616",
+      "biografia": "Dramaturgo y poeta inglés, autor de Hamlet.",
+      "nombre_la": "Gulielmus Shakespeare",
+      "epoca_id": 7,
+      "nacion_id": 6,
+      "biografia_la": "Dramaturgus et poeta Anglicus, auctor \"Hamlet\"."
+    },
+    {
+      "id": 19,
+      "nombre": "Salomón",
+      "nacimiento_ano": -990,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": "990 a. C.",
+      "fallecimiento_ano": -931,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": "931 a. C.",
+      "biografia": "Rey de Israel, autor de proverbios y textos bíblicos.",
+      "nombre_la": "Salomon",
+      "epoca_id": 5,
+      "nacion_id": 14,
+      "biografia_la": "Rex Israel, auctor proverbiorum et textuum sacrorum."
+    },
+    {
+      "id": 20,
+      "nombre": "Dale Carnegie",
+      "nacimiento_ano": 1888,
+      "nacimiento_mes": 11,
+      "nacimiento_dia": 24,
+      "nacimiento_str": "24/11/1888",
+      "fallecimiento_ano": 1955,
+      "fallecimiento_mes": 11,
+      "fallecimiento_dia": 1,
+      "fallecimiento_str": "01/11/1955",
+      "biografia": "Escritor y conferencista estadounidense, autor de libros de desarrollo personal.",
+      "nombre_la": "Daleus Carnegieus",
+      "epoca_id": 8,
+      "nacion_id": 18,
+      "biografia_la": "Scriba et orator Americanus, auctor librorum de progressu personali."
+    },
+    {
+      "id": 21,
+      "nombre": "Anónimo",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Autor desconocido, usado para refranes y proverbios populares.",
+      "nombre_la": "Anonymous",
+      "epoca_id": null,
+      "nacion_id": null,
+      "biografia_la": "Auctor ignotus, usus pro proverbiorum popularium collectione."
+    },
+    {
+      "id": 22,
+      "nombre": "Provervio Chino",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Conjunto de proverbios tradicionales de la cultura china que transmiten sabiduría popular, valores morales y enseñanzas prácticas transmitidas oralmente durante siglos.",
+      "nombre_la": "Proverbium Sinense",
+      "epoca_id": null,
+      "nacion_id": 12,
+      "biografia_la": "Collectio sententiarum Sinensium, magnopere in cultura tradita."
+    },
+    {
+      "id": 23,
+      "nombre": "Proverbio Japonés",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Expresiones tradicionales de la cultura japonesa que resumen enseñanzas morales, filosóficas y prácticas derivadas del budismo, el sintoísmo y la experiencia popular.",
+      "nombre_la": "Proverbium Iaponicum",
+      "epoca_id": null,
+      "nacion_id": 11,
+      "biografia_la": "Collectio sententiarum Iaponicarum."
+    },
+    {
+      "id": 25,
+      "nombre": "Refrán Francés",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Refranes populares de la tradición oral francesa que transmiten observaciones sobre la vida, el trabajo y la conducta humana.",
+      "nombre_la": "Sententia Gallica",
+      "epoca_id": null,
+      "nacion_id": 9,
+      "biografia_la": "Collectio sententiarum Gallicarum."
+    },
+    {
+      "id": 26,
+      "nombre": "Refrán Ruso",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Dichos tradicionales del pueblo ruso que condensan la experiencia colectiva, el ingenio y la filosofía popular transmitida de generación en generación.",
+      "nombre_la": "Sententia Russica",
+      "epoca_id": null,
+      "nacion_id": 16,
+      "biografia_la": "Collectio sententiarum Russicarum."
+    },
+    {
+      "id": 27,
+      "nombre": "Refrán Español",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Refranes populares de la tradición oral hispana que expresan de forma breve y ingeniosa enseñanzas prácticas sobre la vida cotidiana.",
+      "nombre_la": "Sententia Hispanica",
+      "epoca_id": null,
+      "nacion_id": 7,
+      "biografia_la": "Collectio sententiarum Hispanicarum."
+    },
+    {
+      "id": 28,
+      "nombre": "Refrán Vasco",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Proverbios de la tradición oral vasca que reflejan la relación con la naturaleza, el trabajo y los valores comunitarios del pueblo vasco.",
+      "nombre_la": "Sententia Vasconica",
+      "epoca_id": null,
+      "nacion_id": 7,
+      "biografia_la": "Collectio sententiarum Vasconicarum."
+    },
+    {
+      "id": 30,
+      "nombre": "Gayo Julio César",
+      "nacimiento_ano": -100,
+      "nacimiento_mes": 7,
+      "nacimiento_dia": 12,
+      "nacimiento_str": "100 a.C.",
+      "fallecimiento_ano": -44,
+      "fallecimiento_mes": 3,
+      "fallecimiento_dia": 15,
+      "fallecimiento_str": "44 a.C.",
+      "biografia": "Político, militar y escritor romano. Protagonizó el final de la República Romana y el ascenso del Imperio. Conquistó la Galia, cruzó el Rubicón en 49 a. C. iniciando la guerra civil, y ejerció el poder como dictador vitalicio. Fue asesinado el 15 de marzo de 44 a. C. durante los Idus de marzo.",
+      "nombre_la": "Gaius Iulius Caesar",
+      "epoca_id": 5,
+      "nacion_id": 2,
+      "biografia_la": "Politicus, miles et scriptor Romanus. Finitum Rei Publicae et ascensus Imperii. Galliam vicit, Rubiconem transiit anno 49 a.C., bellum civile incepit, dictator perpetuus factus. Interfectus est die 15 Martii 44 a.C."
+    },
+    {
+      "id": 31,
+      "nombre": "Parménides",
+      "nacimiento_ano": -515,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": "c. 515 a.C.",
+      "fallecimiento_ano": -450,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": "c. 450 a.C.",
+      "biografia": "Filósofo presocrático griego, fundador de la escuela eleática. Defendió la idea de la permanencia del ser y que nada surge de la nada.",
+      "nombre_la": "Parmenides",
+      "epoca_id": 5,
+      "nacion_id": 1,
+      "biografia_la": "Philosophus Praesocraticus Graecus, schola Eleatica conditor. Ideam constantiae entis defendit, nihil ex nihilo oriri."
+    },
+    {
+      "id": 32,
+      "nombre": "Confucio",
+      "nacimiento_ano": -551,
+      "nacimiento_mes": 9,
+      "nacimiento_dia": 28,
+      "nacimiento_str": "28/09/551 a.C.",
+      "fallecimiento_ano": -479,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 11,
+      "fallecimiento_str": "11/04/479 a.C.",
+      "biografia": "Filósofo y maestro chino, fundador del confucianismo. Sus enseñanzas influyeron profundamente en la cultura, ética y política de China.",
+      "nombre_la": "Confucius",
+      "epoca_id": 5,
+      "nacion_id": 12,
+      "biografia_la": "Philosophus et magister Sinensis, confucianismi conditor. Doctrinae eius in culturam, ethicam et politicam Sinensem profunde influentes."
+    },
+    {
+      "id": 33,
+      "nombre": "Isidoro de Sevilla",
+      "nacimiento_ano": 560,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": "c. 560",
+      "fallecimiento_ano": 636,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": "c. 636",
+      "biografia": "Arzobispo de Sevilla, erudito y escritor español. Autor de \"Etimologías\", obra enciclopédica que recoge gran parte del saber de su época.",
+      "nombre_la": "Isidorus Hispalensis",
+      "epoca_id": 6,
+      "nacion_id": 7,
+      "biografia_la": "Archiepiscopus Hispaliensis, eruditus et scriptor Hispanicus, auctor \"Etymologiae\"."
+    },
+    {
+      "id": 34,
+      "nombre": "Séneca",
+      "nacimiento_ano": -4,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": "4 a.C.",
+      "fallecimiento_ano": 65,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": "65 d.C.",
+      "biografia": "Filósofo, escritor y político romano, representante del estoicismo. Autor de numerosas cartas y tratados morales.",
+      "nombre_la": "Lucius Annaeus Seneca",
+      "epoca_id": 5,
+      "nacion_id": 2,
+      "biografia_la": "Philosophus, scriptor et politicus Romanus, stoicismus repraesentans. Multas epistulas et tractatus morales scripsit."
+    },
+    {
+      "id": 37,
+      "nombre": "Santo Tomás de Aquino",
+      "nacimiento_ano": 1225,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": "1225",
+      "fallecimiento_ano": 1274,
+      "fallecimiento_mes": 3,
+      "fallecimiento_dia": 7,
+      "fallecimiento_str": "7/03/1274",
+      "biografia": "Filósofo y teólogo italiano, representante de la Escolástica. Autor de la \"Summa Theologica\".",
+      "nombre_la": "Thomas Aquinas",
+      "epoca_id": 6,
+      "nacion_id": 10,
+      "biografia_la": "Philosophus et theologus Italicus, Scholasticae repraesentans. Auctor \"Summa Theologica\"."
+    },
+    {
+      "id": 38,
+      "nombre": "Friedrich Nietzsche",
+      "nacimiento_ano": 1844,
+      "nacimiento_mes": 10,
+      "nacimiento_dia": 15,
+      "nacimiento_str": "15/10/1844",
+      "fallecimiento_ano": 1900,
+      "fallecimiento_mes": 8,
+      "fallecimiento_dia": 25,
+      "fallecimiento_str": "25/08/1900",
+      "biografia": "Filósofo, poeta y filólogo alemán. Autor de obras como \"Así habló Zaratustra\" y \"Más allá del bien y del mal\".",
+      "nombre_la": "Friedrich Nietzsche",
+      "epoca_id": 8,
+      "nacion_id": 8,
+      "biografia_la": "Philosophus, poeta et philologus Germanicus, auctor operum ut \"Ita loquutus est Zarathustra\" et \"Ultra bonum et malum\"."
+    },
+    {
+      "id": 39,
+      "nombre": "G. K. Chesterton",
+      "nacimiento_ano": 1874,
+      "nacimiento_mes": 5,
+      "nacimiento_dia": 29,
+      "nacimiento_str": "29/05/1874",
+      "fallecimiento_ano": 1936,
+      "fallecimiento_mes": 6,
+      "fallecimiento_dia": 14,
+      "fallecimiento_str": "14/06/1936",
+      "biografia": "Escritor, poeta, filósofo y periodista inglés. Famoso por sus ensayos, cuentos de misterio y defensa del cristianismo.",
+      "nombre_la": "Gilbert Keith Chesterton",
+      "epoca_id": 8,
+      "nacion_id": 6,
+      "biografia_la": "Scriba, poeta, philosophus et diurnarius Anglicus. Notus pro essayis, fabulis mysteriis et Christianismi defensione."
+    },
+    {
+      "id": 40,
+      "nombre": "Juan Pablo II",
+      "nacimiento_ano": 1920,
+      "nacimiento_mes": 5,
+      "nacimiento_dia": 18,
+      "nacimiento_str": "18/05/1920",
+      "fallecimiento_ano": 2005,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 2,
+      "fallecimiento_str": "02/04/2005",
+      "biografia": "Papa de la Iglesia Católica desde 1978 hasta 2005. Destacado por su labor pastoral, defensa de la vida y los derechos humanos.",
+      "nombre_la": "Ioannes Paulus II",
+      "epoca_id": 8,
+      "nacion_id": 15,
+      "biografia_la": "Papa Ecclesiae Catholicae ab anno 1978 usque 2005. Labor pastoral, vitae tutela et iura humana praecipuus."
+    },
+    {
+      "id": 41,
+      "nombre": "San Juan Bautista de La Salle",
+      "nacimiento_ano": 1651,
+      "nacimiento_mes": 4,
+      "nacimiento_dia": 30,
+      "nacimiento_str": "30/04/1651",
+      "fallecimiento_ano": 1719,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 7,
+      "fallecimiento_str": "07/04/1719",
+      "biografia": "Sacerdote francés y fundador de los Hermanos de las Escuelas Cristianas, dedicados a la educación cristiana de los jóvenes, especialmente pobres.",
+      "nombre_la": "Sanctus Ioannes Baptista de La Salle",
+      "epoca_id": 7,
+      "nacion_id": 9,
+      "biografia_la": "Sacerdos Francogallicus, fratres Scholarium Christianorum fundator. Iuvenes praecipue pauperes educavit."
+    },
+    {
+      "id": 42,
+      "nombre": "Proverbio Árabe",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Proverbios tradicionales de la cultura árabe que transmiten valores de hospitalidad, honor, paciencia y sabiduría práctica.",
+      "nombre_la": "Proverbium Arabica",
+      "epoca_id": null,
+      "nacion_id": null,
+      "biografia_la": "Collectio sententiarum Arabicarum."
+    },
+    {
+      "id": 45,
+      "nombre": "Proverbio Hindú",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Dichos tradicionales de la India que reflejan principios espirituales, filosóficos y morales influidos por el hinduismo y las tradiciones védicas.",
+      "nombre_la": "Proverbium Indica",
+      "epoca_id": null,
+      "nacion_id": 17,
+      "biografia_la": "Collectio sententiarum Indicarum."
+    },
+    {
+      "id": 48,
+      "nombre": "Oswald Spengler",
+      "nacimiento_ano": 1880,
+      "nacimiento_mes": 5,
+      "nacimiento_dia": 29,
+      "nacimiento_str": "29/05/1880",
+      "fallecimiento_ano": 1936,
+      "fallecimiento_mes": 5,
+      "fallecimiento_dia": 8,
+      "fallecimiento_str": "08/05/1936",
+      "biografia": "Filósofo e historiador alemán, autor de \"La decadencia de Occidente\".",
+      "nombre_la": "Oswaldus Spengler",
+      "epoca_id": 8,
+      "nacion_id": 8,
+      "biografia_la": "Philosophus et historicus Germanicus, auctor \"Occidentis Decadentia\"."
+    },
+    {
+      "id": 49,
+      "nombre": "Miguel de Cervantes",
+      "nacimiento_ano": 1547,
+      "nacimiento_mes": 9,
+      "nacimiento_dia": 29,
+      "nacimiento_str": "29/09/1547",
+      "fallecimiento_ano": 1616,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 23,
+      "fallecimiento_str": "23/04/1616",
+      "biografia": "Novelista, poeta y dramaturgo español, autor de \"Don Quijote de la Mancha\".",
+      "nombre_la": "Michael Cervantes",
+      "epoca_id": 7,
+      "nacion_id": 7,
+      "biografia_la": "Scriba, poeta et dramatist Hispanicus, auctor \"Don Quixote de la Mancha\"."
+    },
+    {
+      "id": 50,
+      "nombre": "Nelson Mandela",
+      "nacimiento_ano": 1918,
+      "nacimiento_mes": 7,
+      "nacimiento_dia": 18,
+      "nacimiento_str": "18/07/1918",
+      "fallecimiento_ano": 2013,
+      "fallecimiento_mes": 12,
+      "fallecimiento_dia": 5,
+      "fallecimiento_str": "05/12/2013",
+      "biografia": "Político y activista sudafricano, primer presidente negro de Sudáfrica y líder contra el apartheid.",
+      "nombre_la": "Nelsonus Mandela",
+      "epoca_id": 8,
+      "nacion_id": null,
+      "biografia_la": "Politicus et activist Africanus Australis, primus praeses niger et apartheid adversator."
+    },
+    {
+      "id": 51,
+      "nombre": "Mahatma Gandhi",
+      "nacimiento_ano": 1869,
+      "nacimiento_mes": 10,
+      "nacimiento_dia": 2,
+      "nacimiento_str": "02/10/1869",
+      "fallecimiento_ano": 1948,
+      "fallecimiento_mes": 1,
+      "fallecimiento_dia": 30,
+      "fallecimiento_str": "30/01/1948",
+      "biografia": "Líder político y espiritual de India, impulsor de la resistencia no violenta.",
+      "nombre_la": "Mohandas Gandhi",
+      "epoca_id": 8,
+      "nacion_id": 17,
+      "biografia_la": "Dux politicis et spiritualis Indiae, resistentiam non violentam promovere."
+    },
+    {
+      "id": 52,
+      "nombre": "Albert Einstein",
+      "nacimiento_ano": 1879,
+      "nacimiento_mes": 3,
+      "nacimiento_dia": 14,
+      "nacimiento_str": "14/03/1879",
+      "fallecimiento_ano": 1955,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 18,
+      "fallecimiento_str": "18/04/1955",
+      "biografia": "Físico teórico alemán, desarrolló la teoría de la relatividad.",
+      "nombre_la": "Albertus Einstein",
+      "epoca_id": 8,
+      "nacion_id": 8,
+      "biografia_la": "Physicus theoreticus Germanicus, theoriam relativitatis excogitavit."
+    },
+    {
+      "id": 53,
+      "nombre": "Martin Luther King Jr.",
+      "nacimiento_ano": 1929,
+      "nacimiento_mes": 1,
+      "nacimiento_dia": 15,
+      "nacimiento_str": "15/01/1929",
+      "fallecimiento_ano": 1968,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 4,
+      "fallecimiento_str": "04/04/1968",
+      "biografia": "Líder del movimiento por los derechos civiles en Estados Unidos y activista por la igualdad racial.",
+      "nombre_la": "Martin Luther King",
+      "epoca_id": 8,
+      "nacion_id": 18,
+      "biografia_la": "Dux iurium civilium et activist aequalitatis racialium in Civitatibus Foederatis."
+    },
+    {
+      "id": 54,
+      "nombre": "John Dewey",
+      "nacimiento_ano": 1859,
+      "nacimiento_mes": 10,
+      "nacimiento_dia": 20,
+      "nacimiento_str": "20/10/1859",
+      "fallecimiento_ano": 1952,
+      "fallecimiento_mes": 6,
+      "fallecimiento_dia": 1,
+      "fallecimiento_str": "01/06/1952",
+      "biografia": "Filósofo y pedagogo estadounidense, defensor de la educación progresista.",
+      "nombre_la": "Ioannes Dewey",
+      "epoca_id": 8,
+      "nacion_id": 18,
+      "biografia_la": "Philosophus et paedagogus Americanus, educationem progressivam defendens."
+    },
+    {
+      "id": 55,
+      "nombre": "Benjamin Franklin",
+      "nacimiento_ano": 1706,
+      "nacimiento_mes": 1,
+      "nacimiento_dia": 17,
+      "nacimiento_str": "17/01/1706",
+      "fallecimiento_ano": 1790,
+      "fallecimiento_mes": 4,
+      "fallecimiento_dia": 17,
+      "fallecimiento_str": "17/04/1790",
+      "biografia": "Político, científico y escritor estadounidense, uno de los Padres Fundadores de Estados Unidos.",
+      "nombre_la": "Benjaminus Franklin",
+      "epoca_id": 8,
+      "nacion_id": 18,
+      "biografia_la": "Politicus, sapiens et scriptor Americanus, unus ex Patribus Fundatoribus."
+    },
+    {
+      "id": 56,
+      "nombre": "Leonardo Da Vinci",
+      "nacimiento_ano": 1452,
+      "nacimiento_mes": 4,
+      "nacimiento_dia": 15,
+      "nacimiento_str": "15/04/1452",
+      "fallecimiento_ano": 1519,
+      "fallecimiento_mes": 5,
+      "fallecimiento_dia": 2,
+      "fallecimiento_str": "02/05/1519",
+      "biografia": "Artista, inventor y científico italiano del Renacimiento.",
+      "nombre_la": "Leonardus Vincius",
+      "epoca_id": 7,
+      "nacion_id": 10,
+      "biografia_la": "Artifex, inventor et physicus Italicus Renaissance."
+    },
+    {
+      "id": 57,
+      "nombre": "Proverbio Tibetano",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": "Proverbios de la tradición tibetana inspirados en la filosofía budista, centrados en la compasión, la impermanencia y el equilibrio interior.",
+      "nombre_la": "",
+      "epoca_id": null,
+      "nacion_id": null,
+      "biografia_la": "Collectio sententiarum Tibeticarum."
+    },
+    {
+      "id": 58,
+      "nombre": "",
+      "nacimiento_ano": null,
+      "nacimiento_mes": null,
+      "nacimiento_dia": null,
+      "nacimiento_str": null,
+      "fallecimiento_ano": null,
+      "fallecimiento_mes": null,
+      "fallecimiento_dia": null,
+      "fallecimiento_str": null,
+      "biografia": null,
+      "nombre_la": "Proverbium Tibetanum",
+      "epoca_id": null,
+      "nacion_id": null,
+      "biografia_la": "Collectio sententiarum Tibeticarum."
+    }
+  ],
+  "categorias": [
+    {
+      "id": 2,
+      "nombre": "Amor"
+    },
+    {
+      "id": 3,
+      "nombre": "Humor"
+    },
+    {
+      "id": 1,
+      "nombre": "Motivación"
+    },
+    {
+      "id": 5,
+      "nombre": "Sabiduría"
+    },
+    {
+      "id": 4,
+      "nombre": "Vida"
+    }
+  ],
+  "citas_categorias": [
+    {
+      "cita_id": 45,
+      "categoria_id": 1
+    },
+    {
+      "cita_id": 46,
+      "categoria_id": 1
+    },
+    {
+      "cita_id": 48,
+      "categoria_id": 1
+    },
+    {
+      "cita_id": 49,
+      "categoria_id": 1
+    },
+    {
+      "cita_id": 50,
+      "categoria_id": 1
+    },
+    {
+      "cita_id": 44,
+      "categoria_id": 2
+    },
+    {
+      "cita_id": 52,
+      "categoria_id": 3
+    },
+    {
+      "cita_id": 37,
+      "categoria_id": 4
+    },
+    {
+      "cita_id": 38,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 40,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 41,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 42,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 43,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 44,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 47,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 50,
+      "categoria_id": 5
+    },
+    {
+      "cita_id": 51,
+      "categoria_id": 5
+    }
+  ],
+  "epocas": [
+    {
+      "id": 1,
+      "nombre": "Paleolítico",
+      "inicio_ano": -2500000,
+      "fin_ano": -10000,
+      "nombre_la": "Paleolithicum"
+    },
+    {
+      "id": 2,
+      "nombre": "Mesolítico",
+      "inicio_ano": -10000,
+      "fin_ano": -5000,
+      "nombre_la": "Mesolithicum"
+    },
+    {
+      "id": 3,
+      "nombre": "Neolítico",
+      "inicio_ano": -9000,
+      "fin_ano": -3000,
+      "nombre_la": "Neolithicum"
+    },
+    {
+      "id": 4,
+      "nombre": "Edad de los Metales",
+      "inicio_ano": -3300,
+      "fin_ano": -1000,
+      "nombre_la": "Aetas Metallorum"
+    },
+    {
+      "id": 5,
+      "nombre": "Edad Antigua",
+      "inicio_ano": -3300,
+      "fin_ano": 476,
+      "nombre_la": "Aetas Antiqua"
+    },
+    {
+      "id": 6,
+      "nombre": "Edad Media",
+      "inicio_ano": 476,
+      "fin_ano": 1492,
+      "nombre_la": "Aetas Media"
+    },
+    {
+      "id": 7,
+      "nombre": "Edad Moderna",
+      "inicio_ano": 1492,
+      "fin_ano": 1789,
+      "nombre_la": "Aetas Moderna"
+    },
+    {
+      "id": 8,
+      "nombre": "Edad Contemporánea",
+      "inicio_ano": 1789,
+      "fin_ano": null,
+      "nombre_la": "Aetas Contemporanea"
+    }
+  ],
+  "idiomas": [
+    {
+      "id": 1,
+      "codigo": "es",
+      "nombre": "Español"
+    },
+    {
+      "id": 2,
+      "codigo": "en",
+      "nombre": "Inglés"
+    },
+    {
+      "id": 3,
+      "codigo": "fr",
+      "nombre": "Francés"
+    },
+    {
+      "id": 4,
+      "codigo": "zh",
+      "nombre": "Chino"
+    },
+    {
+      "id": 5,
+      "codigo": "la",
+      "nombre": "Latín"
+    },
+    {
+      "id": 6,
+      "codigo": "eu",
+      "nombre": "Euskara"
+    },
+    {
+      "id": 7,
+      "codigo": "ja",
+      "nombre": "Japonés"
+    },
+    {
+      "id": 8,
+      "codigo": "ru",
+      "nombre": "Ruso"
+    },
+    {
+      "id": 9,
+      "codigo": "de",
+      "nombre": "Alemán"
+    },
+    {
+      "id": 10,
+      "codigo": "it",
+      "nombre": "Italiano"
+    },
+    {
+      "id": 11,
+      "codigo": "pt",
+      "nombre": "Portugués"
+    },
+    {
+      "id": 12,
+      "codigo": "ar",
+      "nombre": "Árabe"
+    },
+    {
+      "id": 13,
+      "codigo": "hi",
+      "nombre": "Hindi"
+    },
+    {
+      "id": 14,
+      "codigo": "he",
+      "nombre": "Hebreo"
+    }
+  ],
+  "naciones": [
+    {
+      "id": 1,
+      "nombre_nacion": "Grecia",
+      "nombre_nacion_la": "Graecia"
+    },
+    {
+      "id": 2,
+      "nombre_nacion": "Roma",
+      "nombre_nacion_la": "Roma"
+    },
+    {
+      "id": 3,
+      "nombre_nacion": "Egipto",
+      "nombre_nacion_la": "Aegyptus"
+    },
+    {
+      "id": 4,
+      "nombre_nacion": "Persia",
+      "nombre_nacion_la": "Persia"
+    },
+    {
+      "id": 5,
+      "nombre_nacion": "Mesopotamia",
+      "nombre_nacion_la": "Mesopotamia"
+    },
+    {
+      "id": 6,
+      "nombre_nacion": "Inglaterra",
+      "nombre_nacion_la": "Anglia"
+    },
+    {
+      "id": 7,
+      "nombre_nacion": "España",
+      "nombre_nacion_la": "Hispania"
+    },
+    {
+      "id": 8,
+      "nombre_nacion": "Alemania",
+      "nombre_nacion_la": "Germania"
+    },
+    {
+      "id": 9,
+      "nombre_nacion": "Francia",
+      "nombre_nacion_la": "Gallia"
+    },
+    {
+      "id": 10,
+      "nombre_nacion": "Italia",
+      "nombre_nacion_la": "Italia"
+    },
+    {
+      "id": 11,
+      "nombre_nacion": "Japón",
+      "nombre_nacion_la": "Iaponia"
+    },
+    {
+      "id": 12,
+      "nombre_nacion": "China",
+      "nombre_nacion_la": "Sinae"
+    },
+    {
+      "id": 14,
+      "nombre_nacion": "Israel",
+      "nombre_nacion_la": "Israel"
+    },
+    {
+      "id": 15,
+      "nombre_nacion": "Polonia",
+      "nombre_nacion_la": "Polonia"
+    },
+    {
+      "id": 16,
+      "nombre_nacion": "Rusia",
+      "nombre_nacion_la": "Russia"
+    },
+    {
+      "id": 17,
+      "nombre_nacion": "India",
+      "nombre_nacion_la": "India"
+    },
+    {
+      "id": 18,
+      "nombre_nacion": "Estados Unidos",
+      "nombre_nacion_la": "Civitates Foederatae Americae"
+    }
+  ],
+  "tipos": [
+    {
+      "id": 1,
+      "nombre": "Refrán",
+      "descripcion": "Frases populares, breves, con rima o ritmo, transmitidas oralmente. Ej.: \"A caballo regalado, no le mires el diente\""
+    },
+    {
+      "id": 2,
+      "nombre": "Proverbio",
+      "descripcion": "Frases de sabiduría, solemnes o morales, con origen identificable o textual. Ej.: \"Ojo por ojo, diente por diente\""
+    },
+    {
+      "id": 3,
+      "nombre": "Aforismo",
+      "descripcion": "Frases concisas de autor conocido, uso culto. Ej.: \"Pienso, luego existo\" (Descartes)"
+    },
+    {
+      "id": 4,
+      "nombre": "Máxima / Sentencia",
+      "descripcion": "Frases prescriptivas o doctrinales, enfatizan moral o ética. Ej.: \"La verdadera felicidad consiste en hacer el bien\""
+    },
+    {
+      "id": 5,
+      "nombre": "Inspiracional",
+      "descripcion": "Frases que motivan o inspiran acción o actitud positiva. Ej.: \"No dejes para mañana lo que puedas hacer hoy\""
+    },
+    {
+      "id": 6,
+      "nombre": "Filosófica",
+      "descripcion": "Reflexiones sobre la vida, ética, existencia o pensamiento. Ej.: \"El hombre es la medida de todas las cosas\" (Protágoras)"
+    },
+    {
+      "id": 7,
+      "nombre": "Humor",
+      "descripcion": "Frases con intención cómica, irónica o satírica. Ej.: \"No es lo mismo fracasar que estrellarse\""
+    }
+  ]
+}
