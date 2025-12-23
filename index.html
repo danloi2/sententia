@@ -43,18 +43,20 @@
                 ? `<p class="cita-traducida">${cita.cita_traducida}</p>`
                 : ""
             }
-            <p class="cita-original">
-  ${cita.cita_original.replace(/\n/g, "<br>")}
-  ${idioma.codigo ? `<span class="badge idioma">${idioma.codigo}</span>` : ""}
-  ${
-    cita.cita_la
-      ? `<br><span class="badge latin">${cita.cita_la.replace(
-          /\n/g,
-          "<br>"
-        )}</span>`
-      : ""
-  }
-</p>
+
+          <p class="cita-original">
+            ${cita.cita_original}
+            ${
+              idioma.codigo
+                ? `<span class="badge idioma">${idioma.codigo}</span>`
+                : ""
+            }
+            ${
+              cita.cita_la
+                ? `<span class="badge latin">${cita.cita_la}</span>`
+                : ""
+            }
+          </p>
 
             <footer>
               ${cita.autor} ${
