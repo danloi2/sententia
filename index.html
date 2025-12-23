@@ -1,59 +1,92 @@
 <!DOCTYPE html>
 <html lang="la">
-<head>
-  <meta charset="UTF-8">
-  <title>Sententia diei</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Sententia diei</h1>
-    <div id="fecha"></div>
-    <div class="version">Versio 1.0 beta</div>
-    <div id="cita-container">Cargando...</div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sententia diei</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sententia diei</h1>
+      <div id="fecha"></div>
+      <div class="version">Versio 1.0 beta</div>
+      <div id="cita-container">Cargando...</div>
+    </div>
 
-  <script>
-    function formatoAno(año) { return año ? año : ''; }
+    <script>
+      function formatoAno(año) {
+        return año ? año : "";
+      }
 
-    fetch('./db/esaldi.json')   // <- importante la ruta relativa
-      .then(res => res.json())
-      .then(data => {
-        if (!data.citas || data.citas.length === 0) {
-          document.getElementById('cita-container').innerHTML = '<p>No hay citas disponibles.</p>';
-          return;
-        }
+      fetch("./db/esaldi.json") // <- importante la ruta relativa
+        .then((res) => res.json())
+        .then((data) => {
+          if (!data.citas || data.citas.length === 0) {
+            document.getElementById("cita-container").innerHTML =
+              "<p>No hay citas disponibles.</p>";
+            return;
+          }
 
-        const cita = data.citas[Math.floor(Math.random() * data.citas.length)];
-        document.getElementById('fecha').textContent = new Date().toLocaleDateString('la-LA', { year:'numeric', month:'long', day:'numeric' });
+          const cita =
+            data.citas[Math.floor(Math.random() * data.citas.length)];
+          document.getElementById("fecha").textContent =
+            new Date().toLocaleDateString("la-LA", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
 
-        const html = `
+          const html = `
           <blockquote class="cita-block">
-            ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
+            ${
+              cita.cita_traducida
+                ? `<p class="cita-traducida">${cita.cita_traducida}</p>`
+                : ""
+            }
             <p class="cita-original">
-              ${cita.cita_original}
-              ${cita.idioma ? `<span class="badge idioma">${cita.idioma}</span>` : ''}
-              ${cita.cita_la ? `<span class="badge latin">${cita.cita_la}</span>` : ''}
-            </p>
+  ${cita.cita_original.replace(/\n/g, "<br>")}
+  ${idioma.codigo ? `<span class="badge idioma">${idioma.codigo}</span>` : ""}
+  ${
+    cita.cita_la
+      ? `<br><span class="badge latin">${cita.cita_la.replace(
+          /\n/g,
+          "<br>"
+        )}</span>`
+      : ""
+  }
+</p>
+
             <footer>
-              ${cita.autor} ${formatoAno(cita.nacimiento_ano) || formatoAno(cita.fallecimiento_ano) 
-                ? `(${formatoAno(cita.nacimiento_ano)}${cita.fallecimiento_ano ? ' - ' + formatoAno(cita.fallecimiento_ano) : ''})` 
-                : ''}
+              ${cita.autor} ${
+            formatoAno(cita.nacimiento_ano) ||
+            formatoAno(cita.fallecimiento_ano)
+              ? `(${formatoAno(cita.nacimiento_ano)}${
+                  cita.fallecimiento_ano
+                    ? " - " + formatoAno(cita.fallecimiento_ano)
+                    : ""
+                })`
+              : ""
+          }
             </footer>
-            ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
+            ${
+              cita.biografia_la
+                ? `<div class="biografia">${cita.biografia_la}</div>`
+                : ""
+            }
           </blockquote>
           <div class="info-boxes">
-            <div class="info-box">${cita.epoca || 'Epoca ignota'}</div>
-            <div class="info-box">${cita.nacion || 'Natio ignota'}</div>
+            <div class="info-box">${cita.epoca || "Epoca ignota"}</div>
+            <div class="info-box">${cita.nacion || "Natio ignota"}</div>
           </div>
         `;
 
-        document.getElementById('cita-container').innerHTML = html;
-      })
-      .catch(err => {
-        console.error('Error cargando JSON:', err);
-        document.getElementById('cita-container').innerHTML = '<p>Error cargando las citas.</p>';
-      });
-  </script>
-</body>
+          document.getElementById("cita-container").innerHTML = html;
+        })
+        .catch((err) => {
+          console.error("Error cargando JSON:", err);
+          document.getElementById("cita-container").innerHTML =
+            "<p>Error cargando las citas.</p>";
+        });
+    </script>
+  </body>
 </html>
