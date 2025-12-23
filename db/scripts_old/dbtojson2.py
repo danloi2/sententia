@@ -15,7 +15,6 @@ autores = fetch_table("autores")
 epocas = fetch_table("epocas_historicas")
 naciones = fetch_table("nacion")
 idiomas = fetch_table("idiomas")
-tipos = fetch_table("tipos_citas")
 categorias = fetch_table("categorias")
 
 # Citas y sus categorías
@@ -34,8 +33,6 @@ for c in citas:
     epoca = epocas.get(autor.get('epoca_id')) if autor else None
     nacion = naciones.get(autor.get('nacion_id')) if autor else None
     idioma = idiomas.get(c.get('idioma_id')) or {}
-    tipo = tipos.get(c.get('tipo_id')) or {}
-    cats = citas_categorias.get(c['id'], [])
 
     citas_denormalizadas.append({
         "id": c['id'],
@@ -49,10 +46,8 @@ for c in citas:
         "biografia_la": autor.get('biografia_la'),
         "epoca": epoca.get('nombre') if epoca else None,
         "nacion": nacion.get('nombre_nacion') if nacion else None,
-        "idioma": idioma.get('nombre'),
-        "tipo_cita": tipo.get('nombre'),
+        "idioma": idioma.get('idioma_es'),
         "categorias": cats,
-        "fuente": c.get('fuente')
     })
 
 # Guarda JSON final
