@@ -58,10 +58,10 @@ fetch('./db/esaldi.json')
                 ${idiomaBadge}
             </p>
             <p class="cita-la">${cita.cita_la || ''}</p>
-            <footer>
+            
                 ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
                 ${cita.autor} ${anos}
-            </footer>
+            
         </blockquote>
         ${categorias}
     `;
