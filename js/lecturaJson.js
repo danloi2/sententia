@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mostrar fecha
+  // Mostrar fecha en latín con números romanos
   document.getElementById('fecha').textContent = fechaHoyLatina();
 
-  // Cargar JSON y mostrar cita aleatoria
+  // Cargar citas desde JSON
   fetch('db/esaldi.json')
     .then(res => res.json())
     .then(data => {
@@ -13,15 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const cita = data.citas[Math.floor(Math.random() * data.citas.length)];
 
+      const idiomaBadge = cita.idioma 
+        ? `<img src="https://img.shields.io/badge/Idioma-${encodeURIComponent(cita.idioma)}-blue" alt="Idioma: ${cita.idioma}" style="margin-left:0.5em;">`
+        : '';
+
       const html = `
         <blockquote class="cita-block">
           ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
-          <p class="cita-original">${cita.cita_original}</p>
+          <p class="cita-original">
+            ${cita.cita_original}
+            ${idiomaBadge}
+          </p>
           ${cita.cita_la ? `<p class="cita-latina">${cita.cita_la}</p>` : ''}
           <footer>
             ${cita.autor || ''}
             ${cita.nacimiento_ano || cita.fallecimiento_ano
-              ? ` (${cita.nacimiento_ano || ''}${cita.fallecimiento_ano ? ' - ' + cita.fallecimiento_ano : ''})`
+              ? ` (${numeroRomano(cita.nacimiento_ano || 0)}${cita.fallecimiento_ano ? ' - ' + numeroRomano(cita.fallecimiento_ano) : ''})`
               : ''}
           </footer>
           ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
@@ -37,3 +44,21 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('cita-container').innerHTML = '<p>Error cargando las citas.</p>';
     });
 });
+
+// Función de números romanos también disponible aquí
+function numeroRomano(num) {
+  if (num === 0) return 'N';
+  const valores = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  const simbolos = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  let resultado = '';
+  const negativo = num < 0;
+  num = Math.abs(num);
+  for (let i=0; i<valores.length; i++) {
+    while (num >= valores[i]) {
+      resultado += simbolos[i];
+      num -= valores[i];
+    }
+  }
+  return negativo ? '-' + resultado : resultado;
+}
+
