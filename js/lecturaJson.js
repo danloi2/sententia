@@ -14,7 +14,7 @@ fetch('./db/esaldi.json')
       <blockquote class="cita-block">
         ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
         <p class="cita-original">
-          ${cita.cita_original}
+          ${cita.cita_original} <br>
           ${cita.cita_la ? `<span class="badge-la">${cita.cita_la}</span>` : ''}
         </p>
         <footer>
