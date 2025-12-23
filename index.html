@@ -8,59 +8,13 @@
 <body>
   <div class="container">
     <h1>Sententia diei</h1>
-    <div id="fecha"></div>
+    <div id="fecha">Cargando fecha...</div>
     <div class="version">Versio 1.0 beta</div>
-    <div id="cita-container">Cargando...</div>
+    <div id="cita-container">Cargando citas...</div>
   </div>
 
-  <script>
-    function formatoAno(año) { return año ? año : ''; }
-
-    fetch('./db/esaldi.json')
-      .then(res => res.json())
-      .then(data => {
-        if (!data.citas || data.citas.length === 0) {
-          document.getElementById('cita-container').innerHTML = '<p>No hay citas disponibles.</p>';
-          return;
-        }
-
-        const cita = data.citas[Math.floor(Math.random() * data.citas.length)];
-        document.getElementById('fecha').textContent = new Date().toLocaleDateString('la-LA', {
-          year:'numeric', month:'long', day:'numeric'
-        });
-
-        const html = `
-          <blockquote class="cita-block">
-            ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
-            <p class="cita-original">
-              ${cita.cita_original}
-              ${cita.cita_la ? `<br><span class="badge latin">${cita.cita_la}</span>` : ''}
-            </p>
-            <footer>
-              ${cita.autor || ''}
-              ${(cita.nacimiento_ano || cita.fallecimiento_ano) 
-                ? ` (${formatoAno(cita.nacimiento_ano)}${cita.fallecimiento_ano ? ' - ' + formatoAno(cita.fallecimiento_ano) : ''})` 
-                : ''}
-            </footer>
-            ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
-          </blockquote>
-
-          <div class="info-boxes">
-            <div class="info-box">${cita.epoca || 'Epoca ignota'}</div>
-            <div class="info-box">${cita.nacion || 'Natio ignota'}</div>
-            <div class="info-box">Idioma: ${cita.idioma || 'Ignoto'}</div>
-            <div class="info-box">Tipo: ${cita.tipo_cita || 'Ignoto'}</div>
-            <div class="info-box">Categorías: ${cita.categorias.join(', ') || 'Ninguna'}</div>
-            ${cita.fuente ? `<div class="info-box">Fuente: ${cita.fuente}</div>` : ''}
-          </div>
-        `;
-
-        document.getElementById('cita-container').innerHTML = html;
-      })
-      .catch(err => {
-        console.error('Error cargando JSON:', err);
-        document.getElementById('cita-container').innerHTML = '<p>Error cargando las citas.</p>';
-      });
-  </script>
+  <!-- Scripts auxiliares -->
+  <script src="js/fecha.js"></script>
+  <script src="js/lecturaJson.js"></script>
 </body>
 </html>
