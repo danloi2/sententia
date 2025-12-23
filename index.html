@@ -1,125 +1,59 @@
 <!DOCTYPE html>
 <html lang="la">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Sententia diei</title>
-    <link rel="stylesheet" href="assets/style.css" />
-    <style>
-      /* Pequeño estilo para visualización rápida */
-      .badge {
-        padding: 2px 6px;
-        background: #ccc;
-        border-radius: 3px;
-        margin-left: 4px;
-      }
-      .container {
-        max-width: 700px;
-        margin: 2rem auto;
-        font-family: sans-serif;
-      }
-      blockquote {
-        border-left: 4px solid #888;
-        margin: 1rem 0;
-        padding-left: 1rem;
-      }
-      .info-boxes {
-        display: flex;
-        gap: 1rem;
-        margin-top: 0.5rem;
-      }
-      .info-box {
-        background: #f0f0f0;
-        padding: 0.5rem;
-        border-radius: 4px;
-        flex: 1;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Sententia diei</h1>
-      <div id="fecha"></div>
-      <div class="version">Versio 1.0 beta</div>
-      <div id="cita-container"></div>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Sententia diei</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sententia diei</h1>
+    <div id="fecha"></div>
+    <div class="version">Versio 1.0 beta</div>
+    <div id="cita-container">Cargando...</div>
+  </div>
 
-    <script>
-      // Función para formatear años como en PHP
-      function formatoAno(año) {
-        return año ? año : "";
-      }
+  <script>
+    function formatoAno(año) { return año ? año : ''; }
 
-      // Cargar JSON de citas
-      fetch("data/esaldi.json")
-        .then((res) => res.json())
-        .then((data) => {
-          if (!data.citas || data.citas.length === 0) {
-            document.getElementById("cita-container").innerHTML =
-              "<p>No hay citas disponibles.</p>";
-            return;
-          }
+    fetch('./data/esaldi.json')   // <- importante la ruta relativa
+      .then(res => res.json())
+      .then(data => {
+        if (!data.citas || data.citas.length === 0) {
+          document.getElementById('cita-container').innerHTML = '<p>No hay citas disponibles.</p>';
+          return;
+        }
 
-          // Elegir una cita aleatoria
-          const cita =
-            data.citas[Math.floor(Math.random() * data.citas.length)];
+        const cita = data.citas[Math.floor(Math.random() * data.citas.length)];
+        document.getElementById('fecha').textContent = new Date().toLocaleDateString('la-LA', { year:'numeric', month:'long', day:'numeric' });
 
-          // Fecha de hoy en latín (ejemplo simple)
-          const fechaHoy = new Date().toLocaleDateString("la-LA", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          });
-          document.getElementById("fecha").textContent = fechaHoy;
-
-          // Construir el HTML de la cita
-          const html = `
+        const html = `
           <blockquote class="cita-block">
-            ${
-              cita.cita_traducida
-                ? `<p class="cita-traducida">${cita.cita_traducida}</p>`
-                : ""
-            }
+            ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
             <p class="cita-original">
               ${cita.cita_original}
-              ${
-                cita.idioma
-                  ? `<span class="badge idioma">${cita.idioma}</span>`
-                  : ""
-              }
-              ${
-                cita.cita_la
-                  ? `<span class="badge latin">${cita.cita_la}</span>`
-                  : ""
-              }
+              ${cita.idioma ? `<span class="badge idioma">${cita.idioma}</span>` : ''}
+              ${cita.cita_la ? `<span class="badge latin">${cita.cita_la}</span>` : ''}
             </p>
             <footer>
-              ${cita.autor} ${
-            formatoAno(cita.nacimiento_ano) ||
-            formatoAno(cita.fallecimiento_ano)
-              ? `(${formatoAno(cita.nacimiento_ano)}${
-                  cita.fallecimiento_ano
-                    ? " - " + formatoAno(cita.fallecimiento_ano)
-                    : ""
-                })`
-              : ""
-          }
+              ${cita.autor} ${formatoAno(cita.nacimiento_ano) || formatoAno(cita.fallecimiento_ano) 
+                ? `(${formatoAno(cita.nacimiento_ano)}${cita.fallecimiento_ano ? ' - ' + formatoAno(cita.fallecimiento_ano) : ''})` 
+                : ''}
             </footer>
-            ${
-              cita.biografia_la
-                ? `<div class="biografia">${cita.biografia_la}</div>`
-                : ""
-            }
+            ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
           </blockquote>
           <div class="info-boxes">
-            <div class="info-box">${cita.epoca || "Epoca ignota"}</div>
-            <div class="info-box">${cita.nacion || "Natio ignota"}</div>
+            <div class="info-box">${cita.epoca || 'Epoca ignota'}</div>
+            <div class="info-box">${cita.nacion || 'Natio ignota'}</div>
           </div>
         `;
 
-          document.getElementById("cita-container").innerHTML = html;
-        })
-        .catch((err) => console.error("Error cargando JSON:", err));
-    </script>
-  </body>
+        document.getElementById('cita-container').innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Error cargando JSON:', err);
+        document.getElementById('cita-container').innerHTML = '<p>Error cargando las citas.</p>';
+      });
+  </script>
+</body>
 </html>
