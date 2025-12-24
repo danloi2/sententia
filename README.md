@@ -8,8 +8,6 @@
 
 **Sententia diei** es una aplicación web ligera que muestra **citas históricas en latín** y su traducción. Ahora funciona de forma totalmente estática utilizando **JavaScript** para leer datos desde archivos **JSON**.
 
----
-
 ## 📂 Nueva Estructura del Proyecto
 
 La aplicación se ha simplificado para ser más rápida y fácil de desplegar:
@@ -26,8 +24,6 @@ La aplicación se ha simplificado para ser más rápida y fácil de desplegar:
 └─ assets/
    └─ (tus imágenes y estilos)
 
----
-
 ## 🚀 Cómo ejecutarlo localmente
 
 Al ser una aplicación basada en módulos de JavaScript y peticiones `fetch()`, necesitas un servidor web local sencillo (por seguridad de los navegadores al leer archivos locales):
@@ -38,16 +34,12 @@ Al ser una aplicación basada en módulos de JavaScript y peticiones `fetch()`, 
 
 Accede a: `http://localhost:8000` (o el puerto indicado).
 
----
-
 ## 🛠️ Tecnologías utilizadas
 
 - **Vanilla JavaScript:** Gestión de datos asíncrona (Fetch API).
 - **JSON:** Almacenamiento de citas y metadatos.
 - **Bootstrap 5.3:** Diseño responsivo y componentes premium.
 - **Bootstrap Icons:** Iconografía dinámica (sol/luna para la hora romana).
-
----
 
 ## 🌐 Despliegue
 
