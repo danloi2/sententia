@@ -1,37 +1,161 @@
 <!DOCTYPE html>
 <html lang="la">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sententia diei - Cita del día en latín y múltiples idiomas">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sententia diei</title>
-    <link rel="stylesheet" href="assets/style.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-y: auto;
+        padding: 20px 0;
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .search-container {
+        max-width: 300px;
+        margin-left: auto;
+      }
+
+      .github-header-link {
+        color: #6c757d;
+        transition: color 0.2s;
+        display: flex;
+        align-items: center;
+      }
+      
+      .github-header-link:hover {
+        color: #24292e;
+      }
+    </style>
+
+    <script src="js/utils.js" defer></script>
+    <script src="js/fecha.js" defer></script>
+    <script src="js/lecturajson.js" defer></script>
+    <script src="js/buscar.js" defer></script>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
 </head>
+<body class="bg-light">
 
-<body>
-    <div class="container">
-        <h1>Sententia diei</h1>
-        <div class="version">Versio 1.0 beta</div>
-        <div id="fecha" class="fecha">Cargando fecha…</div>
-
-        <div id="cita-container">
-            <p style="text-align: center; color: #666;">Cargando citas…</p>
+    <header class="container-fluid py-2 bg-white shadow-sm">
+      <div class="row align-items-center">
+        
+        <div class="col-md-5 d-flex align-items-center justify-content-center justify-content-md-start ps-md-4 gap-3">
+          <h1 class="h4 fw-bold text-primary mb-0">Sententia diei</h1>
+          <a
+            href="https://github.com/danloi2/sententia"
+            target="_blank"
+            class="github-header-link"
+            title="GitHub Repository"
+          >
+            <i class="bi bi-github fs-5"></i>
+          </a>
+          <img
+            src="https://img.shields.io/github/v/tag/danloi2/sententia?label=Release&color=blue&style=flat-square"
+            alt="Versio"
+            style="height: 18px"
+          />
         </div>
-    </div>
 
-    <!-- Scripts -->
-    <script src="js/utils.js"></script>
-    <script src="js/fecha.js"></script>
-    <script src="js/lecturajson.js"></script>
+        <div class="col-md-3 text-center py-2 py-md-0">
+          <span id="fecha" class="small text-secondary fw-medium">Cargando fecha…</span>
+        </div>
 
-    <footer class="site-footer">
-        <p>
-            <a href="https://github.com/danloi2/sententia" target="_blank" rel="noopener">Sententia Diei</a> 
-            © 2025 by
-            <a href="https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle" target="_blank" rel="noopener">Daniel Losada</a>
-            —
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
-        </p>
+        <div class="col-md-4 text-center text-md-end pe-md-4">
+          <form class="d-flex search-container" role="search">
+            <input
+              id="inputBuscar"
+              class="form-control form-control-sm me-2"
+              type="search"
+              placeholder="Buscar cita..."
+              aria-label="Search"
+            />
+            <button class="btn btn-sm btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="cita-container" class="w-100 row justify-content-center">
+        <div class="spinner-border text-primary" role="status"></div>
+      </div>
+    </main>
+
+    <footer class="container-fluid py-3 bg-white border-top mt-auto">
+      <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2 gap-md-4 small">
+        
+        <div class="text-center">
+          <a
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+            class="text-decoration-none text-muted"
+            >CC BY-SA 4.0</a
+          >
+          <span class="ms-1 opacity-75">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="height: 0.9em" />
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="height: 0.9em" />
+            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="height: 0.9em" />
+          </span>
+        </div>
+
+        <div class="vr d-none d-md-block" style="height: 15px; opacity: 0.3"></div>
+
+        <div class="text-center">
+          <a
+            href="https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle"
+            target="_blank"
+            class="text-decoration-none text-muted"
+            >Daniel Losada © 2025</a
+          >
+        </div>
+        
+      </div>
     </footer>
+
 </body>
 </html>
