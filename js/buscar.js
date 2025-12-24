@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <button type="button" class="list-group-item list-group-item-action border-0 rounded-3 mb-2 shadow-sm p-3"
                                     onclick='mostrarCita(${itemData})'>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-dark">${item.autor_es}</span>
+                                        <span class="fw-bold text-dark">${item.autor_la}</span>
                                         <span class="badge rounded-pill bg-primary-subtle text-primary border border-primary-subtle small">${item.epoca_la || ""}</span>
                                     </div>
                                     <div class="small text-muted text-truncate mt-1">${item.cita_original || item.cita_es}</div>
