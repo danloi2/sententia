@@ -1,6 +1,7 @@
 [
     {
         "autor_es": "Refrán Francés",
+        "autor_la": "Sententia Gallica",
         "cita_es": "La vida es bella",
         "cita_la": "Vita pulchra est",
         "cita_original": "La vie est belle",
@@ -19,6 +20,7 @@
     },
     {
         "autor_es": "Refrán Español",
+        "autor_la": "Sententia Hispanica",
         "cita_es": "A caballo regalado, no le mires el diente",
         "cita_la": "Equi dati dentes non inspiciuntur",
         "cita_original": "A caballo regalado, no le mires el diente",
@@ -37,6 +39,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "Cada persona es diferente",
         "cita_la": "Quot homines, tot sententiae",
         "cita_original": "十人十色",
@@ -55,6 +58,7 @@
     },
     {
         "autor_es": "Refrán Ruso",
+        "autor_la": "Sententia Russica",
         "cita_es": "Sin esfuerzo no se consigue nada",
         "cita_la": "Sine labore nihil obtinetur",
         "cita_original": "Без труда не выловишь и рыбку из пруда",
@@ -73,6 +77,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "La vida está en el movimiento",
         "cita_la": "Vita in motu est",
         "cita_original": "生命在于运动",
@@ -91,6 +96,7 @@
     },
     {
         "autor_es": "Salomón",
+        "autor_la": "Salomon",
         "cita_es": "Ojo por ojo, diente por diente",
         "cita_la": "Oculum pro oculo, dentem pro dente",
         "cita_original": "עַיִן תַּחַת עַיִן שֵׁן תַּחַת שֵׁן",
@@ -109,6 +115,7 @@
     },
     {
         "autor_es": "Salomón",
+        "autor_la": "Salomon",
         "cita_es": "El amor es fuerte como la muerte; los celos son crueles como la tumba",
         "cita_la": "Fortis est amor sicut mors; dura est aemulatio sicut infernus",
         "cita_original": "El amor es fuerte como la muerte; los celos son crueles como la tumba",
@@ -127,6 +134,7 @@
     },
     {
         "autor_es": "René Descartes",
+        "autor_la": "Renatus Cartesius",
         "cita_es": "Pienso, luego existo",
         "cita_la": "Cogito, ergo sum",
         "cita_original": "Cogito ergo sum",
@@ -145,6 +153,7 @@
     },
     {
         "autor_es": "Francis Bacon",
+        "autor_la": "Franciscus Bacon",
         "cita_es": "El conocimiento es poder",
         "cita_la": "Scientia potentia est",
         "cita_original": "Knowledge is power",
@@ -163,6 +172,7 @@
     },
     {
         "autor_es": "San Agustín",
+        "autor_la": "Aurelius Augustinus",
         "cita_es": "La verdadera felicidad consiste en hacer el bien",
         "cita_la": "Vera felicitas in bonis operibus consistit",
         "cita_original": "Vera felicitas in bono faciendo consistit",
@@ -181,6 +191,7 @@
     },
     {
         "autor_es": "Dale Carnegie",
+        "autor_la": "Daleus Carnegieus",
         "cita_es": "Recuerda que la felicidad no depende de quién eres o qué tienes; depende únicamente de lo que piensas",
         "cita_la": "Memento felicitatem non pendere ab eo quod es aut habes, sed ab iis quae cogitas",
         "cita_original": "Recuerda que la felicidad no depende de quién eres o qué tienes; depende únicamente de lo que piensas",
@@ -199,6 +210,7 @@
     },
     {
         "autor_es": "Refrán Español",
+        "autor_la": "Sententia Hispanica",
         "cita_es": "No dejes para mañana lo que puedas hacer hoy",
         "cita_la": "Noli in crastinum differre quod hodie facere potes",
         "cita_original": "No dejes para mañana lo que puedas hacer hoy",
@@ -217,6 +229,7 @@
     },
     {
         "autor_es": "Horacio",
+        "autor_la": "Quintus Horatius Flaccus",
         "cita_es": "Aprovecha el día",
         "cita_la": "Carpe diem",
         "cita_original": "Carpe diem",
@@ -235,6 +248,7 @@
     },
     {
         "autor_es": "Shakespeare",
+        "autor_la": "Gulielmus Shakespeare",
         "cita_es": "Ser o no ser, esa es la cuestión",
         "cita_la": "Esse aut non esse, haec est quaestio",
         "cita_original": "To be, or not to be, that is the question",
@@ -253,6 +267,7 @@
     },
     {
         "autor_es": "Refrán Español",
+        "autor_la": "Sententia Hispanica",
         "cita_es": "No es lo mismo fracasar que estrellarse",
         "cita_la": "Non idem est cadere ac collidi",
         "cita_original": "No es lo mismo fracasar que estrellarse",
@@ -271,6 +286,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Los años que una mujer borra en silencio no son devorados por el tiempo; se posan, suavemente, en los rasgos de sus amigas más íntimas",
         "cita_la": "Anni quos femina silentio delet non a tempore devorantur, sed in vultibus amicorum quiescunt",
         "cita_original": "女人悄然抹去的岁月，并未真被时光吞没 而是悄悄落在了她闺中好友的眉眼之间",
@@ -289,6 +305,7 @@
     },
     {
         "autor_es": "Gayo Julio César",
+        "autor_la": "Gaius Iulius Caesar",
         "cita_es": "La suerte está echada",
         "cita_la": "Alea iacta est",
         "cita_original": "Alea iacta est",
@@ -307,6 +324,7 @@
     },
     {
         "autor_es": "Parménides",
+        "autor_la": "Parmenides",
         "cita_es": "Nada surge de la nada",
         "cita_la": "Ex nihilo nihil fit",
         "cita_original": "Ex nihilo nihil fit",
@@ -325,6 +343,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Todos los hombres son sabios; unos antes, los otros después",
         "cita_la": "Omnes homines sapientes sunt, alii citius, alii postea",
         "cita_original": "人皆有智慧 只是早晚而已",
@@ -343,6 +362,7 @@
     },
     {
         "autor_es": "Confucio",
+        "autor_la": "Confucius",
         "cita_es": "El que sabe de ello no se compara con el que lo ama; el que lo ama no se compara con el que se deleita en ello",
         "cita_la": "Qui scit non aequatur ei qui amat; qui amat non aequatur ei qui delectatur",
         "cita_original": "知之者不如好之者 好之者不如乐之者",
@@ -361,6 +381,7 @@
     },
     {
         "autor_es": "Confucio",
+        "autor_la": "Confucius",
         "cita_es": "Aprender sin reflexionar es inútil; reflexionar sin aprender es peligroso",
         "cita_la": "Discere sine cogitatione inutile est; cogitare sine doctrina periculosum est",
         "cita_original": "学而不思则罔 思而不学则殆",
@@ -379,6 +400,7 @@
     },
     {
         "autor_es": "Confucio",
+        "autor_la": "Confucius",
         "cita_es": "No hagas a otros lo que no deseas para ti mismo",
         "cita_la": "Quod tibi non vis, alteri ne feceris",
         "cita_original": "己所不欲 勿施于人",
@@ -397,6 +419,7 @@
     },
     {
         "autor_es": "San Agustín",
+        "autor_la": "Aurelius Augustinus",
         "cita_es": "El amor lo conquista todo",
         "cita_la": "Amor omnia vincit",
         "cita_original": "Amor vincit omnia",
@@ -415,6 +438,7 @@
     },
     {
         "autor_es": "San Agustín",
+        "autor_la": "Aurelius Augustinus",
         "cita_es": "La fe busca el entendimiento",
         "cita_la": "Fides intellectum quaerit",
         "cita_original": "Fides quaerens intellectum",
@@ -433,6 +457,7 @@
     },
     {
         "autor_es": "Isidoro de Sevilla",
+        "autor_la": "Isidorus Hispalensis",
         "cita_es": "Todo tiene su tiempo",
         "cita_la": "Omnia tempus habent",
         "cita_original": "Omnia tempus habent",
@@ -451,6 +476,7 @@
     },
     {
         "autor_es": "Isidoro de Sevilla",
+        "autor_la": "Isidorus Hispalensis",
         "cita_es": "Las palabras vuelan, lo escrito permanece",
         "cita_la": "Verba volant, scripta manent",
         "cita_original": "Verba volant, scripta manent",
@@ -469,6 +495,7 @@
     },
     {
         "autor_es": "Isidoro de Sevilla",
+        "autor_la": "Isidorus Hispalensis",
         "cita_es": "La ignorancia de la ley no excusa",
         "cita_la": "Ignorantia legis non excusat",
         "cita_original": "Ignorantia legis non excusat",
@@ -487,6 +514,7 @@
     },
     {
         "autor_es": "Isidoro de Sevilla",
+        "autor_la": "Isidorus Hispalensis",
         "cita_es": "El conocimiento es poder",
         "cita_la": "Scientia est potestas",
         "cita_original": "Scientia potentia est",
@@ -505,6 +533,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Aquel que pregunta es un tonto por cinco minutos, pero el que no pregunta permanece tonto por siempre",
         "cita_la": "Qui rogat stultus est ad horam; qui non rogat stultus manet in aeternum",
         "cita_original": "不耻下问",
@@ -523,6 +552,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Un viaje de mil millas comienza con un solo paso",
         "cita_la": "Iter mille milium uno passu incipit",
         "cita_original": "千里之行，始于足下。",
@@ -541,6 +571,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Dar un pez a alguien no es tan bueno como enseñarle a pescar",
         "cita_la": "Potius est docere piscari quam piscem dare",
         "cita_original": "授人以鱼不如授人以渔。",
@@ -559,6 +590,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Quien se conforma, siempre es feliz",
         "cita_la": "Qui contentus est, semper beatus est",
         "cita_original": "知足常乐。",
@@ -577,6 +609,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "El mar acepta todos los ríos; así se hace grande",
         "cita_la": "Mare omnes fluvios recipit et ideo magnum est",
         "cita_original": "海纳百川，有容乃大。",
@@ -595,6 +628,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Aprender sin reflexionar es inútil; reflexionar sin aprender es peligroso",
         "cita_la": "Discere sine cogitatione inutile est; cogitare sine doctrina periculosum est",
         "cita_original": "学而不思则罔，思而不学则殆。",
@@ -613,6 +647,7 @@
     },
     {
         "autor_es": "Provervio Chino",
+        "autor_la": "Proverbium Sinense",
         "cita_es": "Si tres caminan juntos, siempre hay algo que puedo aprender de ellos",
         "cita_la": "Inter tres ambulantes, semper magister est",
         "cita_original": "三人行，必有我师焉。",
@@ -631,6 +666,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "Cae siete veces, levántate ocho",
         "cita_la": "Septies cade, octies surge",
         "cita_original": "七転び八起き",
@@ -649,6 +685,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "Hasta los monos se caen de los árboles",
         "cita_la": "Etiam simiae ex arboribus cadunt",
         "cita_original": "猿も木から落ちる",
@@ -667,6 +704,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "Más vale dar un rodeo que precipitarse",
         "cita_la": "Qui festinat circuit",
         "cita_original": "急がば回れ",
@@ -685,6 +723,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "Incluso sobre una piedra, tres años",
         "cita_la": "Etiam super lapidem, triennium",
         "cita_original": "石の上にも三年",
@@ -703,6 +742,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "Después de la lluvia, la tierra se endurece",
         "cita_la": "Post pluviam terra confirmatur",
         "cita_original": "雨降って地固まる",
@@ -721,6 +761,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "Incluso rozarse las mangas es el resultado de muchas vidas de destino",
         "cita_la": "Etiam leviter contingere manicas est fatum multarum vitarum",
         "cita_original": "袖振り合うも多生の縁",
@@ -739,6 +780,7 @@
     },
     {
         "autor_es": "Proverbio Japonés",
+        "autor_la": "Proverbium Iaponicum",
         "cita_es": "La boca es la fuente del desastre",
         "cita_la": "Os est fons calamitatis",
         "cita_original": "口は災いの元",
@@ -757,6 +799,7 @@
     },
     {
         "autor_es": "Séneca",
+        "autor_la": "Lucius Annaeus Seneca",
         "cita_es": "La vida sin estudio es una muerte",
         "cita_la": "Vita sine litteris mors est",
         "cita_original": "Vita sine litteris mors est",
@@ -775,6 +818,7 @@
     },
     {
         "autor_es": "Séneca",
+        "autor_la": "Lucius Annaeus Seneca",
         "cita_es": "No hay camino fácil de la tierra a las estrellas",
         "cita_la": "Non est ad astra mollis e terris via",
         "cita_original": "Non est ad astra mollis e terris via",
@@ -793,6 +837,7 @@
     },
     {
         "autor_es": "Séneca",
+        "autor_la": "Lucius Annaeus Seneca",
         "cita_es": "Mientras estemos entre hombres, cultivemos la humanidad",
         "cita_la": "Dum inter homines sumus, humanitatem colamus",
         "cita_original": "Dum inter homines sumus, colamus humanitatem",
@@ -811,6 +856,7 @@
     },
     {
         "autor_es": "Séneca",
+        "autor_la": "Lucius Annaeus Seneca",
         "cita_es": "Cada uno es artífice de su propia fortuna",
         "cita_la": "Quisque est faber fortunae suae",
         "cita_original": "Faber est suae quisque fortunae",
@@ -829,6 +875,7 @@
     },
     {
         "autor_es": "Séneca",
+        "autor_la": "Lucius Annaeus Seneca",
         "cita_es": "Sin ira ni pasión",
         "cita_la": "Sine ira et studio",
         "cita_original": "Sine ira et studio",
@@ -847,6 +894,7 @@
     },
     {
         "autor_es": "Santo Tomás de Aquino",
+        "autor_la": "Thomas Aquinas",
         "cita_es": "La verdad es la adecuación del intelecto con la realidad",
         "cita_la": "Veritas est adaequatio rei et intellectus",
         "cita_original": "Veritas est adaequatio rei et intellectus",
@@ -865,6 +913,7 @@
     },
     {
         "autor_es": "Santo Tomás de Aquino",
+        "autor_la": "Thomas Aquinas",
         "cita_es": "Amor a Dios y al prójimo",
         "cita_la": "Amor Dei et proximi",
         "cita_original": "Amor dei et proximi",
@@ -883,6 +932,7 @@
     },
     {
         "autor_es": "Santo Tomás de Aquino",
+        "autor_la": "Thomas Aquinas",
         "cita_es": "La fe y la razón están en armonía",
         "cita_la": "Fides et ratio concordant",
         "cita_original": "Fides et ratio concordant",
@@ -901,6 +951,7 @@
     },
     {
         "autor_es": "Santo Tomás de Aquino",
+        "autor_la": "Thomas Aquinas",
         "cita_es": "El bien común debe prevalecer sobre el bien individual",
         "cita_la": "Bonum commune praeferendum est bono singulari",
         "cita_original": "Bonum commune praefertur bono singulari",
@@ -919,6 +970,7 @@
     },
     {
         "autor_es": "Santo Tomás de Aquino",
+        "autor_la": "Thomas Aquinas",
         "cita_es": "El hombre busca el bien supremo",
         "cita_la": "Homo summum bonum quaerit",
         "cita_original": "Homo est summum bonum quaerens",
@@ -937,6 +989,7 @@
     },
     {
         "autor_es": "Friedrich Nietzsche",
+        "autor_la": "Friedrich Nietzsche",
         "cita_es": "Dios ha muerto",
         "cita_la": "Deus mortuus est",
         "cita_original": "Gott ist tot",
@@ -955,6 +1008,7 @@
     },
     {
         "autor_es": "Friedrich Nietzsche",
+        "autor_la": "Friedrich Nietzsche",
         "cita_es": "Lo que no me mata, me hace más fuerte",
         "cita_la": "Quod me non necat, fortiorem me facit",
         "cita_original": "Was mich nicht umbringt, macht mich stärker",
@@ -973,6 +1027,7 @@
     },
     {
         "autor_es": "Friedrich Nietzsche",
+        "autor_la": "Friedrich Nietzsche",
         "cita_es": "Sin música, la vida sería un error",
         "cita_la": "Sine musica vita error esset",
         "cita_original": "Ohne Musik wäre das Leben ein Irrtum",
@@ -991,6 +1046,7 @@
     },
     {
         "autor_es": "Friedrich Nietzsche",
+        "autor_la": "Friedrich Nietzsche",
         "cita_es": "El hombre es algo que debe ser superado",
         "cita_la": "Homo est aliquid quod superandum est",
         "cita_original": "Der Mensch ist etwas, das überwunden werden soll",
@@ -1009,6 +1065,7 @@
     },
     {
         "autor_es": "Friedrich Nietzsche",
+        "autor_la": "Friedrich Nietzsche",
         "cita_es": "Siempre hay algo de locura en el amor. Pero también hay algo de razón en la locura",
         "cita_la": "Semper aliquid insaniae in amore est, sed etiam aliquid rationis in insania",
         "cita_original": "Es gibt immer etwas Wahnsinn in der Liebe. Aber es gibt auch immer etwas Vernunft im Wahnsinn",
@@ -1027,6 +1084,7 @@
     },
     {
         "autor_es": "G. K. Chesterton",
+        "autor_la": "Gilbert Keith Chesterton",
         "cita_es": "El verdadero soldado lucha no porque odie lo que tiene delante, sino porque ama lo que tiene detrás",
         "cita_la": "Verus miles pugnat non quia odit quod ante se est, sed quia amat quod post se est",
         "cita_original": "The true soldier fights not because he hates what is in front of him, but because he loves what is behind him",
@@ -1045,6 +1103,7 @@
     },
     {
         "autor_es": "G. K. Chesterton",
+        "autor_la": "Gilbert Keith Chesterton",
         "cita_es": "Una aventura es solo un inconveniente correctamente considerado. Un inconveniente es solo una aventura mal considerada",
         "cita_la": "Aventura est incommodum recte consideratum; incommodum est aventura male considerata",
         "cita_original": "An adventure is only an inconvenience rightly considered. An inconvenience is only an adventure wrongly considered",
@@ -1063,6 +1122,7 @@
     },
     {
         "autor_es": "G. K. Chesterton",
+        "autor_la": "Gilbert Keith Chesterton",
         "cita_es": "No hay reglas de arquitectura para un castillo en las nubes",
         "cita_la": "Nullae sunt regulae architecturae pro castello in nubibus",
         "cita_original": "There are no rules of architecture for a castle in the clouds",
@@ -1081,6 +1141,7 @@
     },
     {
         "autor_es": "G. K. Chesterton",
+        "autor_la": "Gilbert Keith Chesterton",
         "cita_es": "La manera de amar algo es darse cuenta de que puede perderse",
         "cita_la": "Via ad amandum est intellegere posse amitti",
         "cita_original": "The way to love anything is to realize that it may be lost",
@@ -1099,6 +1160,7 @@
     },
     {
         "autor_es": "G. K. Chesterton",
+        "autor_la": "Gilbert Keith Chesterton",
         "cita_es": "Las falacias no dejan de ser falacias porque se conviertan en modas",
         "cita_la": "Fallaciae non desinunt fallaciae esse quia fiunt consuetudines",
         "cita_original": "Fallacies do not cease to be fallacies because they become fashions",
@@ -1117,6 +1179,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "Tenemos que defender la verdad a toda costa, aunque volvamos a ser solamente doce",
         "cita_la": "Veritatem defendere oportet omni pretio, etiam si soli duodecim maneamus",
         "cita_original": "Veritatem defendere oportet omni pretio, etiam si solum duodecim restemus",
@@ -1135,6 +1198,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "La fe es la luz que ilumina las tinieblas",
         "cita_la": "Fides est lux quae tenebras illuminat",
         "cita_original": "Fides est lux quae tenebras illuminat",
@@ -1153,6 +1217,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "El amor todo lo vence",
         "cita_la": "Caritas omnia vincit",
         "cita_original": "Caritas omnia vincit",
@@ -1171,6 +1236,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "Buscamos la paz en la tierra",
         "cita_la": "Pacem in terris quaerimus",
         "cita_original": "Pacem in terris quaerimus",
@@ -1189,6 +1255,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "El Espíritu Santo nos guía hacia la verdad",
         "cita_la": "Spiritus Sanctus nos ad veritatem ducit",
         "cita_original": "Spiritus Sanctus nos ducit ad veritatem",
@@ -1207,6 +1274,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "La verdad os hará libres",
         "cita_la": "Veritas vos liberabit",
         "cita_original": "Veritas vos liberabit",
@@ -1225,6 +1293,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "Todas nuestras obras pongamos en Dios",
         "cita_la": "Omnia opera nostra in Deo ponamus",
         "cita_original": "Omnia opera nostra in Deo ponamus",
@@ -1243,6 +1312,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "La fuerza de la fe siempre vence al miedo",
         "cita_la": "Virtus fidei timorem semper vincit",
         "cita_original": "Fidei virtus semper vincit timorem",
@@ -1261,6 +1331,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "Los hombres deben preservar su dignidad",
         "cita_la": "Homines dignitatem suam servare debent",
         "cita_original": "Homines dignitatem suam servare debent",
@@ -1279,6 +1350,7 @@
     },
     {
         "autor_es": "Juan Pablo II",
+        "autor_la": "Ioannes Paulus II",
         "cita_es": "El amor a Dios y al prójimo es el fundamento de la vida",
         "cita_la": "Amor Dei et proximi est fundamentum vitae",
         "cita_original": "Amor Dei et proximi est fundamentum vitae",
@@ -1297,6 +1369,7 @@
     },
     {
         "autor_es": "San Juan Bautista de La Salle",
+        "autor_la": "Sanctus Ioannes Baptista de La Salle",
         "cita_es": "El hombre sin educación es como un cadáver",
         "cita_la": "Homo sine litteris quasi cadaver est",
         "cita_original": "Homo sine litteris mors est",
@@ -1315,6 +1388,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "La paciencia es la llave para la solución",
         "cita_la": "Patientia clavis liberationis est",
         "cita_original": "الصبر مفتاح الفرج",
@@ -1333,6 +1407,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "Quien se esfuerza, encuentra",
         "cita_la": "Qui laborat invenit",
         "cita_original": "من جد وجد",
@@ -1351,6 +1426,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "La mente es un adorno",
         "cita_la": "Mens ornamentum est",
         "cita_original": "العقل زينة",
@@ -1369,6 +1445,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "El amigo se conoce en la adversidad",
         "cita_la": "Amicus in angustiis cognoscitur",
         "cita_original": "الصديق وقت الضيق",
@@ -1387,6 +1464,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "El conocimiento es luz",
         "cita_la": "Scientia lux est",
         "cita_original": "العلم نور",
@@ -1405,6 +1483,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "Quien cava un hoyo para su hermano, caerá en él",
         "cita_la": "Qui foveam fratri fodit in eam cadit",
         "cita_original": "من حفر حفرة لأخيه وقع فيها",
@@ -1423,6 +1502,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "Una sola mano no aplaude",
         "cita_la": "Una manus non plausum facit",
         "cita_original": "يد واحدة لا تصفق",
@@ -1441,6 +1521,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "La experiencia es el mejor maestro",
         "cita_la": "Experientia optimus magister est",
         "cita_original": "التجربة خير معلم",
@@ -1459,6 +1540,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "El tiempo es como una espada; si no lo cortas, te corta",
         "cita_la": "Tempus sicut gladius est: si non id caedis, te caedit",
         "cita_original": "الوقت كالسيف إن لم تقطعه قطعك",
@@ -1477,6 +1559,7 @@
     },
     {
         "autor_es": "Proverbio Árabe",
+        "autor_la": "Proverbium Arabica",
         "cita_es": "El libro es el mejor compañero",
         "cita_la": "Liber optimus comes est",
         "cita_original": "الكتاب خير جليس",
@@ -1495,6 +1578,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "Tu derecho es actuar, no los frutos de la acción",
         "cita_la": "Tuum ius est agere, non fructus actionis",
         "cita_original": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
@@ -1513,6 +1597,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "Yoga es perfección en la acción",
         "cita_la": "Yoga est perfectio in operatione",
         "cita_original": "योगः कर्मसु कौशलम्",
@@ -1531,6 +1616,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "La no violencia es la máxima virtud",
         "cita_la": "Non violentia summa virtus est",
         "cita_original": "अहिंसा परमोधर्मः",
@@ -1549,6 +1635,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "Di la verdad",
         "cita_la": "Veritatem dic",
         "cita_original": "सत्यं वद",
@@ -1567,6 +1654,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "La disciplina conduce a la victoria",
         "cita_la": "Disciplina ad victoriam ducit",
         "cita_original": "तपो न हि विजितम्",
@@ -1585,6 +1673,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "La educación da humildad",
         "cita_la": "Doctrina humilitatem dat",
         "cita_original": "विद्या ददाति विनयम्",
@@ -1603,6 +1692,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "La vida tiene placer y dolor",
         "cita_la": "Vita gaudium et dolorem habet",
         "cita_original": "सुखं वा दुःखं वा जीवनम्",
@@ -1621,6 +1711,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "La separación de un amigo duele",
         "cita_la": "Amici separatio dolet",
         "cita_original": "न मित्रस्य वियोगः दुःखः",
@@ -1639,6 +1730,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "La paz viene del cuidado de uno mismo",
         "cita_la": "Pax ex cura sui venit",
         "cita_original": "आत्मनः प्रतिपालने शान्ति",
@@ -1657,6 +1749,7 @@
     },
     {
         "autor_es": "Proverbio Hindú",
+        "autor_la": "Proverbium Indica",
         "cita_es": "Actúa con mente pura",
         "cita_la": "Mente pura age",
         "cita_original": "शुद्धमनसा कर्म करोति",
@@ -1675,6 +1768,7 @@
     },
     {
         "autor_es": "Oswald Spengler",
+        "autor_la": "Oswaldus Spengler",
         "cita_es": "La cultura es el alma de una civilización",
         "cita_la": "Cultura anima est civilisationis",
         "cita_original": "Die Kultur ist die Seele einer Zivilisation",
@@ -1693,6 +1787,7 @@
     },
     {
         "autor_es": "Oswald Spengler",
+        "autor_la": "Oswaldus Spengler",
         "cita_es": "Cada civilización tiene su ciclo de nacimiento, crecimiento y decadencia",
         "cita_la": "Unaquaeque civilizatio habet цикл natalis, crescentiae et ruinae",
         "cita_original": "Jede Zivilisation hat ihren Zyklus von Geburt, Wachstum und Verfall",
@@ -1711,6 +1806,7 @@
     },
     {
         "autor_es": "Oswald Spengler",
+        "autor_la": "Oswaldus Spengler",
         "cita_es": "La historia no progresa, sino que las culturas nacen, florecen y mueren",
         "cita_la": "Historia non progreditur, sed culturae nascuntur, florent et moriuntur",
         "cita_original": "Die Geschichte schreitet nicht voran, Kulturen entstehen, blühen und sterben",
@@ -1729,6 +1825,7 @@
     },
     {
         "autor_es": "Oswald Spengler",
+        "autor_la": "Oswaldus Spengler",
         "cita_es": "La civilización occidental ha entrado en su fase final de declive",
         "cita_la": "Civilizatio occidentalis in ultimam declinationis phasein intravit",
         "cita_original": "Die westliche Zivilisation ist in ihre Endphase des Niedergangs eingetreten",
@@ -1747,6 +1844,7 @@
     },
     {
         "autor_es": "Oswald Spengler",
+        "autor_la": "Oswaldus Spengler",
         "cita_es": "La política y la economía son manifestaciones de la cultura, no la determinan",
         "cita_la": "Politica et oeconomia sunt manifestationes culturae, non eius factores",
         "cita_original": "Politik und Wirtschaft sind Manifestationen der Kultur, nicht ihr Bestimmungsfaktor",
@@ -1765,6 +1863,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme..",
         "cita_la": "In loco Manche, cuius nomen nolo meminisse..",
         "cita_original": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme..",
@@ -1783,6 +1882,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "El que lee mucho y anda mucho, ve mucho y sabe mucho",
         "cita_la": "Qui multum legit et multum ambulat, multum videt et multum scit",
         "cita_original": "El que lee mucho y anda mucho, ve mucho y sabe mucho",
@@ -1801,6 +1901,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "La pluma es la lengua del alma",
         "cita_la": "Calamus lingua animae est",
         "cita_original": "La pluma es la lengua del alma",
@@ -1819,6 +1920,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "Nunca pares de procurar ser mejor",
         "cita_la": "Numquam desine melius esse quaerere",
         "cita_original": "Nunca pares de procurar ser mejor",
@@ -1837,6 +1939,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "Cada uno es como Dios le hizo, y aun peor muchas veces",
         "cita_la": "Unusquisque est sicut Deus fecit, et saepe peior",
         "cita_original": "Cada uno es como Dios le hizo, y aun peor muchas veces",
@@ -1855,6 +1958,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "No es más que un sueño lo que se sueña en la vida",
         "cita_la": "Somnium solum est quod in vita somniatur",
         "cita_original": "No es más que un sueño lo que se sueña en la vida",
@@ -1873,6 +1977,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos",
         "cita_la": "Libertas, Sancho, donum pretiosissimum est quod caelum hominibus dedit",
         "cita_original": "La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos",
@@ -1891,6 +1996,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "El que lee mucho y anda mucho, ve mucho y sabe mucho",
         "cita_la": "Qui multum legit et multum ambulat, multum videt et multum scit",
         "cita_original": "El que lee mucho y anda mucho, ve mucho y sabe mucho",
@@ -1909,6 +2015,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "Dulcinea del Toboso, señora de mi pensamiento",
         "cita_la": "Dulcinea Tobosi, domina cogitationum mearum",
         "cita_original": "Dulcinea del Toboso, señora de mi pensamiento",
@@ -1927,6 +2034,7 @@
     },
     {
         "autor_es": "Miguel de Cervantes",
+        "autor_la": "Michael Cervantes",
         "cita_es": "Cambiar la tristeza en contento es la más sabrosa medicina del alma",
         "cita_la": "Tristitiam in laetitiam mutare est medicamentum animae sapidissimum",
         "cita_original": "Cambiar la tristeza en contento es la más sabrosa medicina del alma",
@@ -1945,6 +2053,7 @@
     },
     {
         "autor_es": "San Agustín",
+        "autor_la": "Aurelius Augustinus",
         "cita_es": "Conócete, acéptate, supérate",
         "cita_la": "Nosce te, accipe te, supera te",
         "cita_original": "Nosce te, accipe te, supera te",
@@ -1963,6 +2072,7 @@
     },
     {
         "autor_es": "Nelson Mandela",
+        "autor_la": "Nelsonus Mandela",
         "cita_es": "La educación es el arma más poderosa que puedes usar para cambiar el mundo",
         "cita_la": "Educatio potentissimum telum est ad mundum mutandum",
         "cita_original": "Education is the most powerful weapon which you can use to change the world",
@@ -1981,6 +2091,7 @@
     },
     {
         "autor_es": "Mahatma Gandhi",
+        "autor_la": "Mohandas Gandhi",
         "cita_es": "La verdadera educación consiste en obtener lo mejor de uno mismo",
         "cita_la": "Vera educatio consistit in optimo ex se ipsis obtinendo",
         "cita_original": "The true education consists in getting the best out of oneself",
@@ -1999,6 +2110,7 @@
     },
     {
         "autor_es": "Albert Einstein",
+        "autor_la": "Albertus Einstein",
         "cita_es": "La educación es lo que queda después de olvidar lo que se ha aprendido en la escuela",
         "cita_la": "Educatio remanet postquam obliviscimur quod in schola didicimus",
         "cita_original": "Education is what remains after one has forgotten what one has learned in school",
@@ -2017,6 +2129,7 @@
     },
     {
         "autor_es": "Martin Luther King Jr.",
+        "autor_la": "Martin Luther King",
         "cita_es": "La función de la educación es enseñar a pensar intensamente y críticamente. Inteligencia más carácter: ese es el objetivo de la verdadera educación",
         "cita_la": "Munus educationis est docere cogitare intense et critice. Ingenium cum moribus – hoc est finis verae educationis",
         "cita_original": "The function of education is to teach one to think intensively and to think critically. Intelligence plus character – that is the goal of true education",
@@ -2035,6 +2148,7 @@
     },
     {
         "autor_es": "John Dewey",
+        "autor_la": "Ioannes Dewey",
         "cita_es": "La educación no es preparación para la vida; la educación es la vida en sí misma",
         "cita_la": "Educatio non est praeparatio ad vitam; educatio ipsa vita est",
         "cita_original": "Education is not preparation for life; education is life itself",
@@ -2053,6 +2167,7 @@
     },
     {
         "autor_es": "Benjamin Franklin",
+        "autor_la": "Benjaminus Franklin",
         "cita_es": "Una inversión en conocimiento paga el mejor interés",
         "cita_la": "Investitio in scientia optimum redditum praestat",
         "cita_original": "An investment in knowledge pays the best interest",
@@ -2071,6 +2186,7 @@
     },
     {
         "autor_es": "Leonardo Da Vinci",
+        "autor_la": "Leonardus Vincius",
         "cita_es": "El aprendizaje nunca cansa a la mente",
         "cita_la": "Disciplina animi numquam defatigat",
         "cita_original": "Disciplina animi numquam defatigat",
@@ -2089,6 +2205,7 @@
     },
     {
         "autor_es": "Confucio",
+        "autor_la": "Confucius",
         "cita_es": "Aprender sin pensar es esfuerzo perdido; pensar sin aprender, peligroso",
         "cita_la": "Discere sine cogitatione inutile est; cogitare sine discendo periculosum est",
         "cita_original": "學而不思則罔，思而不學則殆。",
@@ -2107,6 +2224,7 @@
     },
     {
         "autor_es": "Proverbio Tibetano",
+        "autor_la": "Proverbium Tibetanum",
         "cita_es": "Un niño sin educación es como un pájaro sin alas",
         "cita_la": "Infans sine educatione quasi avis sine alis est",
         "cita_original": "ཕྱི་ལོག་མི་སློབ་དང་མི་བྱེད་པ་ནི་སྤྱོད་པ་མ་འགྱོ་བའི་བྱེད་སྒོ་འདུག",
