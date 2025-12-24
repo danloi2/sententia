@@ -1,0 +1,164 @@
+/* ===== Reset y base ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== Contenedor principal ===== */
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ===== Título y versión ===== */
+h1 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 5px;
+    color: #004080;
+}
+
+.version {
+    text-align: center;
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#fecha {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* ===== Bloque de cita ===== */
+blockquote.cita-block {
+    background-color: #fff;
+    padding: 20px;
+    border-left: 6px solid #0077cc;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Traducción y cita original ===== */
+.cita-traducida {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #0077cc;
+}
+
+.cita-original {
+    font-size: 1em;
+    font-style: italic;
+    color: #333;
+}
+
+.cita-la {
+    font-size: 0.95em;
+    font-style: italic;
+    color: #004080;
+}
+
+/* ===== Etiquetas ===== */
+.idioma-badge, .badge-la {
+    display: inline-block;
+    font-size: 0.85em;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+
+.idioma-badge {
+    background-color: #0077cc;
+    color: #fff;
+}
+
+.badge-la {
+    background-color: #004080;
+    color: #fff;
+}
+
+/* ===== Biografía del autor ===== */
+.biografia {
+    background-color: #eef5ff;
+    border-left: 4px solid #0077cc;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    color: #222;
+}
+
+/* ===== Información adicional ===== */
+.info-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.info-box {
+    background-color: #0077cc;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    flex: 1;
+    min-width: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    width: 100%;
+    text-align: center;
+    font-size: 0.85em;
+    color: #555;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+}
+
+.site-footer a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.site-footer img {
+    vertical-align: middle;
+    max-width: 1em;
+    max-height: 1em;
+    margin-left: 0.2em;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 600px) {
+    blockquote.cita-block {
+        padding: 15px;
+    }
+    .cita-traducida {
+        font-size: 1.1em;
+    }
+    .info-box {
+        min-width: 100%;
+    }
+}
