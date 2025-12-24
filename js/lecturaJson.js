@@ -20,32 +20,40 @@ fetch('./db/esaldi.json')
       : '';
 
     const html = `
-      <blockquote class="cita-block">
+  <blockquote class="cita-block">
 
-        ${cita.cita_traducida
-          ? `<p class="cita-traducida">${cita.cita_traducida}</p>`
-          : ''}
+    ${cita.cita_traducida
+      ? `<p class="cita-traducida">${cita.cita_traducida}</p>`
+      : ''}
 
-        <p class="cita-original">
-          ${cita.cita_original}
-        </p>
+    <p class="cita-original">
+      ${cita.cita_original}
+    </p>
 
-        ${idiomaBadge}
+    ${idiomaBadge}
 
-        ${cita.cita_la
-          ? `<p class="cita-la">${cita.cita_la}</p>`
-          : ''}
+    ${cita.cita_la
+      ? `<p class="cita-la">${cita.cita_la}</p>`
+      : ''}
 
-        <footer>
-          ${cita.biografia_la || ''}
-          <br>
-          <strong>${cita.autor}</strong>
-          ${nacimiento || fallecimiento
-            ? ` (${nacimiento}${fallecimiento ? ' - ' + fallecimiento : ''})`
-            : ''}
-        </footer>
+    <footer>
+      ${cita.biografia_la || ''}
+      <br>
+      <strong>${cita.autor}</strong>
+      ${nacimiento || fallecimiento
+        ? ` (${nacimiento}${fallecimiento ? ' - ' + fallecimiento : ''})`
+        : ''}
+    </footer>
 
-      </blockquote>
+    <div class="info-boxes">
+      ${cita.epoca ? `<div class="info-box">${cita.epoca}</div>` : ''}
+      ${cita.nacion ? `<div class="info-box">${cita.nacion}</div>` : ''}
+      ${cita.nacion_la ? `<div class="info-box">${cita.nacion_la}</div>` : ''}
+    </div>
+
+  </blockquote>
+`;
+
     `;
 
     document.getElementById('cita-container').innerHTML = html;
