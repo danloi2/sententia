@@ -1,6 +1,7 @@
 fetch('./db/esaldi.json')
   .then(res => res.json())
   .then(data => {
+
     if (!data.citas || !data.citas.length) {
       document.getElementById('cita-container').innerHTML =
         '<p>No hay citas disponibles.</p>';
@@ -12,29 +13,47 @@ fetch('./db/esaldi.json')
     const nacimiento = Utils.numeroRomano(cita.nacimiento_ano);
     const fallecimiento = Utils.numeroRomano(cita.fallecimiento_ano);
 
-
+    const idiomaBadge = cita.idioma
+      ? `<img class="idioma-badge-img"
+          src="https://img.shields.io/badge/${encodeURIComponent(cita.idioma)}-blue?style=for-the-badge&label=Idioma"
+          alt="Idioma">`
+      : '';
 
     const html = `
-      <blockquote class="cita-block">
-        ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
+  <blockquote class="cita-block">
 
-        <p class="cita-original">
-          ${cita.cita_original}
-          <br>
-          ${idiomaBadge}
-        </p>
+    ${cita.cita_traducida
+      ? `<p class="cita-traducida">${cita.cita_traducida}</p>`
+      : ''}
 
-        ${cita.cita_la ? `<p class="cita-la">${cita.cita_la}</p>` : ''}
+    <p class="cita-original">
+      ${cita.cita_original}
+    </p>
 
-        <footer>
-          ${cita.autor}
-          ${nacimiento || fallecimiento
-            ? `(${nacimiento}${fallecimiento ? ' - ' + fallecimiento : ''})`
-            : ''}
-        </footer>
+    ${idiomaBadge}
 
-        ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
-      </blockquote>
+    ${cita.cita_la
+      ? `<p class="cita-la">${cita.cita_la}</p>`
+      : ''}
+
+    <footer>
+      ${cita.biografia_la || ''}
+      <br>
+      <strong>${cita.autor}</strong>
+      ${nacimiento || fallecimiento
+        ? ` (${nacimiento}${fallecimiento ? ' - ' + fallecimiento : ''})`
+        : ''}
+    </footer>
+
+    <div class="info-boxes">
+      ${cita.epoca ? `<div class="info-box">${cita.epoca}</div>` : ''}
+      ${cita.nacion ? `<div class="info-box">${cita.nacion}</div>` : ''}
+      ${cita.nacion_la ? `<div class="info-box">${cita.nacion_la}</div>` : ''}
+    </div>
+
+  </blockquote>
+`;
+
     `;
 
     document.getElementById('cita-container').innerHTML = html;
