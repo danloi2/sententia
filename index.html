@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="la">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sententia diei</title>
@@ -37,7 +37,7 @@
       .fade-in {
         animation: fadeIn 0.6s ease-out;
       }
-      
+
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -60,7 +60,7 @@
         display: flex;
         align-items: center;
       }
-      
+
       .github-header-link:hover {
         color: #24292e;
       }
@@ -68,21 +68,22 @@
 
     <script src="js/utils.js" defer></script>
     <script src="js/fecha.js" defer></script>
+    <script src="js/copiar.js" defer></script>
     <script src="js/lecturajson.js" defer></script>
     <script src="js/buscar.js" defer></script>
-    
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
       defer
     ></script>
-</head>
-<body class="bg-light">
-
+  </head>
+  <body class="bg-light">
     <header class="container-fluid py-2 bg-white shadow-sm">
       <div class="row align-items-center">
-        
-        <div class="col-md-5 d-flex align-items-center justify-content-center justify-content-md-start ps-md-4 gap-3">
+        <div
+          class="col-md-5 d-flex align-items-center justify-content-center justify-content-md-start ps-md-4 gap-3"
+        >
           <h1 class="h4 fw-bold text-primary mb-0">Sententia diei</h1>
           <a
             href="https://github.com/danloi2/sententia"
@@ -100,7 +101,9 @@
         </div>
 
         <div class="col-md-3 text-center py-2 py-md-0">
-          <span id="fecha" class="small text-secondary fw-medium">Cargando fecha…</span>
+          <span id="fecha" class="small text-secondary fw-medium"
+            >Cargando fecha…</span
+          >
         </div>
 
         <div class="col-md-4 text-center text-md-end pe-md-4">
@@ -127,8 +130,9 @@
     </main>
 
     <footer class="container-fluid py-3 bg-white border-top mt-auto">
-      <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2 gap-md-4 small">
-        
+      <div
+        class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-2 gap-md-4 small"
+      >
         <div class="text-center">
           <a
             href="https://creativecommons.org/licenses/by-sa/4.0/"
@@ -137,13 +141,28 @@
             >CC BY-SA 4.0</a
           >
           <span class="ms-1 opacity-75">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" style="height: 0.9em" />
-            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" style="height: 0.9em" />
-            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" style="height: 0.9em" />
+            <img
+              src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+              alt="CC"
+              style="height: 0.9em"
+            />
+            <img
+              src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+              alt="BY"
+              style="height: 0.9em"
+            />
+            <img
+              src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+              alt="SA"
+              style="height: 0.9em"
+            />
           </span>
         </div>
 
-        <div class="vr d-none d-md-block" style="height: 15px; opacity: 0.3"></div>
+        <div
+          class="vr d-none d-md-block"
+          style="height: 15px; opacity: 0.3"
+        ></div>
 
         <div class="text-center">
           <a
@@ -153,9 +172,7 @@
             >Daniel Losada © 2025</a
           >
         </div>
-        
       </div>
     </footer>
-
-</body>
+  </body>
 </html>
