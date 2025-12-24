@@ -1,102 +1,88 @@
 /**
- * js/fecha.js
- * Gestión de la fecha actual en Latín siguiendo el estilo oficial (Curia Romana).
- * * Este script realiza tres tareas:
- * 1. Proporciona un conversor de números arábigos a romanos.
- * 2. Formatea la fecha del sistema al latín eclesiástico/clásico.
- * 3. Inyecta el resultado en el encabezado de la página al cargar.
- */
-
-// Listener que se activa cuando el DOM está listo para ser manipulado
-document.addEventListener('DOMContentLoaded', () => {
-  const fechaEl = document.getElementById('fecha');
-  if (fechaEl) {
-    // Asigna el texto generado por nuestro módulo de utilidades
-    fechaEl.textContent = Utils.fechaHoyLatina();
-  }
-});
-
-/**
- * Utils: Patrón de módulo para encapsular las herramientas de fecha y conversión.
+ * js/fecha.js - Diseño estético usando solo clases nativas de Bootstrap 5.3
  */
 const Utils = (() => {
-
-  /**
-   * Convierte números arábigos (1, 2, 3...) a números Romanos (I, II, III...).
-   * Utiliza el algoritmo de resta sustractiva estándar.
-   * @param {number} num - El número a convertir.
-   * @returns {string} - El equivalente en numeración romana capital.
-   */
   function numeroRomano(num) {
-    // Caso base: si no hay número o es cero (los romanos no tenían el cero)
-    if (num === null || num === undefined || num === 0) return '';
-    
+    if (!num || num === 0) return '';
     const mapa = [
       ["M", 1000], ["CM", 900], ["D", 500], ["CD", 400],
       ["C", 100], ["XC", 90], ["L", 50], ["XL", 40],
       ["X", 10], ["IX", 9], ["V", 5], ["IV", 4], ["I", 1]
     ];
-    
     let res = '';
-    for (const [letra, valor] of mapa) {
-      // Mientras el número sea mayor o igual al valor romano, lo concatenamos
-      while (num >= valor) {
-        res += letra;
-        num -= valor;
-      }
+    let n = num;
+    for (const [l, v] of mapa) {
+      while (n >= v) { res += l; n -= v; }
     }
     return res;
   }
 
-  /**
-   * Genera la fecha actual formateada en Latín.
-   * Estructura: [Día de la semana], die [día del mes] mensis [mes] anno Domini [año]
-   * @returns {string} - Cadena completa (ej: "Die Lunae, die XXIV mensis Decembris...")
-   */
+  function obtenerHoraLatina() {
+    const h = new Date().getHours();
+    
+    // Configuración de iconos según la hora
+    const esNocturna = h < 6 || h >= 19;
+    const icono = esNocturna ? 'bi-moon-stars-fill' : 'bi-sun-fill';
+    const colorIcono = esNocturna ? 'text-info' : 'text-warning';
+
+    const horasRomanas = {
+      0: "sexta vigilia nocturna", 1: "prima vigilia", 2: "secunda vigilia",
+      3: "tertia vigilia", 4: "quarta vigilia", 5: "quinta vigilia",
+      6: "prima hora", 7: "secunda hora", 8: "tertia hora",
+      9: "quarta hora", 10: "quinta hora", 11: "sexta hora",
+      12: "sexta hora", 13: "septima hora", 14: "octava hora",
+      15: "nona hora", 16: "decima hora", 17: "undecima hora",
+      18: "duodecima hora", 19: "prima vigilia nocturna", 20: "secunda vigilia nocturna",
+      21: "tertia vigilia nocturna", 22: "quarta vigilia nocturna", 23: "quinta vigilia nocturna"
+    };
+
+    const textoHora = horasRomanas[h];
+    
+    /**
+     * CLASES BOOTSTRAP UTILIZADAS:
+     * - badge: Crea una cápsula.
+     * - rounded-pill: Forma de píldora.
+     * - bg-primary-subtle: Fondo azul muy suave.
+     * - text-primary: Texto azul.
+     * - fw-bold: Negrita.
+     * - border: Añade un borde fino.
+     * - border-primary-subtle: Color del borde suave.
+     */
+    return `
+      <div class="badge rounded-pill bg-primary-subtle text-primary fw-bold border border-primary-subtle px-3 py-2 mt-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+        <i class="bi ${icono} ${colorIcono} me-1"></i> ${textoHora.toUpperCase()}
+      </div>`;
+  }
+
   function fechaHoyLatina() {
     const f = new Date();
-    
-    // 🗓️ DÍAS DE LA SEMANA (Orden litúrgico y clásico: el Domingo es el primer día - índice 0)
-    const dias = [
-      'Die Dominica', // Domingo
-      'Die Lunae',    // Lunes
-      'Die Martis',   // Martes
-      'Die Mercurii', // Miércoles
-      'Die Iovis',    // Jueves
-      'Die Veneris',  // Viernes
-      'Die Saturni'   // Sábado
-    ];
+    const dias = ['Die Dominica', 'Die Lunae', 'Die Martis', 'Die Mercurii', 'Die Iovis', 'Die Veneris', 'Die Saturni'];
+    const meses = ['Ianuarii', 'Februarii', 'Martii', 'Aprilis', 'Maii', 'Iunii', 'Iulii', 'Augusti', 'Septembris', 'Octobris', 'Novembris', 'Decembris'];
 
-    // 📆 MESES EN GENITIVO (Requerido por la gramática al usar "mensis" [mes de...])
-    const meses = [
-      'Ianuarii',   // de Enero
-      'Februarii',  // de Febrero
-      'Martii',     // de Marzo
-      'Aprilis',    // de Abril
-      'Maii',       // de Mayo
-      'Iunii',      // de Junio
-      'Iulii',      // de Julio
-      'Augusti',    // de Agosto
-      'Septembris', // de Septiembre
-      'Octobris',   // de Octubre
-      'Novembris',  // de Noviembre
-      'Decembris'   // de Diciembre
-    ];
-
-    // Obtención de datos del objeto Date
     const diaSemana = dias[f.getDay()];
     const diaMes = numeroRomano(f.getDate());
     const mesNombre = meses[f.getMonth()];
     const añoRomano = numeroRomano(f.getFullYear());
-
+    
     /**
-     * Retorno de la cadena final:
-     * - "die" + número romano actúa como ablativo de tiempo.
-     * - "anno Domini" (en el año del Señor) es la fórmula tradicional para la era cristiana.
+     * CLASES BOOTSTRAP UTILIZADAS:
+     * - d-flex flex-column align-items-center: Apila los elementos y los centra.
+     * - text-secondary: Color gris elegante.
+     * - small: Tamaño de fuente reducido.
+     * - fst-italic: Texto en cursiva para la fecha solemne.
      */
-    return `${diaSemana}, die ${diaMes} mensis ${mesNombre} anno Domini ${añoRomano}`;
+    const fechaParte = `<span class="text-secondary small fst-italic">${diaSemana}, die ${diaMes} mensis ${mesNombre} anno Domini ${añoRomano}</span>`;
+    const horaParte = obtenerHoraLatina();
+
+    return `<div class="d-flex flex-column align-items-center">${fechaParte}${horaParte}</div>`;
   }
 
-  // Exportación pública de las funciones del módulo
-  return { numeroRomano, fechaHoyLatina };
+  return { fechaHoyLatina };
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const fechaEl = document.getElementById('fecha');
+  if (fechaEl) {
+    fechaEl.innerHTML = Utils.fechaHoyLatina();
+  }
+});
