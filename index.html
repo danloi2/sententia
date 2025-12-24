@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="la">
 <head>
-  <meta charset="UTF-8">
-  <title>Sententia diei</title>
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sententia diei - Cita del día en latín y múltiples idiomas">
+    <title>Sententia diei</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Sententia diei</h1>
-    <div class="version">Versio 1.0 beta</div>
-    <div id="fecha" class="fecha"></div>
-    <div id="cita-container">Cargando citas…</div>
-  </div>
+    <div class="container">
+        <h1>Sententia diei</h1>
+        <div class="version">Versio 1.0 beta</div>
+        <div id="fecha" class="fecha">Cargando fecha...</div>
+        <div id="cita-container">
+            <p style="text-align: center; color: #666;">Cargando citas…</p>
+        </div>
+    </div>
 
-  <script src="js/utils.js"></script>
-  <script src="js/lecturajson.js"></script>
+    <footer class="site-footer">
+        <p>
+            <a href="https://github.com/danloi2/sententia" target="_blank" rel="noopener">Sententia Diei</a> 
+            © 2025 by
+            <a href="https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle" target="_blank" rel="noopener">Daniel Losada</a>
+            — 
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" loading="lazy">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" loading="lazy">
+            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="SA" loading="lazy">
+        </p>
+    </footer>
 
-  <footer class="site-footer">
-    <a href="https://github.com/danloi2/sententia">Sententia Diei</a> © 2025 by
-    <a href="https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle">Daniel Losada</a>
-    — <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
-    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="">
-  </footer>
+    <script src="js/utils.js"></script>
+    <script src="js/lecturajson.js"></script>
 </body>
 </html>
