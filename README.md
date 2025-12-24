@@ -6,58 +6,56 @@
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952b3?logo=bootstrap&logoColor=white)
 ![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-lightgrey)
 
-**Sententia diei** es una aplicación web ligera que muestra **citas históricas en latín** y su traducción. Ahora funciona de forma totalmente estática utilizando **JavaScript** para leer datos desde archivos **JSON**.
+**Sententia diei** is a lightweight web application that displays **historical quotes in Latin** along with their translations. It now works entirely statically using **JavaScript** to read data from **JSON** files.
 
-## 📂 Nueva Estructura del Proyecto
+## 📂 New Project Structure
 
-La arquitectura se ha simplificado eliminando el motor de base de datos del lado del servidor. Ahora, toda la lógica reside en el cliente (navegador) para garantizar la máxima velocidad.
+The architecture has been simplified by removing the server-side database engine. Now, all logic resides in the client (browser) to ensure maximum speed.
 
-    📂 db/: Repositorio de datos portátil.
+    📂 db/: Portable data repository.
 
-        📄 esaldi.json: Diccionario central con citas y metadatos.
+        📄 esaldi.json: Central dictionary with quotes and metadata.
 
-    📂 js/: Núcleo de lógica en JavaScript ES6.
+    📂 js/: Core logic in ES6 JavaScript.
 
-        ⚙️ lecturajson.js: Inicialización de la App, fetch de datos y estadísticas.
+        ⚙️ lecturajson.js: App initialization, data fetching, and statistics.
 
-        🔍 buscar.js: Motor de búsqueda con filtrado multilingüe.
+        🔍 buscar.js: Search engine with multilingual filtering.
 
-        📋 copiar.js: Gestor de portapapeles con formato Quotation.
+        📋 copiar.js: Clipboard manager with Quotation formatting.
 
-        🕒 fecha.js: Sistema de calendario y reloj con horas romanas.
+        🕒 fecha.js: Calendar and clock system with Roman hours.
 
-    🌐 index.html: Interfaz de usuario construida con Bootstrap 5.3.
-
-
-## 🚀 Cómo ejecutarlo localmente
-
-Al ser una aplicación basada en módulos de JavaScript y peticiones `fetch()`, necesitas un servidor web local sencillo (por seguridad de los navegadores al leer archivos locales):
-
-1. **VS Code:** Instala la extensión **Live Server** y pulsa "Go Live".
-2. **Python:** Ejecuta `python -m http.server 8000` en la carpeta raíz.
-3. **Node.js:** Ejecuta `npx serve`.
-
-Accede a: `http://localhost:8000` (o el puerto indicado).
-
-## 🛠️ Tecnologías utilizadas
-
-- **Vanilla JavaScript:** Gestión de datos asíncrona (Fetch API).
-- **JSON:** Almacenamiento de citas y metadatos.
-- **Bootstrap 5.3:** Diseño responsivo y componentes premium.
-- **Bootstrap Icons:** Iconografía dinámica (sol/luna para la hora romana).
-
-## 🌐 Despliegue
-
-¡Buenas noticias! Al no usar PHP ni SQL, ahora **GitHub Pages** es totalmente compatible. Solo necesitas subir tus archivos a un repositorio y activar Pages en la configuración.
+    🌐 index.html: User interface built with Bootstrap 5.3.
 
 
-## 📜 Licencia
+## 🚀 How to Run Locally
 
-Este proyecto está bajo **[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**.
+As this is a JavaScript module-based application using `fetch()`, you need a simple local web server (due to browser security when reading local files):
 
-## 👤 Autor
+1. **VS Code:** Install the **Live Server** extension and click "Go Live".
+2. **Python:** Run `python -m http.server 8000` in the root folder.
+3. **Node.js:** Run `npx serve`.
 
+Access: `http://localhost:8000` (or the port specified).
+
+## 🛠️ Technologies Used
+
+- **Vanilla JavaScript:** Asynchronous data handling (Fetch API).
+- **JSON:** Storage for quotes and metadata.
+- **Bootstrap 5.3:** Responsive design and premium components.
+- **Bootstrap Icons:** Dynamic iconography (sun/moon for Roman hours).
+
+## 🌐 Deployment
+
+Good news! Since it doesn’t use PHP or SQL, **GitHub Pages** is now fully compatible. You just need to upload your files to a repository and enable Pages in the settings.
+
+## 📜 License
+
+This project is licensed under **[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**.
+
+## 👤 Author
 
 [![GitHub](https://img.shields.io/badge/GitHub-Daniel_Losada-181717?logo=github&logoColor=white)](https://github.com/danloi2)  
-[![Profesor Titular de Universidad](https://img.shields.io/badge/Investigador-EHU-blue?logo=researchgate)](https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle)
+[![Full University Professor](https://img.shields.io/badge/Researcher-EHU-blue?logo=researchgate)](https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle)
 
