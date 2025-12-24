@@ -1,40 +1,61 @@
 /**
- * js/lecturajson.js - Lógica de inicio, estadísticas y carga de datos
+ * js/lecturajson.js
+ * * Lógica principal de la aplicación:
+ * 1. Carga la base de datos desde un archivo JSON.
+ * 2. Calcula estadísticas globales (total de citas y autores).
+ * 3. Renderiza una cita aleatoria con un diseño de tarjeta elegante.
+ * 4. Gestiona errores de carga y seguridad (XSS).
  */
 
+// Se ejecuta automáticamente cuando el HTML ha sido cargado completamente
 document.addEventListener("DOMContentLoaded", () => {
+    // Petición asíncrona para obtener el archivo de base de datos
     fetch("db/esaldi.json")
         .then(response => {
+            // Verificación técnica: Si el archivo no existe o hay error de servidor
             if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
             return response.json();
         })
         .then(data => {
+            // Verificación de contenido: Si el JSON está vacío
             if (!data || data.length === 0) throw new Error("Base de datos vacía.");
 
-            // 1. Calcular y mostrar estadísticas (Totales)
+            // 1. Generar los contadores de la parte inferior
             renderStats(data);
 
-            // 2. Seleccionar y mostrar una cita aleatoria al inicio
+            // 2. Algoritmo de selección aleatoria: Índice entre 0 y longitud del array
             const citaAleatoria = data[Math.floor(Math.random() * data.length)];
+            
+            // 3. Pintar la cita seleccionada en el HTML
             mostrarCita(citaAleatoria);
         })
         .catch(err => {
+            // Captura cualquier error en la cadena anterior y lo muestra al usuario
             console.error(err);
             mostrarError("Error al cargar la sabiduría latina.");
         });
 });
 
 /**
- * Calcula el total de citas y autores únicos
+ * Calcula y muestra el total de citas y autores únicos.
+ * @param {Array} data - El array completo de objetos del JSON.
  */
 function renderStats(data) {
     const statsContainer = document.getElementById("stats-container");
-    if (!statsContainer) return;
+    if (!statsContainer) return; // Seguridad: Si el contenedor no existe en el HTML, no hace nada
 
+    // El total de citas es simplemente el tamaño del array
     const totalCitas = data.length;
-    // Creamos un Set para contar autores únicos (sin repetir)
+
+    /**
+     * Cálculo de autores únicos:
+     * 1. .map extrae todos los nombres de autores.
+     * 2. new Set() elimina automáticamente los duplicados.
+     * 3. El operador [...] convierte el Set de nuevo a un Array para medir su .length
+     */
     const autoresUnicos = [...new Set(data.map(item => item.autor_la || item.autor_es))].length;
 
+    // Inyección de las píldoras de información en el footer del main
     statsContainer.innerHTML = `
         <div class="d-flex justify-content-center gap-3 mt-4 fade-in">
             <span class="small text-secondary bg-white border rounded-pill px-3 py-1 shadow-sm">
@@ -50,21 +71,27 @@ function renderStats(data) {
 }
 
 /**
- * Muestra la cita en una tarjeta elegante
+ * Construye la interfaz visual (tarjeta) para la cita seleccionada.
+ * @param {Object} cita - El objeto individual que contiene los textos y metadatos.
  */
 function mostrarCita(cita) {
     const container = document.getElementById("cita-container");
     
-    // ORDEN DE METADATOS: Época primero, luego Idioma, luego Nación
+    /**
+     * Gestión de metadatos (Línea inferior de la cita):
+     * Se crea un array con el orden: Época -> Idioma -> Nación.
+     * .filter(Boolean) elimina elementos si el campo en el JSON está vacío.
+     * .join(" • ") añade el punto separador solo donde es necesario.
+     */
     const metadatosArray = [
         cita.epoca_la, 
         cita.idioma_la, 
         cita.nacion_la
-    ].filter(Boolean); // Filtra campos nulos o vacíos
+    ].filter(Boolean);
     
     const contextoFormateado = metadatosArray.join(" • ");
 
-    // Objeto de datos que será procesado por prepararCopia en copiar.js
+    // Prepara un objeto limpio para que la función de copiar (copiar.js) lo procese
     const datosCopia = {
         la: cita.cita_la || "",
         orig: cita.cita_original || "",
@@ -73,9 +100,14 @@ function mostrarCita(cita) {
         contexto: contextoFormateado
     };
     
-    // Escapar comillas para evitar errores en el atributo onclick
+    /**
+     * Serialización para el atributo 'onclick':
+     * Convertimos el objeto a string y escapamos comillas simples para que
+     * el HTML no se rompa al pasar el objeto a la función 'prepararCopia'.
+     */
     const jsonCopia = JSON.stringify(datosCopia).replace(/'/g, "&apos;");
 
+    // Construcción del HTML dinámico mediante Template Literals
     container.innerHTML = `
         <div class="col-11 col-md-10 col-lg-8 fade-in">
             <div class="card border-0 shadow-lg">
@@ -112,7 +144,8 @@ function mostrarCita(cita) {
 }
 
 /**
- * Muestra un mensaje de error en el contenedor principal
+ * Renderiza un componente visual de error si falla el fetch o el procesamiento.
+ * @param {string} msg - Mensaje personalizado del error.
  */
 function mostrarError(msg) {
     document.getElementById("cita-container").innerHTML = `
@@ -125,7 +158,9 @@ function mostrarError(msg) {
 }
 
 /**
- * Utilidad para evitar inyecciones XSS
+ * Función de saneamiento (Sanitize).
+ * Convierte caracteres especiales en entidades HTML seguras para prevenir
+ * ataques de Inyección de Código (XSS).
  */
 function escaparHTML(str) {
     if (!str) return "";
