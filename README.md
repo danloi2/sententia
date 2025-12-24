@@ -10,19 +10,24 @@
 
 ## 📂 Nueva Estructura del Proyecto
 
-La aplicación se ha simplificado para ser más rápida y fácil de desplegar:
+La arquitectura se ha simplificado eliminando el motor de base de datos del lado del servidor. Ahora, toda la lógica reside en el cliente (navegador) para garantizar la máxima velocidad.
 
-/
-├─ index.html          # Estructura principal (Bootstrap 5.3)
-├─ db/
-│  └─ esaldi.json      # Nuestra nueva base de datos portátil 📦
-├─ js/
-│  ├─ lecturajson.js   # Lógica de carga y estadísticas
-│  ├─ buscar.js        # Motor de búsqueda multilingüe
-│  ├─ copiar.js        # Formateo de citas para portapapeles
-│  └─ fecha.js         # Cálculos de fecha y hora romana 🌙
-└─ assets/
-   └─ (tus imágenes y estilos)
+    📂 db/: Repositorio de datos portátil.
+
+        📄 esaldi.json: Diccionario central con citas y metadatos.
+
+    📂 js/: Núcleo de lógica en JavaScript ES6.
+
+        ⚙️ lecturajson.js: Inicialización de la App, fetch de datos y estadísticas.
+
+        🔍 buscar.js: Motor de búsqueda con filtrado multilingüe.
+
+        📋 copiar.js: Gestor de portapapeles con formato Quotation.
+
+        🕒 fecha.js: Sistema de calendario y reloj con horas romanas.
+
+    🌐 index.html: Interfaz de usuario construida con Bootstrap 5.3.
+
 
 ## 🚀 Cómo ejecutarlo localmente
 
