@@ -1,7 +1,14 @@
 fetch('./db/esaldi.json')
-  .then(res => res.json())
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('No se pudo cargar el JSON');
+    }
+    return res.json();
+  })
   .then(data => {
-    if (!data.citas || !data.citas.length) {
+    console.log('JSON cargado:', data); // 👈 DEBUG
+
+    if (!data.citas || data.citas.length === 0) {
       document.getElementById('cita-container').innerHTML =
         '<p>No hay citas disponibles.</p>';
       return;
@@ -14,29 +21,36 @@ fetch('./db/esaldi.json')
 
     const html = `
       <blockquote class="cita-block">
-        ${cita.cita_traducida ? `<p class="cita-traducida">${cita.cita_traducida}</p>` : ''}
+
+        ${cita.cita_traducida
+          ? `<p class="cita-traducida">${cita.cita_traducida}</p>`
+          : ''}
 
         <p class="cita-original">
           ${cita.cita_original}
         </p>
 
-        ${cita.cita_la ? `<p class="cita-la">${cita.cita_la}</p>` : ''}
+        ${cita.cita_la
+          ? `<p class="cita-la">${cita.cita_la}</p>`
+          : ''}
 
         <footer>
           ${cita.autor}
-          ${nacimiento || fallecimiento
-            ? `(${nacimiento}${fallecimiento ? ' - ' + fallecimiento : ''})`
+          ${(nacimiento || fallecimiento)
+            ? ` (${nacimiento}${fallecimiento ? ' - ' + fallecimiento : ''})`
             : ''}
         </footer>
 
-        ${cita.biografia_la ? `<div class="biografia">${cita.biografia_la}</div>` : ''}
+        ${cita.biografia_la
+          ? `<div class="biografia">${cita.biografia_la}</div>`
+          : ''}
       </blockquote>
     `;
 
     document.getElementById('cita-container').innerHTML = html;
   })
   .catch(err => {
-    console.error(err);
+    console.error('ERROR REAL:', err);
     document.getElementById('cita-container').innerHTML =
       '<p>Error cargando citas.</p>';
   });
