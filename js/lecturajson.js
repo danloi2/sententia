@@ -76,7 +76,7 @@ function mostrarCita(cita) {
           <blockquote class="blockquote mb-0 text-start">
             ${
               cita.cita_la
-                ? `<p class="display-6 fw-bold text-primary mb-2">${escaparHTML(
+                ? `<p class="display-6 fs-3 fw-bold text-primary mb-2">${escaparHTML(
                     cita.cita_la
                   )}</p>`
                 : ""
