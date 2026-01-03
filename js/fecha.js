@@ -61,7 +61,7 @@ const Utils = (() => {
     const mesNombre = meses[f.getMonth()];
     const añoRomano = numeroRomano(f.getFullYear());
 
-    const fechaParte = `<span class="text-secondary small fst-italic">${diaSemana}, die ${diaMes} mensis ${mesNombre}<br>anno Domini ${añoRomano}</span>`;
+    const fechaParte = `<span class="text-secondary small fst-italic">${diaSemana}, die ${diaMes} mensis ${mesNombre}<br>Anno Domini ${añoRomano}</span>`;
     const horaParte = obtenerHoraLatina();
 
     return `
