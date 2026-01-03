@@ -1,7 +1,10 @@
 /**
  * js/fecha.js - Diseño estético usando solo clases nativas de Bootstrap 5.3
+ * Muestra fecha y hora “a la latina” con iconos y badges Bootstrap.
  */
+
 const Utils = (() => {
+  // Convierte número a romano
   function numeroRomano(num) {
     if (!num || num === 0) return '';
     const mapa = [
@@ -17,14 +20,16 @@ const Utils = (() => {
     return res;
   }
 
+  // Obtiene la hora y la representa como texto latino con icono
   function obtenerHoraLatina() {
     const h = new Date().getHours();
-    
-    // Configuración de iconos según la hora
+
+    // Icono según día/nocturna
     const esNocturna = h < 6 || h >= 19;
     const icono = esNocturna ? 'bi-moon-stars-fill' : 'bi-sun-fill';
     const colorIcono = esNocturna ? 'text-info' : 'text-warning';
 
+    // Horas latinas
     const horasRomanas = {
       0: "sexta vigilia nocturna", 1: "prima vigilia", 2: "secunda vigilia",
       3: "tertia vigilia", 4: "quarta vigilia", 5: "quinta vigilia",
@@ -37,23 +42,15 @@ const Utils = (() => {
     };
 
     const textoHora = horasRomanas[h];
-    
-    /**
-     * CLASES BOOTSTRAP UTILIZADAS:
-     * - badge: Crea una cápsula.
-     * - rounded-pill: Forma de píldora.
-     * - bg-primary-subtle: Fondo azul muy suave.
-     * - text-primary: Texto azul.
-     * - fw-bold: Negrita.
-     * - border: Añade un borde fino.
-     * - border-primary-subtle: Color del borde suave.
-     */
+
+    // Badge Bootstrap
     return `
-      <div class="badge rounded-pill bg-primary-subtle text-primary fw-bold border border-primary-subtle px-3 py-2 mt-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">
+      <div class="badge rounded-pill bg-primary-subtle text-primary fw-bold border border-primary-subtle px-3 py-2 mt-1 d-flex align-items-center" style="font-size:0.7rem; letter-spacing:0.5px;">
         <i class="bi ${icono} ${colorIcono} me-1"></i> ${textoHora.toUpperCase()}
       </div>`;
   }
 
+  // Genera fecha completa en latín con Bootstrap
   function fechaHoyLatina() {
     const f = new Date();
     const dias = ['Die Dominica', 'Die Lunae', 'Die Martis', 'Die Mercurii', 'Die Iovis', 'Die Veneris', 'Die Saturni'];
@@ -63,23 +60,21 @@ const Utils = (() => {
     const diaMes = numeroRomano(f.getDate());
     const mesNombre = meses[f.getMonth()];
     const añoRomano = numeroRomano(f.getFullYear());
-    
-    /**
-     * CLASES BOOTSTRAP UTILIZADAS:
-     * - d-flex flex-column align-items-center: Apila los elementos y los centra.
-     * - text-secondary: Color gris elegante.
-     * - small: Tamaño de fuente reducido.
-     * - fst-italic: Texto en cursiva para la fecha solemne.
-     */
+
     const fechaParte = `<span class="text-secondary small fst-italic">${diaSemana}, die ${diaMes} mensis ${mesNombre} anno Domini ${añoRomano}</span>`;
     const horaParte = obtenerHoraLatina();
 
-    return `<div class="d-flex flex-column align-items-center">${fechaParte}${horaParte}</div>`;
+    return `
+      <div class="d-flex flex-column align-items-center gap-1">
+        ${fechaParte}
+        ${horaParte}
+      </div>`;
   }
 
   return { fechaHoyLatina };
 })();
 
+// Renderizar al cargar DOM
 document.addEventListener('DOMContentLoaded', () => {
   const fechaEl = document.getElementById('fecha');
   if (fechaEl) {
