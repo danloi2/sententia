@@ -4,44 +4,67 @@
 ![JSON](https://img.shields.io/badge/Data-JSON-lightgrey?logo=json)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952b3?logo=bootstrap&logoColor=white)
-![Version](https://img.shields.io/github/v/release/danloi2/sententia?label=version&style=flat-square)
+![Version](https://img.shields.io/github/v/release/danloi2/sententia?style=flat-square)
 ![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-lightgrey)
 
-**Sententia diei** es una aplicación web ligera que muestra **citas históricas en latín** con sus traducciones, funcionando completamente de manera **estática** usando **JavaScript** para leer datos desde **JSON**.
+**Sententia diei** es una aplicación web ligera que muestra **citas históricas en latín** con sus traducciones. Funciona completamente de forma **estática**, usando **JavaScript** para leer datos desde **JSON**.
 
-Versión actual: **2.0.0**
+![Sententia diei](assets/sententiadiei.png)
 
----
+
 
 ## 📂 Estructura del Proyecto
 
-La arquitectura ha sido simplificada: toda la lógica está en el navegador para máxima velocidad.
+    📂 db/: Repositorio de datos portátil
+        📄 esaldi.xlsx    : Archivo de origen de citas
+        📄 esaldi.csv     : Exportado desde Excel/LibreOffice en UTF-8
+        📄 esaldi.json    : Generado automáticamente usando `convertir.js`
+        ℹ️ convertir.js   : Script que convierte CSV a JSON
 
-📂 db/ # Repositorio de datos portátil
-📄 esaldi.json # Diccionario central de citas y metadatos
+    📂 js/: Lógica central en JavaScript ES6
+        ⚙️ lecturajson.js : Inicialización, carga de datos y estadísticas
+        🔍 buscar.js      : Motor de búsqueda con filtrado
+        📋 copiar.js      : Copiado al portapapeles con formato
+        🕒 fecha.js       : Fecha y hora “a la latina” con iconos y badges Bootstrap
 
-📂 js/ # Lógica principal en JavaScript ES6
-⚙️ lecturajson.js # Inicialización, carga de datos y estadísticas
-🔍 buscar.js # Motor de búsqueda con filtrado multilingüe
-📋 copiar.js # Gestión de portapapeles y formato de citas
-🕒 fecha.js # Sistema de fecha y hora romana
+    📂 assets/: Recursos de la aplicación
+        📄 favicon.ico    : Icono de la página
 
-🌐 index.html # Interfaz de usuario construida con Bootstrap
+    🌐 index.html       : Interfaz de usuario construida con Bootstrap 5.3
 
+## ℹ️ Cómo actualizar los datos
 
----
+Para refrescar la base de datos:
 
-## 🚀 Cómo Ejecutar Localmente
+1. Exporta `esaldi.xlsx` a `esaldi.csv` en **UTF-8**.  
+2. Ejecuta el script de conversión dentro de la carpeta `db`:
 
-Al ser una aplicación **modular en JS** usando `fetch()`, necesitas un servidor web simple para evitar restricciones de seguridad al leer archivos locales:
+```bash
+node convertir.js
+```
 
-1. **VS Code:** Instalar la extensión **Live Server** y hacer click en "Go Live".
-2. **Python:** Ejecutar `python -m http.server 8000` en la carpeta raíz.
-3. **Node.js:** Ejecutar `npx serve`.
+Esto generará automáticamente `esaldi.json` listo para la aplicación
 
-Accede en: `http://localhost:8000` (o el puerto indicado).
+## 🚀 Cómo ejecutar localmente
 
----
+Al ser una aplicación basada en módulos JS y usando `fetch()`, necesitas un **servidor local** para evitar problemas de seguridad del navegador:
+
+1. **VS Code:** Instalar la extensión **Live Server** y pulsar "Go Live".  
+2. **Python:** Ejecutar:
+   ```bash
+   python -m http.server 8000
+   ```
+   
+3. **Node.js:**
+  ```bash
+  Ejecutar `npx serve`.
+  ```
+
+Accede en: 
+
+```bash
+`http://localhost:8000` (o el puerto indicado).
+```
 
 ## 🛠️ Tecnologías Usadas
 
@@ -50,19 +73,13 @@ Accede en: `http://localhost:8000` (o el puerto indicado).
 - **Bootstrap 5.3:** Diseño responsive y componentes estéticos  
 - **Bootstrap Icons:** Iconografía dinámica (sol/luna para horas romanas)  
 
----
-
 ## 🌐 Despliegue
 
 Como no utiliza PHP ni SQL, **GitHub Pages** funciona perfectamente. Solo sube los archivos a un repositorio y habilita Pages en la configuración.
 
----
-
 ## 📜 Licencia
 
 Este proyecto está bajo **[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**.
-
----
 
 ## 👤 Autor
 
