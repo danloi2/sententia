@@ -4,58 +4,68 @@
 ![JSON](https://img.shields.io/badge/Data-JSON-lightgrey?logo=json)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952b3?logo=bootstrap&logoColor=white)
+![Version](https://img.shields.io/github/v/release/danloi2/sententia?label=version&style=flat-square)
 ![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-lightgrey)
 
-**Sententia diei** is a lightweight web application that displays **historical quotes in Latin** along with their translations. It now works entirely statically using **JavaScript** to read data from **JSON** files.
+**Sententia diei** es una aplicación web ligera que muestra **citas históricas en latín** con sus traducciones, funcionando completamente de manera **estática** usando **JavaScript** para leer datos desde **JSON**.
 
-## 📂 New Project Structure
+Versión actual: **2.0.0**
 
-The architecture has been simplified by removing the server-side database engine. Now, all logic resides in the client (browser) to ensure maximum speed.
+---
 
-    📂 db/: Portable data repository.
+## 📂 Estructura del Proyecto
 
-        📄 esaldi.json: Central dictionary with quotes and metadata.
+La arquitectura ha sido simplificada: toda la lógica está en el navegador para máxima velocidad.
 
-    📂 js/: Core logic in ES6 JavaScript.
+📂 db/ # Repositorio de datos portátil
+📄 esaldi.json # Diccionario central de citas y metadatos
 
-        ⚙️ lecturajson.js: App initialization, data fetching, and statistics.
+📂 js/ # Lógica principal en JavaScript ES6
+⚙️ lecturajson.js # Inicialización, carga de datos y estadísticas
+🔍 buscar.js # Motor de búsqueda con filtrado multilingüe
+📋 copiar.js # Gestión de portapapeles y formato de citas
+🕒 fecha.js # Sistema de fecha y hora romana
 
-        🔍 buscar.js: Search engine with multilingual filtering.
-
-        📋 copiar.js: Clipboard manager with Quotation formatting.
-
-        🕒 fecha.js: Calendar and clock system with Roman hours.
-
-    🌐 index.html: User interface built with Bootstrap 5.3.
+🌐 index.html # Interfaz de usuario construida con Bootstrap
 
 
-## 🚀 How to Run Locally
+---
 
-As this is a JavaScript module-based application using `fetch()`, you need a simple local web server (due to browser security when reading local files):
+## 🚀 Cómo Ejecutar Localmente
 
-1. **VS Code:** Install the **Live Server** extension and click "Go Live".
-2. **Python:** Run `python -m http.server 8000` in the root folder.
-3. **Node.js:** Run `npx serve`.
+Al ser una aplicación **modular en JS** usando `fetch()`, necesitas un servidor web simple para evitar restricciones de seguridad al leer archivos locales:
 
-Access: `http://localhost:8000` (or the port specified).
+1. **VS Code:** Instalar la extensión **Live Server** y hacer click en "Go Live".
+2. **Python:** Ejecutar `python -m http.server 8000` en la carpeta raíz.
+3. **Node.js:** Ejecutar `npx serve`.
 
-## 🛠️ Technologies Used
+Accede en: `http://localhost:8000` (o el puerto indicado).
 
-- **Vanilla JavaScript:** Asynchronous data handling (Fetch API).
-- **JSON:** Storage for quotes and metadata.
-- **Bootstrap 5.3:** Responsive design and premium components.
-- **Bootstrap Icons:** Dynamic iconography (sun/moon for Roman hours).
+---
 
-## 🌐 Deployment
+## 🛠️ Tecnologías Usadas
 
-Good news! Since it doesn’t use PHP or SQL, **GitHub Pages** is now fully compatible. You just need to upload your files to a repository and enable Pages in the settings.
+- **Vanilla JavaScript:** Manejo de datos asíncrono (Fetch API)  
+- **JSON:** Almacenamiento de citas y metadatos  
+- **Bootstrap 5.3:** Diseño responsive y componentes estéticos  
+- **Bootstrap Icons:** Iconografía dinámica (sol/luna para horas romanas)  
 
-## 📜 License
+---
 
-This project is licensed under **[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**.
+## 🌐 Despliegue
 
-## 👤 Author
+Como no utiliza PHP ni SQL, **GitHub Pages** funciona perfectamente. Solo sube los archivos a un repositorio y habilita Pages en la configuración.
+
+---
+
+## 📜 Licencia
+
+Este proyecto está bajo **[Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)**.
+
+---
+
+## 👤 Autor
 
 [![GitHub](https://img.shields.io/badge/GitHub-Daniel_Losada-181717?logo=github&logoColor=white)](https://github.com/danloi2)  
-[![Full University Professor](https://img.shields.io/badge/Researcher-EHU-blue?logo=researchgate)](https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle)
+[![Investigador EHU](https://img.shields.io/badge/Researcher-EHU-blue?logo=researchgate)](https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle)
 
