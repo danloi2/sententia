@@ -14,7 +14,7 @@
 ---
 ## 📑 Índice
 
-- [Estructura del Proyecto](#-estructura-del-proyecto)  
+- [Estructura del Proyecto](#Estructura-del-Proyecto)  
 - [Cómo se generan las imágenes](#-cómo-se-generan-las-imágenes)  
   - [Personajes](#personajes)  
   - [Banderas para refranes y proverbios](#banderas-para-refranes-y-proverbios)  
