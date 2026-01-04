@@ -37,29 +37,29 @@
     <header class="bg-white shadow-sm py-3">
       <div class="container">
         <div class="row align-items-center">
-          <!-- Logo con GitHub y versión debajo -->
+          <!-- Título + GitHub + Shield -->
           <div
-            class="col-md-4 d-flex flex-column align-items-center align-items-md-start gap-2"
+            class="col-md-5 d-flex align-items-center justify-content-center justify-content-md-start gap-3"
           >
-            <h1 class="h4 fw-bold text-primary mb-1">Sententia diei</h1>
-            <div class="d-flex align-items-center gap-2">
-              <a
-                href="https://github.com/danloi2/sententia"
-                target="_blank"
-                class="text-muted fs-5"
-                data-bs-toggle="tooltip"
-                title="Repositorium"
-              >
-                <i class="bi bi-github"></i>
-              </a>
-              <span
-                class="badge bg-primary"
-                data-bs-toggle="tooltip"
-                title="Editio"
-              >
-                v<span id="version">1.0.0</span>
-              </span>
-            </div>
+            <h1 class="h4 fw-bold text-primary mb-0">Sententia diei</h1>
+
+            <a
+              href="https://github.com/danloi2/sententia"
+              target="_blank"
+              class="text-muted fs-5"
+              data-bs-toggle="tooltip"
+              title="Repositorium GitHub"
+            >
+              <i class="bi bi-github"></i>
+            </a>
+
+            <img
+              src="https://img.shields.io/github/v/tag/danloi2/sententia?label=Release&color=0d6efd&style=flat-square"
+              alt="Versio"
+              height="18"
+              data-bs-toggle="tooltip"
+              title="Versio ultima"
+            />
           </div>
 
           <!-- Fecha -->
@@ -74,7 +74,7 @@
 
           <!-- Buscador -->
           <div
-            class="col-md-4 d-flex justify-content-center justify-content-md-end mt-2 mt-md-0"
+            class="col-md-3 d-flex justify-content-center justify-content-md-end mt-2 mt-md-0"
           >
             <form class="d-flex" role="search">
               <input
