@@ -15,15 +15,15 @@
 ## 📑 Índice
 
 - [Estructura del Proyecto](#Estructura-del-Proyecto)  
-- [Cómo se generan las imágenes](#-cómo-se-generan-las-imágenes)  
-  - [Personajes](#personajes)  
-  - [Banderas para refranes y proverbios](#banderas-para-refranes-y-proverbios)  
-- [Cómo actualizar los datos](#-cómo-actualizar-los-datos)  
-- [Cómo ejecutar localmente](#-cómo-ejecutar-localmente)  
-- [Tecnologías Usadas](#-tecnologías-usadas)  
-- [Despliegue](#-despliegue)  
-- [Licencia](#-licencia)  
-- [Autor](#-autor)
+- [Cómo se generan las imágenes](#Cómo-se-generan-las-imágenes)  
+  - [Personajes](#Personajes)  
+  - [Banderas para refranes y proverbios](#Banderas-para-refranes-y-proverbios)  
+- [Cómo actualizar los datos](#Cómo-actualizar-los-datos)  
+- [Cómo ejecutar localmente](#Cómo-ejecutar-localmente)  
+- [Tecnologías Usadas](#Tecnologías-usadas)  
+- [Despliegue](#Despliegue)  
+- [Licencia](#Licencia)  
+- [Autor](#Autor)
 
 
 ## Estructura del Proyecto
@@ -54,7 +54,7 @@
 
 Las imágenes de **personajes** y **banderas** se crean con **Google Gemini / Nano Banana**, usando los siguientes prompts:
 
-### PERSONAJES
+### Personajes
 ```
 A historically accurate colored portrait of '[NOMBRE DEL AUTOR]' isolated on a pure white background.
 Traditional colored pencil and graphite style, fine cross-hatching, and delicate academic shading.
@@ -62,7 +62,7 @@ Natural skin tones and soft colors. Crisp outlines, high contrast edges, and ref
 Focus on facial features and authentic historical iconography. High resolution, 8k.
 ```
 
-### BANDERAS PARA REFRANES Y PROVERBIOS
+### Banderas para refranes y proverbios
 ```
 A historically accurate illustration of the '[NOMBRE DE LA BANDERA O PAÍS]' flag, isolated on a pure white background.
 Traditional colored pencil and graphite style, fine cross-hatching, and delicate academic shading on the fabric folds.
@@ -107,7 +107,7 @@ Accede en: `http://localhost:8000` (o el puerto indicado).
 
 ---
 
-## Tecnologías Usadas
+## Tecnologías usadas
 
 - **Vanilla JavaScript**: Manejo de datos asíncrono (Fetch API)
 - **JSON**: Almacenamiento de citas y metadatos
