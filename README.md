@@ -70,59 +70,7 @@ Soft, aged colors and natural pigment tones. Crisp outlines, high contrast edges
 Focus on textile texture, authentic historical embroidery, and heraldic details. High resolution, 8k.
 ```
 
-Después, mediante el script `js/transparente.js`, se eliminan los fondos blancos para generar PNGs con transparencia:
-```javascript
-import fs from "fs";
-import path from "path";
-import sharp from "sharp";
-
-const __dirname = path.resolve();
-const inputDir = path.join(__dirname, "../assets/autores");
-const outputDir = path.join(inputDir, "transparente");
-
-if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
-
-const colorFondo = { r: 255, g: 255, b: 255 };
-const tolerancia = 30;
-
-function colorCerca(r, g, b, target, tol) {
-  return (
-    Math.abs(r - target.r) <= tol &&
-    Math.abs(g - target.g) <= tol &&
-    Math.abs(b - target.b) <= tol
-  );
-}
-
-const files = fs.readdirSync(inputDir).filter(f => f.toLowerCase().endsWith(".png"));
-
-for (const file of files) {
-  const inputPath = path.join(inputDir, file);
-  const outputPath = path.join(outputDir, file);
-
-  try {
-    const image = sharp(inputPath).ensureAlpha();
-    const { data, info } = await image.raw().toBuffer({ resolveWithObject: true });
-
-    for (let i = 0; i < data.length; i += 4) {
-      const r = data[i];
-      const g = data[i + 1];
-      const b = data[i + 2];
-
-      if (colorCerca(r, g, b, colorFondo, tolerancia)) {
-        data[i + 3] = 0;
-      }
-    }
-
-    await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
-      .png()
-      .toFile(outputPath);
-
-    console.log("✅ Procesada:", file);
-  } catch (err) {
-    console.error("❌ Error procesando", file, err);
-  }
-}
-```
+Después, mediante el script `js/transparente.js`, se eliminan los fondos blancos para generar PNGs con transparencia.
 
 ---
 
