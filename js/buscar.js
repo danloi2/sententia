@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       backupHTML = container.innerHTML;
     }
 
+    // Filtrar resultados
     const resultados = CITAS.filter(item => {
       return Object.values(item).some(val =>
         val && val.toString().toLowerCase().includes(query)
@@ -35,6 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function mostrarLista(lista, query) {
+    // Guardamos la lista globalmente para usar índices
+    window.listaResultados = lista;
+
     container.innerHTML = `
       <div id="lista-resultados" class="col-11 col-md-10 col-lg-8 mx-auto fade-in">
         <div class="card border-0 shadow-lg">
@@ -46,31 +50,44 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
           <div class="card-body p-4" style="max-height: 50vh; overflow-y: auto;">
             <div class="list-group list-group-flush">
-              ${lista.map(item => {
-                const itemData = JSON.stringify({
-                  la: item.cita_la,
-                  orig: item.cita_original,
-                  es: item.cita_es,
-                  autor: item.autor_la || item.autor_es,
-                  contexto: [item.epoca_la, item.idioma_la, item.nacion_la].filter(Boolean).join(" • ")
-                }).replace(/'/g, "&apos;");
-
-                return `
-                  <button type="button" class="list-group-item list-group-item-action border-0 rounded-3 mb-2 shadow-sm p-3"
-                    onclick='mostrarCita(${itemData})'>
-                    <div class="d-flex justify-content-between align-items-center">
-                      <span class="fw-bold text-dark">${item.autor_la || "Anónimo"}</span>
-                      <span class="badge rounded-pill bg-primary-subtle text-primary border border-primary-subtle small">${item.epoca_la || ""}</span>
-                    </div>
-                    <div class="small text-muted text-truncate mt-1">${item.cita_la || item.cita_es || ""}</div>
-                  </button>`;
-              }).join("")}
+              ${lista.map((item, index) => `
+                <button type="button" class="list-group-item list-group-item-action border-0 rounded-3 mb-2 shadow-sm p-3"
+                  onclick="mostrarCita(window.listaResultados[${index}])">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-bold text-dark">${item.autor_la || "Anónimo"}</span>
+                    <span class="badge rounded-pill bg-primary-subtle text-primary border border-primary-subtle small">${item.epoca_la || ""}</span>
+                  </div>
+                  <div class="small text-muted text-truncate mt-1">${item.cita_la || item.cita_es || ""}</div>
+                </button>
+              `).join("")}
             </div>
           </div>
         </div>
       </div>`;
 
+    // Botón para cerrar resultados y restaurar backup
     const btnCerrar = document.getElementById("btnCerrar");
     if (btnCerrar) btnCerrar.addEventListener("click", () => container.innerHTML = backupHTML);
   }
+
+  function mostrarError(msg) {
+    container.innerHTML = `
+      <div class="col-10 col-md-6 mx-auto alert alert-danger shadow-sm fade-in d-flex flex-column flex-md-row align-items-start gap-3">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-exclamation-circle-fill me-2"></i>
+          <strong>Error:</strong> ${escaparHTML(msg)}
+        </div>
+        <div class="mt-2 mt-md-0 ms-md-auto">
+          <button class="btn btn-sm btn-danger" onclick="location.reload()">Reintentar</button>
+        </div>
+      </div>`;
+  }
+
+  function escaparHTML(str) {
+    if (!str) return "";
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
 });
+
