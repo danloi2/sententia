@@ -88,9 +88,13 @@ function mostrarCita(cita) {
                   )}</p>`
                 : ""
             }
-            <p class="h5 text-dark border-top pt-3 mt-3">${escaparHTML(
-              cita.cita_es
-            )}</p>
+            ${
+              cita.cita_es && cita.cita_es !== cita.cita_original
+                ? `<p class="h5 text-dark border-top pt-3 mt-3">${escaparHTML(
+                    cita.cita_es
+                  )}</p>`
+                : ""
+            }
           </blockquote>
           <figcaption class="blockquote-footer mt-4 text-end mb-0">
             <strong class="text-dark">${escaparHTML(datosCopia.autor)}</strong>
