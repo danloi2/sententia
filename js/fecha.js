@@ -6,16 +6,29 @@
 const Utils = (() => {
   // Convierte número a romano
   function numeroRomano(num) {
-    if (!num || num === 0) return '';
+    if (!num || num === 0) return "";
     const mapa = [
-      ["M", 1000], ["CM", 900], ["D", 500], ["CD", 400],
-      ["C", 100], ["XC", 90], ["L", 50], ["XL", 40],
-      ["X", 10], ["IX", 9], ["V", 5], ["IV", 4], ["I", 1]
+      ["M", 1000],
+      ["CM", 900],
+      ["D", 500],
+      ["CD", 400],
+      ["C", 100],
+      ["XC", 90],
+      ["L", 50],
+      ["XL", 40],
+      ["X", 10],
+      ["IX", 9],
+      ["V", 5],
+      ["IV", 4],
+      ["I", 1],
     ];
-    let res = '';
+    let res = "";
     let n = num;
     for (const [l, v] of mapa) {
-      while (n >= v) { res += l; n -= v; }
+      while (n >= v) {
+        res += l;
+        n -= v;
+      }
     }
     return res;
   }
@@ -26,19 +39,35 @@ const Utils = (() => {
 
     // Icono según día/nocturna
     const esNocturna = h < 6 || h >= 19;
-    const icono = esNocturna ? 'bi-moon-stars-fill' : 'bi-sun-fill';
-    const colorIcono = esNocturna ? 'text-info' : 'text-warning';
+    const icono = esNocturna ? "bi-moon-stars-fill" : "bi-sun-fill";
+    const colorIcono = esNocturna ? "text-info" : "text-warning";
 
     // Horas latinas
     const horasRomanas = {
-      0: "sexta vigilia nocturna", 1: "prima vigilia", 2: "secunda vigilia",
-      3: "tertia vigilia", 4: "quarta vigilia", 5: "quinta vigilia",
-      6: "prima hora", 7: "secunda hora", 8: "tertia hora",
-      9: "quarta hora", 10: "quinta hora", 11: "sexta hora",
-      12: "sexta hora", 13: "septima hora", 14: "octava hora",
-      15: "nona hora", 16: "decima hora", 17: "undecima hora",
-      18: "duodecima hora", 19: "prima vigilia nocturna", 20: "secunda vigilia nocturna",
-      21: "tertia vigilia nocturna", 22: "quarta vigilia nocturna", 23: "quinta vigilia nocturna"
+      0: "sexta vigilia nocturna",
+      1: "prima vigilia",
+      2: "secunda vigilia",
+      3: "tertia vigilia",
+      4: "quarta vigilia",
+      5: "quinta vigilia",
+      6: "prima hora",
+      7: "secunda hora",
+      8: "tertia hora",
+      9: "quarta hora",
+      10: "quinta hora",
+      11: "sexta hora",
+      12: "sexta hora",
+      13: "septima hora",
+      14: "octava hora",
+      15: "nona hora",
+      16: "decima hora",
+      17: "undecima hora",
+      18: "duodecima hora",
+      19: "prima vigilia nocturna",
+      20: "secunda vigilia nocturna",
+      21: "tertia vigilia nocturna",
+      22: "quarta vigilia nocturna",
+      23: "quinta vigilia nocturna",
     };
 
     const textoHora = horasRomanas[h];
@@ -53,15 +82,36 @@ const Utils = (() => {
   // Genera fecha completa en latín con Bootstrap
   function fechaHoyLatina() {
     const f = new Date();
-    const dias = ['Die Dominica', 'Die Lunae', 'Die Martis', 'Die Mercurii', 'Die Iovis', 'Die Veneris', 'Die Saturni'];
-    const meses = ['Ianuarii', 'Februarii', 'Martii', 'Aprilis', 'Maii', 'Iunii', 'Iulii', 'Augusti', 'Septembris', 'Octobris', 'Novembris', 'Decembris'];
+    const dias = [
+      "Die Dominica",
+      "Die Lunae",
+      "Die Martis",
+      "Die Mercurii",
+      "Die Iovis",
+      "Die Veneris",
+      "Die Saturni",
+    ];
+    const meses = [
+      "Ianuarii",
+      "Februarii",
+      "Martii",
+      "Aprilis",
+      "Maii",
+      "Iunii",
+      "Iulii",
+      "Augusti",
+      "Septembris",
+      "Octobris",
+      "Novembris",
+      "Decembris",
+    ];
 
     const diaSemana = dias[f.getDay()];
     const diaMes = numeroRomano(f.getDate());
     const mesNombre = meses[f.getMonth()];
     const añoRomano = numeroRomano(f.getFullYear());
 
-    const fechaParte = `<span class="text-secondary small fst-italic">${diaSemana}, die ${diaMes} mensis ${mesNombre}<br>Anno Domini ${añoRomano}</span>`;
+    const fechaParte = `<span class="text-secondary small fst-iiannotaliciannotalicannotalic">${diaSemana}, die ${diaMes} mensis ${mesNombre}<br>Anno Domini ${añoRomano}</span>`;
     const horaParte = obtenerHoraLatina();
 
     return `
@@ -75,8 +125,8 @@ const Utils = (() => {
 })();
 
 // Renderizar al cargar DOM
-document.addEventListener('DOMContentLoaded', () => {
-  const fechaEl = document.getElementById('fecha');
+document.addEventListener("DOMContentLoaded", () => {
+  const fechaEl = document.getElementById("fecha");
   if (fechaEl) {
     fechaEl.innerHTML = Utils.fechaHoyLatina();
   }
