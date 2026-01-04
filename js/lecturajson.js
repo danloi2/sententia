@@ -54,6 +54,7 @@ function renderStats(data) {
 
 function mostrarCita(cita) {
   const container = document.getElementById("cita-container");
+
   const metadatosArray = [cita.epoca_la, cita.idioma_la, cita.nacion_la].filter(
     Boolean
   );
@@ -70,62 +71,99 @@ function mostrarCita(cita) {
   const jsonCopia = JSON.stringify(datosCopia).replace(/'/g, "&apos;");
 
   container.innerHTML = `
-    <div class="col-11 col-md-10 col-lg-8 fade-in mx-auto">
-      <figure class="card border-0 shadow-lg" role="region" aria-label="Sententia">
-        <div class="card-body p-4 p-md-5 border-start border-5 border-primary">
-          <blockquote class="blockquote mb-0 text-start">
-            ${
-              cita.cita_la
-                ? `<p class="display-6 fs-3 fw-bold text-primary mb-2">${escaparHTML(
-                    cita.cita_la
-                  )}</p>`
-                : ""
-            }
-            ${
-              cita.cita_original && cita.cita_original !== cita.cita_la
-                ? `<p class="h6 fst-italic text-muted mb-3 opacity-75 small">${escaparHTML(
-                    cita.cita_original
-                  )}</p>`
-                : ""
-            }
-            ${
-              cita.cita_es && cita.cita_es !== cita.cita_original
-                ? `<p class="h5 text-dark border-top pt-3 mt-3">${escaparHTML(
-                    cita.cita_es
-                  )}</p>`
-                : ""
-            }
-          </blockquote>
-          <figcaption class="blockquote-footer mt-4 text-end mb-0">
-            <strong class="text-dark">${escaparHTML(datosCopia.autor)}</strong>
-            <div class="small text-muted">${escaparHTML(
-              contextoFormateado
-            )}</div>
-          </figcaption>
-          <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top border-light">
-            <button class="btn btn-sm btn-outline-primary rounded-pill px-3" onclick='prepararCopia(this, ${jsonCopia})'>
-              <i class="bi bi-clipboard-check"></i> Copiare
-            </button>
-            <button class="btn btn-sm btn-primary rounded-pill px-3" onclick="location.reload()">
-              <i class="bi bi-shuffle"></i> Sententia Nova
-            </button>
+  <div class="col-11 col-md-10 col-lg-8 fade-in mx-auto">
+    <figure class="card border-0 shadow-lg" role="region" aria-label="Sententia">
+      <div class="card-body p-4 p-md-5">
+
+        <div class="row g-4 align-items-start">
+
+          ${
+            cita.imagen
+              ? `
+              <!-- IMAGEN -->
+              <div class="col-12 col-md-4 text-center">
+                <img
+                  src="${escaparHTML(cita.imagen)}"
+                  alt="Imagen asociada a ${escaparHTML(
+                    cita.autor_la || "sententia"
+                  )}"
+                  class="img-fluid rounded shadow-sm mb-2"
+                  loading="lazy"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imagenModal"
+                  data-atribucion="${escaparHTML(cita.imagen_atr || "")}"
+                />
+                ${
+                  cita.imagen_atr
+                    ? `<div class="small text-muted fst-italic">
+                        ${escaparHTML(cita.imagen_atr)}
+                      </div>`
+                    : ""
+                }
+              </div>
+              `
+              : ""
+          }
+
+          <!-- TEXTO CITA -->
+          <div class="${
+            cita.imagen ? "col-12 col-md-8" : "col-12"
+          } border-start border-5 border-primary ps-md-4">
+
+            <blockquote class="blockquote mb-0 text-start">
+              ${
+                cita.cita_la
+                  ? `<p class="fs-3 fw-bold text-primary mb-2">
+                      ${escaparHTML(cita.cita_la)}
+                    </p>`
+                  : ""
+              }
+              ${
+                cita.cita_original && cita.cita_original !== cita.cita_la
+                  ? `<p class="fst-italic text-muted mb-3 small">
+                      ${escaparHTML(cita.cita_original)}
+                    </p>`
+                  : ""
+              }
+              ${
+                cita.cita_es && cita.cita_es !== cita.cita_original
+                  ? `<p class="h5 text-dark border-top pt-3 mt-3">
+                      ${escaparHTML(cita.cita_es)}
+                    </p>`
+                  : ""
+              }
+            </blockquote>
+
+            <figcaption class="blockquote-footer mt-4 text-end mb-0">
+              <strong class="text-dark">
+                ${escaparHTML(datosCopia.autor)}
+              </strong>
+              <div class="small text-muted">
+                ${escaparHTML(contextoFormateado)}
+              </div>
+            </figcaption>
+
+            <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top border-light">
+              <button
+                class="btn btn-sm btn-outline-primary rounded-pill px-3"
+                onclick='prepararCopia(this, ${jsonCopia})'
+              >
+                <i class="bi bi-clipboard-check"></i> Copiare
+              </button>
+              <button
+                class="btn btn-sm btn-primary rounded-pill px-3"
+                onclick="location.reload()"
+              >
+                <i class="bi bi-shuffle"></i> Sententia Nova
+              </button>
+            </div>
+
           </div>
         </div>
-      </figure>
-    </div>`;
-}
 
-function mostrarError(msg) {
-  document.getElementById("cita-container").innerHTML = `
-    <div class="col-10 col-md-6 mx-auto alert alert-danger shadow-sm fade-in d-flex flex-column flex-md-row align-items-start gap-3">
-      <div class="d-flex align-items-center">
-        <i class="bi bi-exclamation-circle-fill me-2"></i>
-        <strong>Error:</strong> ${escaparHTML(msg)}
       </div>
-      <div class="mt-2 mt-md-0 ms-md-auto">
-        <button class="btn btn-sm btn-danger" onclick="location.reload()">Reintentar</button>
-      </div>
-    </div>`;
+    </figure>
+  </div>`;
 }
 
 function escaparHTML(str) {
@@ -134,3 +172,13 @@ function escaparHTML(str) {
   div.textContent = str;
   return div.innerHTML;
 }
+
+document.addEventListener("click", (e) => {
+  const img = e.target.closest("[data-bs-target='#imagenModal']");
+  if (!img) return;
+
+  document.getElementById("modalImagen").src = img.src;
+  document.getElementById("modalImagen").alt = img.alt;
+  document.getElementById("modalAtribucion").textContent =
+    img.dataset.atribucion || "";
+});
