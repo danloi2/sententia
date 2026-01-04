@@ -52,20 +52,13 @@
               >
                 <i class="bi bi-github"></i>
               </a>
-              <a
-              href="https://github.com/danloi2/sententia/releases/latest"
-              target="_blank"
-              data-bs-toggle="tooltip"
-              title="Editio"
+              <span
+                class="badge bg-primary"
+                data-bs-toggle="tooltip"
+                title="Editio"
               >
-              <img
-              src="https://img.shields.io/github/v/release/danloi2/sententia?style=flat"
-              alt="Version"
-              class="rounded-pill"
-              />
-              </a>
-
-
+                v<span id="version">1.0.0</span>
+              </span>
             </div>
           </div>
 
@@ -172,5 +165,19 @@
         });
       });
     </script>
+    <!-- Modal imagen -->
+    <div class="modal fade" id="imagenModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img id="modalImagen" src="" class="img-fluid rounded" alt="" />
+            <div
+              id="modalAtribucion"
+              class="small text-muted fst-italic mt-2"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
