@@ -14,19 +14,19 @@
 ---
 ## 📑 Índice
 
-- [Estructura del Proyecto](##-estructura-del-proyecto)  
+- [Estructura del Proyecto](#-estructura-del-proyecto)  
 - [Cómo se generan las imágenes](#-cómo-se-generan-las-imágenes)  
   - [Personajes](#personajes)  
   - [Banderas para refranes y proverbios](#banderas-para-refranes-y-proverbios)  
-- [Cómo actualizar los datos](#ℹ️-cómo-actualizar-los-datos)  
-- [Cómo ejecutar localmente](#🚀-cómo-ejecutar-localmente)  
-- [Tecnologías Usadas](#🛠️-tecnologías-usadas)  
-- [Despliegue](#🌐-despliegue)  
-- [Licencia](#📜-licencia)  
-- [Autor](#👤-autor)
+- [Cómo actualizar los datos](#-cómo-actualizar-los-datos)  
+- [Cómo ejecutar localmente](#-cómo-ejecutar-localmente)  
+- [Tecnologías Usadas](#-tecnologías-usadas)  
+- [Despliegue](#-despliegue)  
+- [Licencia](#-licencia)  
+- [Autor](#-autor)
 
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 ```
 📂 db/                      Repositorio de datos portátil
   📄 esaldi.xlsx           Archivo de origen de citas
@@ -50,7 +50,7 @@
 
 ---
 
-## 📝 Cómo se generan las imágenes
+## Cómo se generan las imágenes
 
 Las imágenes de **personajes** y **banderas** se crean con **Google Gemini / Nano Banana**, usando los siguientes prompts:
 
@@ -74,7 +74,7 @@ Después, mediante el script `js/transparente.js`, se eliminan los fondos blanco
 
 ---
 
-## ℹ️ Cómo actualizar los datos
+## Cómo actualizar los datos
 
 Para refrescar la base de datos:
 
@@ -88,7 +88,7 @@ Esto generará automáticamente `esaldi.json` listo para la aplicación.
 
 ---
 
-## 🚀 Cómo ejecutar localmente
+## Cómo ejecutar localmente
 
 Al ser una aplicación basada en módulos JS y usando `fetch()`, necesitas un servidor local:
 
@@ -107,7 +107,7 @@ Accede en: `http://localhost:8000` (o el puerto indicado).
 
 ---
 
-## 🛠️ Tecnologías Usadas
+## Tecnologías Usadas
 
 - **Vanilla JavaScript**: Manejo de datos asíncrono (Fetch API)
 - **JSON**: Almacenamiento de citas y metadatos
@@ -116,19 +116,19 @@ Accede en: `http://localhost:8000` (o el puerto indicado).
 
 ---
 
-## 🌐 Despliegue
+## Despliegue
 
 Como no utiliza PHP ni SQL, **GitHub Pages** funciona perfectamente. Solo sube los archivos a un repositorio y habilita Pages en la configuración.
 
 ---
 
-## 📜 Licencia
+## Licencia
 
 Este proyecto está bajo **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
 
 ---
 
-## 👤 Autor
+## Autor
 
 [![GitHub](https://img.shields.io/badge/GitHub-Daniel_Losada-181717?logo=github&logoColor=white)](https://github.com/danloi2)  
 [![Investigador EHU](https://img.shields.io/badge/Researcher-EHU-blue?logo=researchgate)](https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle)
