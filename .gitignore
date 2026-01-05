@@ -1,7 +1,3 @@
-# Datos de contenedor y volúmenes
-mariadb_data2/
-web/vendor/
-
 # Configuración local sensible
 .env
 
