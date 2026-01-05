@@ -44,30 +44,30 @@ const Utils = (() => {
 
     // Horas latinas
     const horasRomanas = {
-      0: "sexta vigilia nocturna",
+      0: "media nox", // medianoche
       1: "prima vigilia",
       2: "secunda vigilia",
       3: "tertia vigilia",
       4: "quarta vigilia",
-      5: "quinta vigilia",
-      6: "prima hora",
-      7: "secunda hora",
-      8: "tertia hora",
-      9: "quarta hora",
-      10: "quinta hora",
-      11: "sexta hora",
-      12: "sexta hora",
-      13: "septima hora",
-      14: "octava hora",
-      15: "nona hora",
-      16: "decima hora",
-      17: "undecima hora",
-      18: "duodecima hora",
-      19: "prima vigilia nocturna",
-      20: "secunda vigilia nocturna",
-      21: "tertia vigilia nocturna",
-      22: "quarta vigilia nocturna",
-      23: "quinta vigilia nocturna",
+      5: "quinta vigilia", // o "diluculum" (amanecer)
+      6: "hora prima",
+      7: "hora secunda",
+      8: "hora tertia",
+      9: "hora quarta",
+      10: "hora quinta",
+      11: "hora sexta",
+      12: "hora sexta", // mediodía (meridies)
+      13: "hora septima",
+      14: "hora octava",
+      15: "hora nona",
+      16: "hora decima",
+      17: "hora undecima",
+      18: "hora duodecima", // o "crepusculum" (anochecer)
+      19: "prima vigilia",
+      20: "secunda vigilia",
+      21: "tertia vigilia",
+      22: "quarta vigilia",
+      23: "quinta vigilia", // o "concubium" (hora de acostarse)
     };
 
     const textoHora = horasRomanas[h];
