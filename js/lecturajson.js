@@ -3,7 +3,7 @@
  * Lógica principal para JSON estático de citas.
  */
 
-let CITAS = []; // variable global para usarla también en buscar.js
+let CITAS = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   fetch("db/esaldi.json")
@@ -44,7 +44,7 @@ function renderStats(data) {
       <div class="col-auto mb-2">
         <span class="small text-secondary bg-white border rounded-pill px-3 py-1 shadow-sm d-flex align-items-center">
           <i class="bi bi-people-fill text-primary me-1"></i> 
-          <strong>${autoresUnicos}</strong><span class="ms-2"> Auctores</span>
+          <strong>${autoresUnicos}</strong><span class="ms-2">Auctores</span>
         </span>
       </div>
     </div>`;
@@ -58,14 +58,16 @@ function mostrarCita(cita) {
   );
   const contextoFormateado = metadatosArray.join(" • ");
 
-  // 👉 Imagen por defecto
+  const referenciaFormateada =
+    cita.referencia && cita.referencia.trim() !== ""
+      ? cita.referencia.trim()
+      : null;
+
   const imagenFinal =
     cita.imagen && cita.imagen !== "0"
       ? cita.imagen
       : "./assets/empty.png";
 
-  // 👉 Texto bajo la imagen:
-  // prioridad: imagen_atr → autor_la → nada
   const textoImagen =
     cita.imagen_atr && cita.imagen_atr !== "0"
       ? cita.imagen_atr
@@ -77,6 +79,7 @@ function mostrarCita(cita) {
     es: cita.cita_es || "",
     autor: cita.autor_la || "Anónimo",
     contexto: contextoFormateado,
+    referencia: referenciaFormateada || "",
   };
 
   const jsonCopia = JSON.stringify(datosCopia).replace(/'/g, "&apos;");
@@ -85,16 +88,12 @@ function mostrarCita(cita) {
     <div class="col-11 col-md-10 col-lg-8 fade-in mx-auto">
       <figure class="card border-0 shadow-lg" role="region" aria-label="Sententia">
         <div class="card-body p-4 p-md-5">
-
           <div class="row g-4 align-items-start">
 
-            <!-- IMAGEN -->
             <div class="col-12 col-md-4 text-center">
               <img
                 src="${escaparHTML(imagenFinal)}"
-                alt="Imagen asociada a ${escaparHTML(
-                  cita.autor_la || "sententia"
-                )}"
+                alt="Imagen asociada a ${escaparHTML(cita.autor_la || "sententia")}"
                 class="img-fluid rounded shadow-sm mb-2"
                 loading="lazy"
                 data-bs-toggle="modal"
@@ -110,9 +109,7 @@ function mostrarCita(cita) {
               }
             </div>
 
-            <!-- TEXTO -->
             <div class="col-12 col-md-8 border-start border-5 border-primary ps-md-4">
-
               <blockquote class="blockquote mb-0 text-start">
                 ${
                   cita.cita_la
@@ -141,7 +138,19 @@ function mostrarCita(cita) {
                 <strong class="text-dark">
                   ${escaparHTML(datosCopia.autor)}
                 </strong>
-                <div class="small text-muted">
+
+                ${
+                  referenciaFormateada
+                    ? `<div class="mt-1">
+                         <span class="badge bg-light text-secondary border rounded-pill px-3 py-1">
+                           <i class="bi bi-book me-1"></i>
+                           ${escaparHTML(referenciaFormateada)}
+                         </span>
+                       </div>`
+                    : ""
+                }
+
+                <div class="small text-muted mt-1">
                   ${escaparHTML(contextoFormateado)}
                 </div>
               </figcaption>
@@ -160,10 +169,8 @@ function mostrarCita(cita) {
                   <i class="bi bi-shuffle"></i> Sententia Nova
                 </button>
               </div>
-
             </div>
           </div>
-
         </div>
       </figure>
     </div>`;
@@ -183,7 +190,6 @@ function escaparHTML(str) {
   return div.innerHTML;
 }
 
-// Modal imagen
 document.addEventListener("click", (e) => {
   const img = e.target.closest("[data-bs-target='#imagenModal']");
   if (!img) return;
