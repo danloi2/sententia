@@ -52,7 +52,18 @@
 
 ## Cómo se generan las imágenes
 
-Las imágenes de **personajes** y **banderas** se crean con **Google Gemini / Nano Banana**, usando los siguientes prompts:
+Las imágenes asociadas a autores y banderas se generan mediante **Google Gemini (Nano Banana)** siguiendo prompts consistentes para mantener un estilo visual histórico y uniforme.
+
+### 🎨 Estilo visual
+
+- Dibujo tradicional en lápiz de color y grafito
+- Detalles finos de sombreado cruzado y texturas
+- Colores naturales y suaves
+- Líneas nítidas y bordes contrastados
+- Alta resolución (8k)
+- Fondo blanco (posteriormente eliminado por `transparente.js`)
+
+Se usan los siguientes prompts:
 
 ### Personajes
 ```
