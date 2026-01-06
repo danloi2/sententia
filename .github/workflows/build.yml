@@ -1,0 +1,81 @@
+name: Build Tauri App
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+      - name: Install dependencies
+        run: npm install
+      - name: Build Tauri Linux
+        run: npm run tauri build
+      - name: Upload Linux executables
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-build
+          path: src-tauri/target/release/bundle
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+      - name: Install dependencies
+        run: npm install
+      - name: Build Tauri Windows
+        run: npm run tauri build
+      - name: Upload Windows executables
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-build
+          path: src-tauri/target/release/bundle
+
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+      - name: Install dependencies
+        run: npm install
+      - name: Build Tauri macOS
+        run: npm run tauri build
+      - name: Upload macOS executables
+        uses: actions/upload-artifact@v3
+        with:
+          name: macos-build
+          path: src-tauri/target/release/bundle
