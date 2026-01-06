@@ -1,13 +1,16 @@
 {
   "name": "sententiadiei",
-  "private": true,
   "version": "0.1.0",
-  "type": "module",
+  "description": "Sententia Diei App",
+  "main": "index.html",
   "scripts": {
-    "prepare-build": "mkdir -p dist && cp index.html js/* dist/ -r",
     "tauri": "tauri",
     "dev": "tauri dev",
-    "build": "npm run prepare-build && tauri build"
+    "build": "tauri build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0",
+    "@tauri-apps/plugin-shell": "^2.0.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.0.0"
