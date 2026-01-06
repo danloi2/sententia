@@ -28,7 +28,8 @@
     "withGlobalTauri": true
   },
   "build": {
-    "frontendDist": "../dist", 
-    "devUrl": "http://localhost:5173"
+    "beforeBuildCommand": "",
+    "frontendDist": "../",
+    "devUrl": "../"
   }
 }
