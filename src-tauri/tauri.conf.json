@@ -28,6 +28,6 @@
     "withGlobalTauri": true
   },
   "build": {
-    "frontendDist": "../"
+    "frontendDist": "../dist_temp"
   }
 }
