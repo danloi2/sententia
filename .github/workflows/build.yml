@@ -37,20 +37,23 @@ jobs:
       - name: Prepare assets (Fix for Tauri v2 root error)
         shell: bash
         run: |
-          mkdir dist_temp
-          # Copia archivos sueltos de la raíz
-          cp *.html *.json 2>/dev/null || true
+          # 1. Crear carpeta limpia
+          mkdir -p dist_temp
           
-          # Copia carpetas completas de forma recursiva
-          cp -r js dist_temp/ 2>/dev/null || true
-          cp -r db dist_temp/ 2>/dev/null || true
-          cp -r assets dist_temp/ 2>/dev/null || true
+          # 2. Copiar archivos sueltos de la raíz DIRECTO a dist_temp
+          cp index.html dist_temp/ 2>/dev/null || true
+          cp *.js dist_temp/ 2>/dev/null || true
+          cp *.css dist_temp/ 2>/dev/null || true
+          cp *.json dist_temp/ 2>/dev/null || true
           
-          # Copia cualquier archivo html/js/css que haya quedado en la raíz
-          cp *.html *.js *.css dist_temp/ 2>/dev/null || true
-
-          echo "Estructura empaquetada:"
-          ls -R dist_temp
+          # 3. Copiar carpetas completas DENTRO de dist_temp
+          [ -d js ] && cp -r js dist_temp/
+          [ -d db ] && cp -r db dist_temp/
+          [ -d assets ] && cp -r assets dist_temp/
+          
+          # 4. Verificación crucial: Si esto sale vacío en los logs, la app saldrá blanca
+          echo "--- CONTENIDO FINAL DE DIST_TEMP ---"
+          ls -F dist_temp
 
       - name: Build Tauri App
         run: npm run build
