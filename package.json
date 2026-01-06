@@ -2,7 +2,7 @@
   "name": "sententiadiei",
   "version": "4.0.0",
   "description": "Sententia Diei App",
-  "main": "src/index.html",
+  "main": "docs/index.html",
   "scripts": {
     "tauri": "tauri",
     "dev": "tauri dev",
