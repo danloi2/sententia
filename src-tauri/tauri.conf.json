@@ -28,8 +28,6 @@
     "withGlobalTauri": true
   },
   "build": {
-    "beforeBuildCommand": "",
-    "frontendDist": "../",
-    "devUrl": "../"
+    "frontendDist": "../"
   }
 }
