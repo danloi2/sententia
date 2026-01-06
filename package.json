@@ -4,9 +4,10 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "prepare-build": "mkdir -p dist && cp index.html js/* dist/ -r",
     "tauri": "tauri",
     "dev": "tauri dev",
-    "build": "tauri build"
+    "build": "npm run prepare-build && tauri build"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.0.0"
