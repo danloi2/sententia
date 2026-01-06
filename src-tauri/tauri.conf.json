@@ -29,6 +29,6 @@
   },
   "build": {
     "beforeBuildCommand": "",
-    "frontendDist": "../src"
+    "frontendDist": "../docs"
   }
 }
