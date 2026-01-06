@@ -3,3 +3,8 @@
 
 # VS Code
 .vscode/
+
+node_modules/
+src-tauri/target/
+dist/           # si usas algún build local
+*.log
