@@ -35,13 +35,22 @@ jobs:
         run: npm install
 
       - name: Prepare assets (Fix for Tauri v2 root error)
-        # Este paso crea la carpeta temporal y copia tus archivos web
-        # Evita que Tauri se queje de ver node_modules o src-tauri
         shell: bash
         run: |
           mkdir dist_temp
-          cp *.html *.js *.css *.png *.jpg *.json dist_temp/ 2>/dev/null || true
-          # Si tienes carpetas de imágenes o fuentes, añade: cp -r nombre_carpeta dist_temp/
+          # Copia archivos sueltos de la raíz
+          cp *.html *.json 2>/dev/null || true
+          
+          # Copia carpetas completas de forma recursiva
+          cp -r js dist_temp/ 2>/dev/null || true
+          cp -r db dist_temp/ 2>/dev/null || true
+          cp -r assets dist_temp/ 2>/dev/null || true
+          
+          # Copia cualquier archivo html/js/css que haya quedado en la raíz
+          cp *.html *.js *.css dist_temp/ 2>/dev/null || true
+
+          echo "Estructura empaquetada:"
+          ls -R dist_temp
 
       - name: Build Tauri App
         run: npm run build
