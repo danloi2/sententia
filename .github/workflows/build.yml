@@ -13,20 +13,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
+
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           profile: minimal
           override: true
+
+      - name: Clean node_modules
+        run: rm -rf node_modules package-lock.json
+
       - name: Install dependencies
         run: npm install
+
+      - name: Verify Tauri version
+        run: npx tauri --version
+
       - name: Build Tauri Linux
         run: npm run build
+
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -38,20 +49,33 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
+
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           profile: minimal
           override: true
+
+      - name: Clean node_modules
+        run: |
+          rd /s /q node_modules
+          del package-lock.json
+
       - name: Install dependencies
         run: npm install
+
+      - name: Verify Tauri version
+        run: npx tauri --version
+
       - name: Build Tauri Windows
         run: npm run build
+
       - name: Upload Windows artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -63,20 +87,31 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
+
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
           profile: minimal
           override: true
+
+      - name: Clean node_modules
+        run: rm -rf node_modules package-lock.json
+
       - name: Install dependencies
         run: npm install
+
+      - name: Verify Tauri version
+        run: npx tauri --version
+
       - name: Build Tauri macOS
         run: npm run build
+
       - name: Upload macOS artifacts
         uses: actions/upload-artifact@v4
         with:
