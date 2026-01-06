@@ -9,6 +9,7 @@ on:
 jobs:
 
   build-linux:
+    name: Build Linux
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -25,14 +26,15 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build Tauri Linux
-        run: npm run tauri build
-      - name: Upload Linux executables
+        run: npm run build
+      - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
         with:
           name: linux-build
           path: src-tauri/target/release/bundle
 
   build-windows:
+    name: Build Windows
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -49,14 +51,15 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build Tauri Windows
-        run: npm run tauri build
-      - name: Upload Windows executables
+        run: npm run build
+      - name: Upload Windows artifacts
         uses: actions/upload-artifact@v4
         with:
           name: windows-build
           path: src-tauri/target/release/bundle
 
   build-macos:
+    name: Build macOS
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
@@ -73,8 +76,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build Tauri macOS
-        run: npm run tauri build
-      - name: Upload macOS executables
+        run: npm run build
+      - name: Upload macOS artifacts
         uses: actions/upload-artifact@v4
         with:
           name: macos-build
