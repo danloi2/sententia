@@ -9,6 +9,7 @@
 
 **Sententia diei** es una aplicación web ligera que muestra **citas históricas en latín** con sus traducciones. Funciona completamente de forma **estática**, usando **JavaScript** para leer datos desde **JSON**.
 
+![Sententia diei](assets/sententiadiei.png)
 
 ---
 ## 📑 Índice
