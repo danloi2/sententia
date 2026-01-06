@@ -1,5 +1,4 @@
 name: Build Tauri App
-
 on:
   push:
     branches: [ main ]
@@ -7,114 +6,53 @@ on:
     branches: [ main ]
 
 jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-latest, ubuntu-22.04, windows-latest]
 
-  build-linux:
-    name: Build Linux
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          cache: 'npm'
 
-      - name: Setup Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          profile: minimal
-          override: true
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
 
-      - name: Clean node_modules
-        run: rm -rf node_modules package-lock.json
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Verify Tauri version
-        run: npx tauri --version
-
-      - name: Build Tauri Linux
-        run: npm run build
-
-      - name: Upload Linux artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: linux-build
-          path: src-tauri/target/release/bundle
-
-  build-windows:
-    name: Build Windows
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Setup Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          profile: minimal
-          override: true
-
-      - name: Clean node_modules
+      - name: Install dependencies (ubuntu only)
+        if: matrix.platform == 'ubuntu-22.04'
         run: |
-          rd /s /q node_modules
-          del package-lock.json
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
 
-      - name: Install dependencies
+      - name: Install frontend dependencies
         run: npm install
 
-      - name: Verify Tauri version
-        run: npx tauri --version
+      - name: Prepare assets (Fix for Tauri v2 root error)
+        # Este paso crea la carpeta temporal y copia tus archivos web
+        # Evita que Tauri se queje de ver node_modules o src-tauri
+        shell: bash
+        run: |
+          mkdir dist_temp
+          cp *.html *.js *.css *.png *.jpg *.json dist_temp/ 2>/dev/null || true
+          # Si tienes carpetas de imágenes o fuentes, añade: cp -r nombre_carpeta dist_temp/
 
-      - name: Build Tauri Windows
+      - name: Build Tauri App
         run: npm run build
 
-      - name: Upload Windows artifacts
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: windows-build
-          path: src-tauri/target/release/bundle
-
-  build-macos:
-    name: Build macOS
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Setup Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          profile: minimal
-          override: true
-
-      - name: Clean node_modules
-        run: rm -rf node_modules package-lock.json
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Verify Tauri version
-        run: npx tauri --version
-
-      - name: Build Tauri macOS
-        run: npm run build
-
-      - name: Upload macOS artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: macos-build
-          path: src-tauri/target/release/bundle
-
+          name: ${{ matrix.platform }}-build
+          path: |
+            src-tauri/target/release/bundle/msi/*.msi
+            src-tauri/target/release/bundle/setup.exe
+            src-tauri/target/release/bundle/dmg/*.dmg
+            src-tauri/target/release/bundle/deb/*.deb
+            src-tauri/target/release/bundle/appimage/*.AppImage
