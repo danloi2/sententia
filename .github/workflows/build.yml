@@ -4,7 +4,6 @@
 
 name: Build Tauri App
 
-# Trigger workflow on push or pull request to main branch
 on:
   push:
     branches: [ main ]
@@ -13,40 +12,31 @@ on:
 
 jobs:
   build:
-    # Run jobs on multiple platforms in parallel
     strategy:
       fail-fast: false
       matrix:
+        # Nota: Ubuntu generará DEB, RPM y AppImage
         platform: [macos-latest, ubuntu-22.04, windows-latest]
 
     runs-on: ${{ matrix.platform }}
 
     steps:
-      # ------------------------------
-      # Step 1: Checkout repository
-      # ------------------------------
+      # 1. Descargar el código
       - uses: actions/checkout@v4
 
-      # ------------------------------
-      # Step 2: Setup Node.js
-      # ------------------------------
+      # 2. Configurar Node.js (necesario para procesar imágenes y Tauri)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
 
-      # ------------------------------
-      # Step 3: Install Rust (stable)
-      # Required for building Tauri apps
-      # ------------------------------
+      # 3. Instalar Rust (necesario para el núcleo de Tauri)
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
-      # ------------------------------
-      # Step 4: Install Linux dependencies (GTK/WebKit etc.)
-      # Only needed on Ubuntu
-      # ------------------------------
+      # 4. Instalar dependencias de Linux (Solo en Ubuntu)
+      # Aquí hemos añadido 'rpm' para que pueda generar ese paquete
       - name: Install system dependencies (Ubuntu)
         if: matrix.platform == 'ubuntu-22.04'
         run: |
@@ -54,27 +44,26 @@ jobs:
           sudo apt-get install -y \
             libgtk-3-dev \
             libwebkit2gtk-4.1-dev \
+            libjavascriptcoregtk-4.1-dev \
+            libsoup-3.0-dev \
             libappindicator3-dev \
             librsvg2-dev \
-            patchelf
+            patchelf \
+            librpm-dev \
+            rpm
 
-      # ------------------------------
-      # Step 5: Install frontend dependencies
-      # ------------------------------
+      # 5. Instalar dependencias de Node.js
+      # Esto instala sharp, potrace, imagetracerjs, etc.
       - name: Install frontend dependencies
         run: npm install
 
-      # ------------------------------
-      # Step 6: Build Tauri App
-      # This will generate all bundles: DEB, RPM, AppImage, MSI, DMG
-      # ------------------------------
+      # 6. Compilar la App
+      # Si pusiste "npm run process-imgs" en beforeBuildCommand de tauri.conf.json,
+      # este paso generará automáticamente los PNG y SVG antes de compilar.
       - name: Build Tauri App
         run: npm run build
 
-      # ------------------------------
-      # Step 7: Upload artifacts
-      # Collect installers for each platform
-      # ------------------------------
+      # 7. Guardar los archivos generados (Artifacts)
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
