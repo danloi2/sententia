@@ -1,4 +1,10 @@
+# ------------------------------
+# GitHub Actions Workflow: Build Tauri App
+# ------------------------------
+
 name: Build Tauri App
+
+# Trigger this workflow on pushes and pull requests to main
 on:
   push:
     branches: [ main ]
@@ -7,48 +13,77 @@ on:
 
 jobs:
   build:
+    # Run jobs on multiple platforms in parallel
     strategy:
-      fail-fast: false
+      fail-fast: false  # Continue other jobs even if one fails
       matrix:
         platform: [macos-latest, ubuntu-22.04, windows-latest]
 
+    # Use the OS defined in the matrix
     runs-on: ${{ matrix.platform }}
+
     steps:
+      # ------------------------------
+      # Step 1: Checkout repository
+      # ------------------------------
       - uses: actions/checkout@v4
 
+      # ------------------------------
+      # Step 2: Setup Node.js environment
+      # ------------------------------
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # No usamos cache para evitar el error de 'lock file not found'
+          cache: 'npm'   # Cache npm dependencies for faster builds
 
+      # ------------------------------
+      # Step 3: Install Rust (stable)
+      # Required for building Tauri
+      # ------------------------------
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
+      # ------------------------------
+      # Step 4: Install system dependencies (Ubuntu only)
+      # Required for GTK/WebKit and packaging
+      # ------------------------------
       - name: Install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+          sudo apt-get install -y \
+            libgtk-3-dev \
+            libwebkit2gtk-4.1-dev \
+            libappindicator3-dev \
+            librsvg2-dev \
+            patchelf
 
+      # ------------------------------
+      # Step 5: Install frontend dependencies
+      # ------------------------------
       - name: Install frontend dependencies
         run: npm install
 
+      # ------------------------------
+      # Step 6: Build the Tauri App
+      # Tauri will automatically locate src-tauri according to tauri.conf.json
+      # ------------------------------
       - name: Build Tauri App
-        # Tauri usará ../docs y los resources definidos en tauri.conf.json
         run: npm run build
 
+      # ------------------------------
+      # Step 7: Upload built artifacts
+      # Includes installers for all supported platforms
+      # ------------------------------
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.platform }}-build
-          # Subimos toda la carpeta bundle para no perder ningún instalador
           path: |
             src-tauri/target/release/bundle/msi/*.msi
             src-tauri/target/release/bundle/setup.exe
             src-tauri/target/release/bundle/dmg/*.dmg
             src-tauri/target/release/bundle/deb/*.deb
-            src-tauri/target/release/bundle/rpm/*.rpm
             src-tauri/target/release/bundle/appimage/*.AppImage
+
