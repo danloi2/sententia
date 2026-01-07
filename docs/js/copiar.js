@@ -1,13 +1,5 @@
 /**
  * js/copiar.js
- *
- * Module responsible for copying the displayed quote to the clipboard.
- * Supports static JSON structure used in the application.
- *
- * Features:
- *  - Formats text with Latin quotes, original text, translation, author, reference, and context
- *  - Provides visual feedback on successful copy
- *  - Handles errors gracefully
  */
 
 // ============================
@@ -46,7 +38,6 @@ function prepararCopia(button, data) {
     finalText += `${data.contexto}`;
   }
 
-  // Trigger the actual clipboard copy
   ejecutarCopiado(button, finalText.trim());
 }
 
@@ -54,36 +45,59 @@ function prepararCopia(button, data) {
 // Execute clipboard copy and provide feedback
 // ============================
 function ejecutarCopiado(button, text) {
-  if (!navigator.clipboard) {
-    alert("Your browser does not support the Clipboard API.");
+  // Comprobación de seguridad para navegadores antiguos o entornos bloqueados
+  if (!navigator.clipboard || !navigator.clipboard.writeText) {
+    // Fallback para entornos donde la API está bloqueada (común en algunos WebViews de Linux)
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      mostrarFeedback(button);
+    } catch (err) {
+      alert("Error: Clipboard not accessible.");
+    }
+    document.body.removeChild(textArea);
     return;
   }
 
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      // Change button temporarily to show success
-      const originalHTML = button.innerHTML;
-      button.innerHTML = '<i class="bi bi-check-lg"></i> Copiatum!';
-      button.classList.replace("btn-outline-primary", "btn-success");
-
-      setTimeout(() => {
-        button.innerHTML = originalHTML;
-        button.classList.replace("btn-success", "btn-outline-primary");
-      }, 1500);
+      mostrarFeedback(button);
     })
     .catch((err) => {
       console.error("Clipboard copy error:", err);
-
-      // Display an alert within the card if copying fails
-      const alertContainer = document.createElement("div");
-      alertContainer.className =
-        "alert alert-danger alert-dismissible fade show mt-3";
-      alertContainer.role = "alert";
-      alertContainer.innerHTML = `
-        <strong>Error:</strong> Could not copy to clipboard.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      `;
-      button.closest(".card-body")?.prepend(alertContainer);
+      mostrarErrorCopia(button);
     });
 }
+
+// Función auxiliar para el feedback visual
+function mostrarFeedback(button) {
+  const originalHTML = button.innerHTML;
+  button.innerHTML = '<i class="bi bi-check-lg"></i> Copiatum!';
+  
+  // Manejamos las clases con seguridad
+  button.classList.remove("btn-outline-primary");
+  button.classList.add("btn-success");
+
+  setTimeout(() => {
+    button.innerHTML = originalHTML;
+    button.classList.remove("btn-success");
+    button.classList.add("btn-outline-primary");
+  }, 1500);
+}
+
+function mostrarErrorCopia(button) {
+  const alertContainer = document.createElement("div");
+  alertContainer.className = "alert alert-danger alert-dismissible fade show mt-3";
+  alertContainer.innerHTML = `
+    <strong>Error:</strong> No se pudo copiar.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  `;
+  button.closest(".card-body")?.prepend(alertContainer);
+}
+
+// EXTREMADAMENTE IMPORTANTE: Exponer a global para que lecturajson.js la encuentre
+window.prepararCopia = prepararCopia;

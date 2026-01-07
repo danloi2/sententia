@@ -143,4 +143,3 @@ document.addEventListener("DOMContentLoaded", () => {
     fechaEl.innerHTML = Utils.fechaHoyLatina();
   }
 });
-

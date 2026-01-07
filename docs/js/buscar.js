@@ -2,12 +2,6 @@
  * js/buscar.js
  *
  * Quote search module using static JSON loaded into CITAS.
- *
- * Features:
- *  - Real-time search by author, era, text, or other fields
- *  - Displays single result directly or multiple results in a list
- *  - Supports restoring original content if search is cleared
- *  - Bootstrap 5.3 cards and list groups for clean UI
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,24 +16,23 @@ document.addEventListener("DOMContentLoaded", () => {
   searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const query = searchInput.value.trim().toLowerCase();
-    if (query.length < 2) return; // Ignore short queries
+    if (query.length < 2) return; 
 
-    // Save backup only once
     if (!document.getElementById("lista-resultados")) {
       backupHTML = container.innerHTML;
     }
 
-    // Filter quotes matching the query in any property
     const resultados = CITAS.filter((item) => {
       return Object.values(item).some((val) =>
         val && val.toString().toLowerCase().includes(query)
       );
     });
 
-    // Display search results
     if (resultados.length === 1) {
-      mostrarCita(resultados[0]);
-      searchInput.value = "";
+      if (typeof window.mostrarCita === "function") {
+        window.mostrarCita(resultados[0]);
+        searchInput.value = "";
+      }
     } else if (resultados.length > 1) {
       mostrarLista(resultados, query);
     } else {
@@ -51,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Display multiple search results in a list
   // ============================
   function mostrarLista(lista, query) {
-    // Save globally for button onclick handlers
-    window.listaResultados = lista;
+    // Guardamos los resultados para acceder a ellos desde el evento de clic
+    window.listaResultadosActuales = lista;
 
     container.innerHTML = `
       <div id="lista-resultados" class="col-11 col-md-10 col-lg-8 mx-auto fade-in">
@@ -64,17 +57,17 @@ document.addEventListener("DOMContentLoaded", () => {
             <button type="button" class="btn-close" id="btnCerrar" aria-label="Close results"></button>
           </div>
           <div class="card-body p-4" style="max-height: 50vh; overflow-y: auto;">
-            <div class="list-group list-group-flush">
+            <div class="list-group list-group-flush" id="contenedor-items-busqueda">
               ${lista
                 .map(
                   (item, index) => `
-                <button type="button" class="list-group-item list-group-item-action border-0 rounded-3 mb-2 shadow-sm p-3"
-                  onclick="mostrarCita(window.listaResultados[${index}])">
+                <button type="button" class="list-group-item list-group-item-action border-0 rounded-3 mb-2 shadow-sm p-3 item-resultado"
+                  data-index="${index}">
                   <div class="d-flex justify-content-between align-items-center">
-                    <span class="fw-bold text-dark">${item.autor_la || "Anonymous"}</span>
-                    <span class="badge rounded-pill bg-primary-subtle text-primary border border-primary-subtle small">${item.epoca_la || ""}</span>
+                    <span class="fw-bold text-dark">${escaparHTML(item.autor_la || "Anonymous")}</span>
+                    <span class="badge rounded-pill bg-primary-subtle text-primary border border-primary-subtle small">${escaparHTML(item.epoca_la || "")}</span>
                   </div>
-                  <div class="small text-muted text-truncate mt-1">${item.cita_la || item.cita_es || ""}</div>
+                  <div class="small text-muted text-truncate mt-1">${escaparHTML(item.cita_la || item.cita_es || "")}</div>
                 </button>
               `
                 )
@@ -84,13 +77,19 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>`;
 
-    // Close button restores original content
-    const btnCerrar = document.getElementById("btnCerrar");
-    if (btnCerrar) {
-      btnCerrar.addEventListener("click", () => {
-        container.innerHTML = backupHTML;
-      });
-    }
+    // Evento para cerrar y restaurar
+    document.getElementById("btnCerrar")?.addEventListener("click", () => {
+      container.innerHTML = backupHTML;
+    });
+
+    // Delegación de eventos para los items de la lista
+    document.getElementById("contenedor-items-busqueda")?.addEventListener("click", (e) => {
+      const btn = e.target.closest(".item-resultado");
+      if (btn && window.mostrarCita) {
+        const index = btn.dataset.index;
+        window.mostrarCita(window.listaResultadosActuales[index]);
+      }
+    });
   }
 
   // ============================
@@ -104,14 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
           <strong>Error:</strong> ${escaparHTML(msg)}
         </div>
         <div class="mt-2 mt-md-0 ms-md-auto">
-          <button class="btn btn-sm btn-danger" onclick="location.reload()">Retry</button>
+          <button class="btn btn-sm btn-danger" id="btnRetry">Retry</button>
         </div>
       </div>`;
+    
+    document.getElementById("btnRetry")?.addEventListener("click", () => {
+      location.reload();
+    });
   }
 
-  // ============================
-  // Escape HTML to prevent XSS
-  // ============================
   function escaparHTML(str) {
     if (!str) return "";
     const div = document.createElement("div");
@@ -119,4 +119,3 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 });
-
