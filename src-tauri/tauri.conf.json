@@ -44,7 +44,6 @@
     "withGlobalTauri": true
   },
   "build": {
-    "beforeBuildCommand": "npm run process-imgs",
     "frontendDist": "../docs"
   }
 }
