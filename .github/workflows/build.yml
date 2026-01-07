@@ -20,10 +20,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          # No usamos cache para evitar el error de 'lock file not found'
 
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
       - name: Install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-22.04'
@@ -35,13 +37,14 @@ jobs:
         run: npm install
 
       - name: Build Tauri App
-        # Al ejecutar esto, Tauri buscará automáticamente en ../src según tu tauri.conf.json
+        # Tauri usará ../docs y los resources definidos en tauri.conf.json
         run: npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.platform }}-build
+          # Subimos toda la carpeta bundle para no perder ningún instalador
           path: |
             src-tauri/target/release/bundle/msi/*.msi
             src-tauri/target/release/bundle/setup.exe
