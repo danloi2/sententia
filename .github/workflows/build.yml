@@ -4,7 +4,7 @@
 
 name: Build Tauri App
 
-# Trigger this workflow on pushes and pull requests to main
+# Trigger workflow on push or pull request to main branch
 on:
   push:
     branches: [ main ]
@@ -15,11 +15,10 @@ jobs:
   build:
     # Run jobs on multiple platforms in parallel
     strategy:
-      fail-fast: false  # Continue other jobs even if one fails
+      fail-fast: false
       matrix:
         platform: [macos-latest, ubuntu-22.04, windows-latest]
 
-    # Use the OS defined in the matrix
     runs-on: ${{ matrix.platform }}
 
     steps:
@@ -29,26 +28,26 @@ jobs:
       - uses: actions/checkout@v4
 
       # ------------------------------
-      # Step 2: Setup Node.js environment
+      # Step 2: Setup Node.js
       # ------------------------------
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'   # Cache npm dependencies for faster builds
+          cache: 'npm'
 
       # ------------------------------
       # Step 3: Install Rust (stable)
-      # Required for building Tauri
+      # Required for building Tauri apps
       # ------------------------------
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
       # ------------------------------
-      # Step 4: Install system dependencies (Ubuntu only)
-      # Required for GTK/WebKit and packaging
+      # Step 4: Install Linux dependencies (GTK/WebKit etc.)
+      # Only needed on Ubuntu
       # ------------------------------
-      - name: Install dependencies (ubuntu only)
+      - name: Install system dependencies (Ubuntu)
         if: matrix.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
@@ -66,15 +65,15 @@ jobs:
         run: npm install
 
       # ------------------------------
-      # Step 6: Build the Tauri App
-      # Tauri will automatically locate src-tauri according to tauri.conf.json
+      # Step 6: Build Tauri App
+      # This will generate all bundles: DEB, RPM, AppImage, MSI, DMG
       # ------------------------------
       - name: Build Tauri App
         run: npm run build
 
       # ------------------------------
-      # Step 7: Upload built artifacts
-      # Includes installers for all supported platforms
+      # Step 7: Upload artifacts
+      # Collect installers for each platform
       # ------------------------------
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
@@ -85,5 +84,7 @@ jobs:
             src-tauri/target/release/bundle/setup.exe
             src-tauri/target/release/bundle/dmg/*.dmg
             src-tauri/target/release/bundle/deb/*.deb
+            src-tauri/target/release/bundle/rpm/*.rpm
             src-tauri/target/release/bundle/appimage/*.AppImage
+
 
