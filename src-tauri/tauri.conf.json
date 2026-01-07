@@ -5,7 +5,7 @@
   "identifier": "com.sententiadiei",
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["deb", "rpm", "appimage", "msi", "dmg"],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
@@ -13,26 +13,33 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "resources": [
-      "../docs/db/**/*",
-      "../docs/js/**/*",
-      "../docs/assets/**/*"
-    ]
+    "linux": {
+      "deb": {
+        "depends": ["libwebkit2gtk-4.1-0", "libappindicator3-1"]
+      },
+      "rpm": {
+        "depends": ["webkit2gtk3", "libappindicator3"]
+      }
+    }
   },
   "app": {
     "windows": [
       {
         "title": "Sententia Diei",
         "width": 900,
-        "height": 700
+        "height": 700,
+        "resizable": true,
+        "fullscreen": false
       }
     ],
     "security": {
-      "csp": "default-src 'self'; img-src 'self' asset: https://* data:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' asset: ipc: http://ipc.localhost"
-    }
+      "csp": "default-src 'self'; img-src 'self' https://* data: asset:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' asset: ipc: http://ipc.localhost"
+    },
+    "withGlobalTauri": true
   },
   "build": {
     "beforeBuildCommand": "",
     "frontendDist": "../docs"
   }
 }
+
