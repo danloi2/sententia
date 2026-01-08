@@ -1,0 +1,30 @@
+# ------------------------------
+# Local environment configuration (sensitive, do not commit)
+# ------------------------------
+.env
+
+# ------------------------------
+# VS Code workspace settings (personal, editor-specific)
+# ------------------------------
+.vscode/
+
+# ------------------------------
+# Node.js dependencies
+# ------------------------------
+node_modules/
+
+# ------------------------------
+# Tauri build artifacts
+# ------------------------------
+src-tauri/target/
+
+# ------------------------------
+# Log files
+# ------------------------------
+*.log
+
+# ------------------------------
+# Generated author assets (images)
+# ------------------------------
+docs/assets/autores/
+

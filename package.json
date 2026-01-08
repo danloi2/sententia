@@ -1,6 +1,6 @@
 {
   "name": "sententiadiei",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Sententia Diei App",
   "type": "module",
   "main": "docs/index.html",
@@ -12,10 +12,12 @@
     "process-imgs": "node docs/js/transparente.js"
   },
   "dependencies": {
-    "@tauri-apps/api": "^2.0.0"
+    "@tauri-apps/api": "^2.9.1",
+    "@tauri-apps/plugin-dialog": "^2.4.2",
+    "@tauri-apps/plugin-fs": "^2.4.4"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2.0.0",
+    "@tauri-apps/cli": "^2.9.6",
     "csv-parse": "^6.1.0",
     "imagetracerjs": "^1.2.6",
     "potrace": "^2.1.8",
