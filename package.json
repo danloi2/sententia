@@ -9,7 +9,6 @@
     "dev": "tauri dev",
     "build": "tauri build",
     "serve": "serve docs",
-    "process-imgs": "node docs/js/transparente.js"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.9.1",
