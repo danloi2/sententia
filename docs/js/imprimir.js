@@ -9,7 +9,7 @@ async function imprimirCita(format = "png") {
   const clone = element.cloneNode(true);
   clone.style.boxShadow = "none";
   clone.style.background = "white";
-  clone.style.width = "800px"; // Ancho base para consistencia
+  clone.style.width = "800px"; 
   clone.querySelectorAll("button, .btn, .cita-acciones, .dropdown, .dropdown-menu, .no-export")
     .forEach((el) => el.remove());
 
@@ -41,7 +41,8 @@ async function imprimirCita(format = "png") {
 
 async function guardarConTauri(canvas, formato) {
   try {
-    const tauri = window.__TAURI__ || (window.internal && window.internal.__TAURI__);
+    // Detección de API según versión de Tauri v2
+    const tauri = window.__TAURI__ || window.__TAURI_API__;
     let dataUint8;
     let blobUrl;
 
@@ -58,33 +59,29 @@ async function guardarConTauri(canvas, formato) {
       if (!jsPDF) throw new Error("jsPDF no cargado");
 
       const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
-      
-      // --- CÁLCULO PARA EVITAR DISTORSIÓN ---
       const imgData = canvas.toDataURL("image/png");
-      const pageWidth = pdf.internal.pageSize.getWidth();   // 297mm
-      const pageHeight = pdf.internal.pageSize.getHeight(); // 210mm
       
-      // Calculamos el ancho y alto proporcional
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      
       const ratio = canvas.width / canvas.height;
-      let printWidth = pageWidth;
-      let printHeight = pageWidth / ratio;
+      let printWidth = pageWidth - 20; // Margen de 10mm
+      let printHeight = printWidth / ratio;
 
-      // Si el alto calculado supera la página, ajustamos por el alto
-      if (printHeight > pageHeight) {
-        printHeight = pageHeight;
-        printWidth = pageHeight * ratio;
+      if (printHeight > (pageHeight - 20)) {
+        printHeight = pageHeight - 20;
+        printWidth = printHeight * ratio;
       }
 
-      // Centramos la imagen en la hoja
       const x = (pageWidth - printWidth) / 2;
       const y = (pageHeight - printHeight) / 2;
 
       pdf.addImage(imgData, "PNG", x, y, printWidth, printHeight);
-      
       dataUint8 = new Uint8Array(pdf.output('arraybuffer'));
       blobUrl = URL.createObjectURL(pdf.output('blob'));
     }
 
+    // Si los plugins están disponibles (App instalada)
     if (tauri && tauri.dialog && tauri.fs) {
       const filePath = await tauri.dialog.save({
         defaultPath: `sententia.${formato}`,
@@ -97,6 +94,7 @@ async function guardarConTauri(canvas, formato) {
       }
     } 
 
+    // Fallback: Descarga de navegador (Modo desarrollo/web)
     const link = document.createElement("a");
     link.href = blobUrl;
     link.download = `sententia.${formato}`;
