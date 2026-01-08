@@ -23,7 +23,7 @@
       "rpm": {
         "depends": [
           "webkit2gtk4.1",
-          "libayatana-appindicator3-1"
+          "libayatana-appindicator3"
         ]
       }
     }
@@ -44,6 +44,7 @@
     }
   },
   "build": {
+    "beforeBuildCommand": "npm run process-imgs",
     "frontendDist": "../docs"
   }
 }
