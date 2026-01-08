@@ -5,7 +5,7 @@
   "identifier": "com.sententiadiei",
   "bundle": {
     "active": true,
-    "targets": ["rpm"],
+    "targets": ["deb", "rpm", "appimage", "msi", "dmg"],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
@@ -14,8 +14,17 @@
       "icons/icon.ico"
     ],
     "linux": {
+      "deb": {
+        "depends": [
+          "libwebkit2gtk-4.1-0",
+          "libayatana-appindicator3-1"
+        ]
+      },
       "rpm": {
-        "depends": ["webkit2gtk3", "libappindicator3"]
+        "depends": [
+          "webkit2gtk4.1",
+          "libayatana-appindicator3-1"
+        ]
       }
     }
   },
@@ -26,7 +35,8 @@
         "title": "Sententia Diei",
         "width": 900,
         "height": 700,
-        "resizable": true
+        "resizable": true,
+        "fullscreen": false
       }
     ],
     "security": {
@@ -34,7 +44,7 @@
     }
   },
   "build": {
-    "beforeBuildCommand": "",
+    "beforeBuildCommand": "npm run process-imgs",
     "frontendDist": "../docs"
   }
 }
