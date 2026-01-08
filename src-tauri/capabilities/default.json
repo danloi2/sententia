@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Permisos para exportar archivos en Fedora",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "opener:default",
+    "dialog:allow-save",
+    "fs:allow-write-file",
+    "fs:allow-read-file",
+    "fs:allow-exists"
+  ]
+}
