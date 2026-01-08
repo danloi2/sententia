@@ -2,6 +2,26 @@
  * js/imprimir.js - Versión Proporciones Corregidas
  */
 
+async function abrirEnNavegador(event, url) {
+  if (event) event.preventDefault();
+
+  // 1. Intentamos detectar si estamos en la App de escritorio
+  const tauri = window.__TAURI__ || window.__TAURI_API__;
+
+  if (tauri && tauri.opener) {
+    // ESTO SOLO PASA EN LA APP: Abre el navegador del sistema
+    try {
+      await tauri.opener.open(url);
+      return; 
+    } catch (e) {
+      console.error("Error con el plugin opener:", e);
+    }
+  }
+
+  // 2. ESTO PASA EN LA WEB (o si falla lo anterior): Abre pestaña nueva
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
 async function imprimirCita(format = "png") {
   const element = document.getElementById("cita-print");
   if (!element) return;
