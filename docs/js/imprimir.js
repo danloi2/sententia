@@ -1,6 +1,5 @@
 /**
- * js/imprimir.js
- * Versión compatible con Linux / Tauri RPM
+ * js/imprimir.js - Versión Final Tauri v2 (PNG + PDF real)
  */
 
 async function imprimirCita(format = "png") {
@@ -9,9 +8,8 @@ async function imprimirCita(format = "png") {
 
   const clone = element.cloneNode(true);
   clone.style.boxShadow = "none";
-  clone.style.background = "white"; // Mejor blanco para evitar errores de renderizado en Linux
+  clone.style.background = "white";
   clone.style.width = "800px";
-
   clone.querySelectorAll("button, .btn, .cita-acciones, .dropdown, .dropdown-menu, .no-export")
     .forEach((el) => el.remove());
 
@@ -22,77 +20,77 @@ async function imprimirCita(format = "png") {
   document.body.appendChild(container);
 
   try {
-    if (typeof html2canvas === 'undefined') throw new Error("html2canvas not loaded");
+    if (typeof html2canvas === 'undefined') throw new Error("html2canvas no cargado");
 
     const canvas = await html2canvas(clone, {
       backgroundColor: "#ffffff",
       useCORS: true,
-      allowTaint: true, // Crucial para Linux
-      scale: 2,         // Bajamos un poco la escala para evitar crashes de memoria en el WebView de Fedora
-      logging: true     // Activamos logging para que puedas ver errores en la terminal
+      allowTaint: true,
+      scale: 2
     });
 
-    if (format === "png") exportPNG(canvas);
-    else if (format === "pdf") exportPDF(canvas);
+    await guardarConTauri(canvas, format);
 
   } catch (error) {
-    console.error("Error detallado:", error);
-    alert("Error al exportar: Abrir terminal para ver detalles.");
+    console.error("Error en exportación:", error);
+    alert("Error: " + error.message);
   } finally {
     document.body.removeChild(container);
   }
 }
 
-function exportPNG(canvas) {
-  const imgData = canvas.toDataURL("image/png");
-  const link = document.createElement("a");
-  link.href = imgData;
-  link.download = "sententia.png";
-  
-  // Forzar trigger en WebKitGTK
-  const clickEvent = new MouseEvent("click", {
-    view: window,
-    bubbles: true,
-    cancelable: true
-  });
-  
-  document.body.appendChild(link);
-  link.dispatchEvent(clickEvent);
-  document.body.removeChild(link);
-}
-
-function exportPDF(canvas) {
-  const { jsPDF } = window.jspdf || {};
-  if (!jsPDF) return;
-
-  const pdf = new jsPDF({
-    orientation: "landscape",
-    unit: "mm",
-    format: "a4",
-  });
-
-  const imgData = canvas.toDataURL("image/png");
-  const pageWidth = pdf.internal.pageSize.getWidth();
-  const pageHeight = pdf.internal.pageSize.getHeight();
-  const imgWidth = pageWidth;
-  const imgHeight = (canvas.height * imgWidth) / canvas.width;
-  const y = (pageHeight - imgHeight) / 2;
-
-  pdf.addImage(imgData, "PNG", 0, y, imgWidth, imgHeight);
-  
-  // En Tauri Linux, pdf.save() puede fallar. 
-  // Intentamos disparar la descarga de forma manual si falla
+async function guardarConTauri(canvas, formato) {
   try {
-    pdf.save("sententia.pdf");
-  } catch (e) {
-    const blob = pdf.output("blob");
-    const url = URL.createObjectURL(blob);
+    const tauri = window.__TAURI__ || (window.internal && window.internal.__TAURI__);
+    
+    // --- PREPARACIÓN DE LOS DATOS SEGÚN EL FORMATO ---
+    let dataUint8; // Para Tauri
+    let blobUrl;   // Para Navegador/Emergencia
+
+    if (formato === "png") {
+      const base64 = canvas.toDataURL("image/png").split(',')[1];
+      const binaryString = atob(base64);
+      dataUint8 = new Uint8Array(binaryString.length);
+      for (let i = 0; i < binaryString.length; i++) {
+        dataUint8[i] = binaryString.charCodeAt(i);
+      }
+      blobUrl = canvas.toDataURL("image/png");
+    } else {
+      const { jsPDF } = window.jspdf || {};
+      if (!jsPDF) throw new Error("jsPDF no cargado");
+      const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
+      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 297, 210);
+      
+      dataUint8 = new Uint8Array(pdf.output('arraybuffer'));
+      blobUrl = URL.createObjectURL(pdf.output('blob'));
+    }
+
+    // --- INTENTO DE GUARDADO CON TAURI (MODO NATIVO) ---
+    if (tauri && tauri.dialog && tauri.fs) {
+      const filePath = await tauri.dialog.save({
+        defaultPath: `sententia.${formato}`,
+        filters: [{ name: formato.toUpperCase(), extensions: [formato] }]
+      });
+
+      if (filePath) {
+        await tauri.fs.writeFile(filePath, dataUint8);
+        alert("Guardado con éxito");
+        return;
+      }
+    } 
+
+    // --- MÉTODO DE EMERGENCIA (SI NO HAY PLUGINS O SE CANCELÓ TAURI) ---
+    console.warn("Usando descarga directa del navegador");
     const link = document.createElement("a");
-    link.href = url;
-    link.download = "sententia.pdf";
+    link.href = blobUrl;
+    link.download = `sententia.${formato}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+  } catch (err) {
+    console.error("Fallo al guardar:", err);
+    alert("Error al guardar: " + err.message);
   }
 }
 

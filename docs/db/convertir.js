@@ -66,4 +66,3 @@ try {
   console.error("❌ Error writing JSON:", err);
   process.exit(1); // Stop execution if write fails
 }
-
