@@ -1,5 +1,5 @@
 /**
- * js/imprimir.js - Versión Final Tauri v2 (PNG + PDF real)
+ * js/imprimir.js - Versión Proporciones Corregidas
  */
 
 async function imprimirCita(format = "png") {
@@ -9,7 +9,7 @@ async function imprimirCita(format = "png") {
   const clone = element.cloneNode(true);
   clone.style.boxShadow = "none";
   clone.style.background = "white";
-  clone.style.width = "800px";
+  clone.style.width = "800px"; // Ancho base para consistencia
   clone.querySelectorAll("button, .btn, .cita-acciones, .dropdown, .dropdown-menu, .no-export")
     .forEach((el) => el.remove());
 
@@ -42,10 +42,8 @@ async function imprimirCita(format = "png") {
 async function guardarConTauri(canvas, formato) {
   try {
     const tauri = window.__TAURI__ || (window.internal && window.internal.__TAURI__);
-    
-    // --- PREPARACIÓN DE LOS DATOS SEGÚN EL FORMATO ---
-    let dataUint8; // Para Tauri
-    let blobUrl;   // Para Navegador/Emergencia
+    let dataUint8;
+    let blobUrl;
 
     if (formato === "png") {
       const base64 = canvas.toDataURL("image/png").split(',')[1];
@@ -58,14 +56,35 @@ async function guardarConTauri(canvas, formato) {
     } else {
       const { jsPDF } = window.jspdf || {};
       if (!jsPDF) throw new Error("jsPDF no cargado");
+
       const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
-      pdf.addImage(canvas.toDataURL("image/png"), "PNG", 0, 0, 297, 210);
+      
+      // --- CÁLCULO PARA EVITAR DISTORSIÓN ---
+      const imgData = canvas.toDataURL("image/png");
+      const pageWidth = pdf.internal.pageSize.getWidth();   // 297mm
+      const pageHeight = pdf.internal.pageSize.getHeight(); // 210mm
+      
+      // Calculamos el ancho y alto proporcional
+      const ratio = canvas.width / canvas.height;
+      let printWidth = pageWidth;
+      let printHeight = pageWidth / ratio;
+
+      // Si el alto calculado supera la página, ajustamos por el alto
+      if (printHeight > pageHeight) {
+        printHeight = pageHeight;
+        printWidth = pageHeight * ratio;
+      }
+
+      // Centramos la imagen en la hoja
+      const x = (pageWidth - printWidth) / 2;
+      const y = (pageHeight - printHeight) / 2;
+
+      pdf.addImage(imgData, "PNG", x, y, printWidth, printHeight);
       
       dataUint8 = new Uint8Array(pdf.output('arraybuffer'));
       blobUrl = URL.createObjectURL(pdf.output('blob'));
     }
 
-    // --- INTENTO DE GUARDADO CON TAURI (MODO NATIVO) ---
     if (tauri && tauri.dialog && tauri.fs) {
       const filePath = await tauri.dialog.save({
         defaultPath: `sententia.${formato}`,
@@ -74,13 +93,10 @@ async function guardarConTauri(canvas, formato) {
 
       if (filePath) {
         await tauri.fs.writeFile(filePath, dataUint8);
-        alert("Guardado con éxito");
         return;
       }
     } 
 
-    // --- MÉTODO DE EMERGENCIA (SI NO HAY PLUGINS O SE CANCELÓ TAURI) ---
-    console.warn("Usando descarga directa del navegador");
     const link = document.createElement("a");
     link.href = blobUrl;
     link.download = `sententia.${formato}`;
@@ -90,7 +106,6 @@ async function guardarConTauri(canvas, formato) {
 
   } catch (err) {
     console.error("Fallo al guardar:", err);
-    alert("Error al guardar: " + err.message);
   }
 }
 
