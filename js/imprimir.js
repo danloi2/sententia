@@ -1,23 +1,9 @@
 /**
- * js/imprimir.js - Versión Proporciones Corregidas y Fix OKLCH
+ * js/imprimir.js - Versión Web Limpia
  */
 
 async function abrirEnNavegador(event, url) {
   if (event) event.preventDefault();
-
-  // 1. Intentamos detectar si estamos en la App de escritorio (Tauri)
-  const tauri = window.__TAURI__ || window.__TAURI_API__;
-
-  if (tauri && tauri.opener) {
-    try {
-      await tauri.opener.open(url);
-      return;
-    } catch (e) {
-      console.error('Error con el plugin opener:', e);
-    }
-  }
-
-  // 2. Modo Web: Abre pestaña nueva
   window.open(url, '_blank', 'noopener,noreferrer');
 }
 
@@ -25,43 +11,48 @@ async function imprimirCita(format = 'png') {
   const element = document.getElementById('cita-print');
   if (!element) return;
 
-  // Guardamos estilos originales que vamos a modificar temporalmente
+  // 1. Preparar el elemento para la captura
   const originalBoxShadow = element.style.boxShadow;
-
-  // Ocultamos temporalmente los elementos que no queremos exportar
   const elementsToHide = element.querySelectorAll(
     'button, #export-dropdown, .cita-acciones, .no-export'
   );
+
   const originalDisplayValues = [];
   elementsToHide.forEach((el, i) => {
     originalDisplayValues[i] = el.style.display;
     el.style.display = 'none';
   });
 
-  // Removemos sombra para la captura
   element.style.boxShadow = 'none';
 
   try {
-    // html2canvas-pro soporta oklch, oklab y color-mix nativamente
-    if (typeof html2canvas === 'undefined') throw new Error('html2canvas-pro no cargado');
+    // 2. Verificación flexible de la librería (Soporta html2canvas y variantes Pro)
+    const capturador = window.html2canvas;
+    if (!capturador) {
+      throw new Error('La librería de captura (html2canvas) no está cargada en el index.html');
+    }
 
-    const canvas = await html2canvas(element, {
+    // 3. Ejecutar captura con ajustes de alta calidad
+    const canvas = await capturador(element, {
       backgroundColor: '#ffffff',
       useCORS: true,
-      allowTaint: true,
-      scale: 2,
+      allowTaint: false,
+      scale: 3, // Alta resolución
+      logging: false,
+      x: 0,
+      y: 0,
       scrollX: 0,
-      scrollY: -window.scrollY,
-      windowWidth: document.documentElement.offsetWidth,
-      windowHeight: document.documentElement.offsetHeight,
+      scrollY: 0,
+      windowWidth: element.scrollWidth,
+      windowHeight: element.scrollHeight,
     });
 
-    await guardarConTauri(canvas, format);
+    await descargarArchivo(canvas, format);
   } catch (error) {
     console.error('Error en exportación:', error);
-    alert('Error al generar la imagen: ' + error.message);
+    alert('Error al generar el archivo: ' + error.message);
   } finally {
-    // Restauramos los estilos originales
+    // 4. Restaurar interfaz
     element.style.boxShadow = originalBoxShadow;
     elementsToHide.forEach((el, i) => {
       el.style.display = originalDisplayValues[i];
@@ -69,36 +60,35 @@ async function imprimirCita(format = 'png') {
   }
 }
 
-async function guardarConTauri(canvas, formato) {
+async function descargarArchivo(canvas, formato) {
   try {
-    const tauri = window.__TAURI__ || window.__TAURI_API__;
-    let dataUint8;
-    let blobUrl;
+    let finalUrl;
 
     if (formato === 'png') {
-      const base64 = canvas.toDataURL('image/png').split(',')[1];
-      const binaryString = atob(base64);
-      dataUint8 = new Uint8Array(binaryString.length);
-      for (let i = 0; i < binaryString.length; i++) {
-        dataUint8[i] = binaryString.charCodeAt(i);
-      }
-      blobUrl = canvas.toDataURL('image/png');
+      finalUrl = canvas.toDataURL('image/png');
     } else {
+      // Soporte PDF vía jsPDF
       const { jsPDF } = window.jspdf || {};
-      if (!jsPDF) throw new Error('jsPDF no cargado');
+      if (!jsPDF) throw new Error('Librería jsPDF no encontrada');
 
-      const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
+      const pdf = new jsPDF({
+        orientation: 'landscape',
+        unit: 'mm',
+        format: 'a4',
+      });
+
       const imgData = canvas.toDataURL('image/png');
-
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
 
+      const margin = 10;
       const ratio = canvas.width / canvas.height;
-      let printWidth = pageWidth - 20;
+
+      let printWidth = pageWidth - margin * 2;
       let printHeight = printWidth / ratio;
 
-      if (printHeight > pageHeight - 20) {
-        printHeight = pageHeight - 20;
+      if (printHeight > pageHeight - margin * 2) {
+        printHeight = pageHeight - margin * 2;
         printWidth = printHeight * ratio;
       }
 
@@ -106,34 +96,23 @@ async function guardarConTauri(canvas, formato) {
       const y = (pageHeight - printHeight) / 2;
 
       pdf.addImage(imgData, 'PNG', x, y, printWidth, printHeight);
-      dataUint8 = new Uint8Array(pdf.output('arraybuffer'));
-      blobUrl = URL.createObjectURL(pdf.output('blob'));
+      finalUrl = pdf.output('bloburl');
     }
 
-    // Integración con File System de Tauri (Si estamos en la App)
-    if (tauri && tauri.dialog && tauri.fs) {
-      const filePath = await tauri.dialog.save({
-        defaultPath: `sententia.${formato}`,
-        filters: [{ name: formato.toUpperCase(), extensions: [formato] }],
-      });
-
-      if (filePath) {
-        await tauri.fs.writeFile(filePath, dataUint8);
-        return;
-      }
-    }
-
-    // Fallback: Descarga directa en navegador
+    // 5. Crear enlace de descarga invisible
     const link = document.createElement('a');
-    link.href = blobUrl;
-    link.download = `sententia.${formato}`;
+    link.href = finalUrl;
+    link.download = `sententia_${Date.now()}.${formato}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    if (formato === 'pdf') {
+      setTimeout(() => URL.revokeObjectURL(finalUrl), 100);
+    }
   } catch (err) {
-    console.error('Fallo al guardar el archivo:', err);
+    console.error('Error en la descarga:', err);
   }
 }
 
-// Exponer la función globalmente
 window.imprimirCita = imprimirCita;
