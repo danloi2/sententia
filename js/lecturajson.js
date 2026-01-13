@@ -149,9 +149,12 @@ function mostrarCita(quote) {
               )}</span>
               ${
                 copyData.referencia
-                  ? `<span class="inline-flex items-start gap-1.5 px-3 py-1 rounded-xl bg-primary-50 text-primary-700 text-xs font-semibold mb-2"><span style="width:14px; height:14px; flex-shrink:0; margin-top:2px; background-color:currentColor; -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22><path stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25%22/></svg>') no-repeat center; mask:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22none%22 viewBox=%220 0 24 24%22 stroke=%22currentColor%22><path stroke-linecap=%22round%22 stroke-linejoin=%22round%22 stroke-width=%222%22 d=%22M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25%22/></svg>') no-repeat center;"></span><span>${escaparHTML(
-                      copyData.referencia
-                    )}</span></span>`
+                  ? `<span class="inline-flex items-start gap-1.5 px-3 py-1 rounded-xl bg-primary-50 text-primary-700 text-xs font-semibold mb-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#1d4ed8" style="width:14px; height:14px; min-width:14px; min-height:14px; display: block; margin-top:2px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                      </svg>
+                      <span style="color: #1d4ed8;">${escaparHTML(copyData.referencia)}</span>
+                    </span>`
                   : ''
               }
               <span class="text-sm text-slate-400 font-medium">${escaparHTML(

@@ -1,5 +1,5 @@
 /**
- * js/imprimir.js - Versión Web Limpia
+ * js/imprimir.js - Versión Final (Alineación Derecha + PDF Fix)
  */
 
 async function abrirEnNavegador(event, url) {
@@ -11,7 +11,6 @@ async function imprimirCita(format = 'png') {
   const element = document.getElementById('cita-print');
   if (!element) return;
 
-  // 1. Preparar el elemento para la captura
   const originalBoxShadow = element.style.boxShadow;
   const elementsToHide = element.querySelectorAll(
     'button, #export-dropdown, .cita-acciones, .no-export'
@@ -26,33 +25,59 @@ async function imprimirCita(format = 'png') {
   element.style.boxShadow = 'none';
 
   try {
-    // 2. Verificación flexible de la librería (Soporta html2canvas y variantes Pro)
     const capturador = window.html2canvas;
-    if (!capturador) {
-      throw new Error('La librería de captura (html2canvas) no está cargada en el index.html');
-    }
+    if (!capturador) throw new Error('html2canvas no cargado');
 
-    // 3. Ejecutar captura con ajustes de alta calidad
     const canvas = await capturador(element, {
       backgroundColor: '#ffffff',
       useCORS: true,
-      allowTaint: false,
-      scale: 3, // Alta resolución
+      scale: 3,
       logging: false,
-      x: 0,
-      y: 0,
-      scrollX: 0,
-      scrollY: 0,
-      windowWidth: element.scrollWidth,
-      windowHeight: element.scrollHeight,
+      windowHeight: 2000,
+      onclone: (clonedDoc) => {
+        const clonedElement = clonedDoc.getElementById('cita-print');
+        if (clonedElement) {
+          clonedElement.style.width = '950px';
+          clonedElement.style.maxWidth = 'none';
+          clonedElement.style.height = 'auto';
+          clonedElement.style.overflow = 'visible';
+          clonedElement.style.margin = '0';
+
+          const figcaption = clonedElement.querySelector('figcaption');
+          if (figcaption) {
+            figcaption.style.display = 'flex';
+            figcaption.style.flexDirection = 'column';
+            // ALINEACIÓN A LA DERECHA
+            figcaption.style.alignItems = 'flex-end';
+            figcaption.style.textAlign = 'right';
+            figcaption.style.gap = '8px';
+            figcaption.style.marginTop = '24px';
+            figcaption.style.width = '100%';
+          }
+
+          // Ajustamos el bloque de Referencia (cuadro azul)
+          const referencia = clonedElement.querySelector('.bg-primary-50');
+          if (referencia) {
+            referencia.style.display = 'inline-flex';
+            referencia.style.justifyContent = 'flex-end';
+          }
+
+          // Ajustamos Época • Lengua • Nación
+          const contextText = figcaption ? figcaption.querySelector('span:last-child') : null;
+          if (contextText) {
+            contextText.style.display = 'block';
+            contextText.style.width = '100%';
+            contextText.style.whiteSpace = 'nowrap';
+            contextText.style.textAlign = 'right';
+          }
+        }
+      },
     });
 
     await descargarArchivo(canvas, format);
   } catch (error) {
-    console.error('Error en exportación:', error);
-    alert('Error al generar el archivo: ' + error.message);
+    console.error('Error:', error);
   } finally {
-    // 4. Restaurar interfaz
     element.style.boxShadow = originalBoxShadow;
     elementsToHide.forEach((el, i) => {
       el.style.display = originalDisplayValues[i];
@@ -63,53 +88,45 @@ async function imprimirCita(format = 'png') {
 async function descargarArchivo(canvas, formato) {
   try {
     let finalUrl;
-
     if (formato === 'png') {
       finalUrl = canvas.toDataURL('image/png');
     } else {
-      // Soporte PDF vía jsPDF
+      // Corregido: Extracción limpia de jsPDF
       const { jsPDF } = window.jspdf || {};
-      if (!jsPDF) throw new Error('Librería jsPDF no encontrada');
+      if (!jsPDF) throw new Error('jsPDF no encontrado');
 
-      const pdf = new jsPDF({
-        orientation: 'landscape',
-        unit: 'mm',
-        format: 'a4',
-      });
-
+      // Corregido: Instancia directa sin el prefijo erróneo 'pdfjs.'
+      const pdf = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' });
       const imgData = canvas.toDataURL('image/png');
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
 
-      const margin = 10;
       const ratio = canvas.width / canvas.height;
-
-      let printWidth = pageWidth - margin * 2;
+      let printWidth = pageWidth - 30;
       let printHeight = printWidth / ratio;
 
-      if (printHeight > pageHeight - margin * 2) {
-        printHeight = pageHeight - margin * 2;
+      if (printHeight > pageHeight - 20) {
+        printHeight = pageHeight - 20;
         printWidth = printHeight * ratio;
       }
 
-      const x = (pageWidth - printWidth) / 2;
-      const y = (pageHeight - printHeight) / 2;
-
-      pdf.addImage(imgData, 'PNG', x, y, printWidth, printHeight);
+      pdf.addImage(
+        imgData,
+        'PNG',
+        (pageWidth - printWidth) / 2,
+        (pageHeight - printHeight) / 2,
+        printWidth,
+        printHeight
+      );
       finalUrl = pdf.output('bloburl');
     }
 
-    // 5. Crear enlace de descarga invisible
     const link = document.createElement('a');
     link.href = finalUrl;
     link.download = `sententia_${Date.now()}.${formato}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
-    if (formato === 'pdf') {
-      setTimeout(() => URL.revokeObjectURL(finalUrl), 100);
-    }
   } catch (err) {
     console.error('Error en la descarga:', err);
   }
