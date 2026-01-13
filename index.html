@@ -1,190 +1,170 @@
 <!DOCTYPE html>
-<html lang="la">
+<html lang="la" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sententia diei</title>
 
-    <!-- ============================
-       Bootstrap CSS
-       Provides responsive grid, utilities, and components
-  ============================ -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
 
-    <!-- ============================
-       Bootstrap Icons
-       Provides iconography used throughout the UI
-  ============================ -->
+    <!-- Static CSS (Compiled from Tailwind) -->
+    <link rel="stylesheet" href="css/output.css" />
+
+    <!-- Bootstrap Icons (Keeping for simplicity as they are used in JS logic too) -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
-    <!-- ============================
-       Favicon
-  ============================ -->
+    <!-- Favicon -->
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
 
-    <!-- ============================
-       Custom JavaScript
-       Defer ensures scripts execute after HTML parsing
-  ============================ -->
+    <!-- Custom JavaScript -->
     <script src="js/fecha.js" defer></script>
-    <!-- Date display logic -->
     <script src="js/copiar.js" defer></script>
-    <!-- Clipboard copy functionality -->
     <script src="js/lecturajson.js" defer></script>
-    <!-- Main logic: load and display quotes -->
     <script src="js/buscar.js" defer></script>
-    <!-- Search/filter logic -->
     <script src="js/imprimir.js" defer></script>
-    <!-- Export to PNG/PDF functionality -->
-
-    <!-- ============================
-       Bootstrap JS Bundle
-       Includes Popper for tooltips, dropdowns, modals, etc.
-  ============================ -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
   </head>
 
-  <body class="d-flex flex-column min-vh-100 bg-light">
-    <!-- ============================
-       Header Section
-       Contains site title, GitHub link, version badge, and search form
-  ============================ -->
-    <header class="bg-white shadow-sm py-3">
-      <div class="container">
-        <div class="row align-items-center">
-          <div
-            class="col-md-4 d-flex flex-column align-items-center align-items-md-start gap-1"
-          >
-            <h1 class="h4 fw-bold text-primary mb-0">Sententia diei</h1>
-            <div class="d-flex align-items-center gap-2">
+  <body
+    class="flex flex-col min-h-screen bg-fixed bg-linear-to-br from-slate-50 via-white to-primary-50 text-slate-800 font-sans antialiased"
+  >
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between py-4 gap-4">
+          <!-- Logo & Links -->
+          <div class="flex flex-col items-center md:items-start gap-1">
+            <h1 class="text-xl font-bold text-primary-700 tracking-tight">Sententia diei</h1>
+            <div class="flex items-center gap-3">
               <a
                 href="#"
                 onclick="abrirEnNavegador(event, 'https://github.com/danloi2/sententia')"
-                class="text-muted d-flex align-items-center"
-                data-bs-toggle="tooltip"
+                class="text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-1 text-sm font-medium"
                 title="GitHub Repository"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
                   fill="currentColor"
-                  class="bi bi-github"
+                  class="w-5 h-5"
                   viewBox="0 0 16 16"
                 >
                   <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
                   />
                 </svg>
+                <span>GitHub</span>
               </a>
               <img
-                src="https://img.shields.io/github/v/tag/danloi2/sententia?label=Release&color=0d6efd&style=flat-square"
+                src="https://img.shields.io/github/v/tag/danloi2/sententia?label=Release&color=2563eb&style=flat-square"
                 alt="Version"
-                height="18"
-                data-bs-toggle="tooltip"
+                class="h-5"
                 title="Latest Version"
               />
             </div>
           </div>
 
-          <!-- Center: Current date -->
-          <div class="col-md-4 text-center mt-2 mt-md-0">
-            <span id="fecha" class="fs-5 fw-semibold text-primary d-block lh-sm"
-              >Cargando fecha…</span
-            >
+          <!-- Date -->
+          <div class="text-center">
+            <span id="fecha" class="text-lg font-medium text-slate-600 block">Loading date...</span>
           </div>
 
-          <!-- Right: Search form -->
-          <div
-            class="col-md-4 d-flex justify-content-center justify-content-md-end mt-2 mt-md-0"
-          >
-            <form class="d-flex" role="search">
+          <!-- Search -->
+          <div class="w-full md:w-auto">
+            <form class="relative group" role="search">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5 text-slate-400 group-focus-within:text-primary-500 transition-colors"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                  />
+                </svg>
+              </div>
               <input
                 id="inputBuscar"
-                class="form-control form-control-sm me-2"
+                class="block w-full md:w-64 pl-10 pr-3 py-2 border border-slate-300 rounded-lg leading-5 bg-slate-50 placeholder-slate-400 focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all sm:text-sm"
                 type="search"
-                placeholder="Quaerere per auctorem, aetatem…"
+                placeholder="Search..."
                 aria-label="Search"
               />
-              <button class="btn btn-sm btn-outline-success" type="submit">
-                Quaerere
-              </button>
             </form>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- ============================
-       Main Section
-       Contains quote container and statistics
-  ============================ -->
-    <main class="container flex-grow-1 my-4">
-      <!-- Quote container (populated dynamically via lecturajson.js) -->
-      <div id="cita-container" class="row justify-content-center">
-        <div class="text-center">
-          <div class="spinner-border text-primary" role="status"></div>
-          <p class="mt-2 text-muted small fst-italic">
-            Investigando sapientiam...
-          </p>
+    <!-- Main Content -->
+    <main class="grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+      <!-- Quote Container -->
+      <div id="cita-container" class="flex justify-center transition-all duration-500">
+        <div class="text-center py-12">
+          <div
+            class="animate-spin inline-block w-8 h-8 border-[3px] border-current border-t-transparent text-primary-600 rounded-full"
+            role="status"
+            aria-label="loading"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+          <p class="mt-4 text-slate-500 italic font-serif">Investigando sapientiam...</p>
         </div>
       </div>
 
-      <!-- Statistics container (number of quotes, authors, etc.) -->
-      <div id="stats-container" class="fade-in mt-4"></div>
+      <!-- Stats Container -->
+      <div id="stats-container" class="mt-8 transition-opacity duration-700"></div>
     </main>
 
-    <!-- ============================
-       Footer Section
-       Contains Creative Commons license and author credit
-  ============================ -->
-    <footer class="mt-auto bg-white border-top shadow-sm py-4">
-      <div class="container">
-        <div class="row text-center text-md-start align-items-center">
-          <!-- Left: CC License -->
-          <div
-            class="col-md-6 d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-start gap-2"
-          >
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <!-- License -->
+          <div class="flex items-center gap-2 text-sm text-slate-500">
             <a
               href="https://creativecommons.org/licenses/by-sa/4.0/"
               target="_blank"
-              class="text-decoration-none fw-medium"
+              class="hover:text-primary-600 font-medium transition-colors"
               >CC BY-SA 4.0</a
             >
-            <div class="d-flex align-items-center gap-1">
+            <div class="flex items-center opacity-70">
               <img
                 src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
                 alt="CC"
-                height="20"
+                class="h-4 w-4 mx-0.5"
               />
               <img
                 src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
                 alt="BY"
-                height="20"
+                class="h-4 w-4 mx-0.5"
               />
               <img
                 src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
                 alt="SA"
-                height="20"
+                class="h-4 w-4 mx-0.5"
               />
             </div>
           </div>
 
-          <!-- Right: Author credit -->
-          <div class="col-md-6 mt-3 mt-md-0 text-center text-md-end">
+          <!-- Author -->
+          <div class="text-sm">
             <a
               href="https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle"
               target="_blank"
-              class="text-decoration-none text-muted fw-medium"
+              class="text-slate-500 hover:text-primary-600 font-medium transition-colors"
             >
               Daniel Losada © 2025
             </a>
@@ -193,44 +173,111 @@
       </div>
     </footer>
 
-    <!-- ============================
-       Modal for displaying quote images
-       Populated dynamically when clicking an image
-  ============================ -->
-    <div class="modal fade" id="imagenModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-body text-center">
-            <img id="modalImagen" src="" class="img-fluid rounded" alt="" />
-            <div
-              id="modalAtribucion"
-              class="small text-muted fst-italic mt-2"
-            ></div>
+    <!-- Modal Logic (Vanilla Replacement for Bootstrap Modal) -->
+    <div
+      id="imgModal"
+      class="fixed inset-0 z-100 hidden"
+      aria-labelledby="modal-title"
+      role="dialog"
+      aria-modal="true"
+    >
+      <!-- Backdrop -->
+      <div
+        class="fixed inset-0 bg-slate-900/75 transition-opacity opacity-0"
+        id="modalBackdrop"
+      ></div>
+
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <!-- Modal Panel -->
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg opacity-0 scale-95"
+            id="modalPanel"
+          >
+            <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 text-center">
+              <img
+                id="modalImagen"
+                src=""
+                class="max-h-[70vh] w-auto mx-auto rounded shadow-sm"
+                alt=""
+              />
+              <div id="modalAtribucion" class="mt-3 text-sm text-slate-500 italic font-serif"></div>
+            </div>
+            <div class="bg-slate-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+              <button
+                type="button"
+                id="closeModalBtn"
+                class="inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 hover:bg-slate-50 sm:mt-0 sm:w-auto"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-5 h-5"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                Close
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ============================
-       Initialize Bootstrap tooltips
-  ============================ -->
+    <!-- Export Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas-pro@1.5.8/dist/html2canvas-pro.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const tooltipTriggerList = [].slice.call(
-          document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        );
-        tooltipTriggerList.map(function (tooltipTriggerEl) {
-          return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
+      // Modal Logic
+      const modal = document.getElementById('imgModal');
+      const backdrop = document.getElementById('modalBackdrop');
+      const panel = document.getElementById('modalPanel');
+      const closeBtn = document.getElementById('closeModalBtn');
+      const modalImg = document.getElementById('modalImagen');
+      const modalAtr = document.getElementById('modalAtribucion');
+
+      function openModal(src, alt, atr) {
+        modal.classList.remove('hidden');
+        // Small timeout to allow transition to work
+        setTimeout(() => {
+          backdrop.classList.remove('opacity-0');
+          panel.classList.remove('opacity-0', 'scale-95');
+          panel.classList.add('opacity-100', 'scale-100');
+        }, 10);
+
+        modalImg.src = src;
+        modalImg.alt = alt || '';
+        modalAtr.textContent = atr || '';
+      }
+
+      function closeModal() {
+        backdrop.classList.add('opacity-0');
+        panel.classList.remove('opacity-100', 'scale-100');
+        panel.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+
+      // Listen for image clicks (delegated from lecturajson.js)
+      document.addEventListener('click', (e) => {
+        const imgTrigger = e.target.closest("[data-modal-trigger='true']");
+        if (imgTrigger) {
+          const src = imgTrigger.src;
+          const alt = imgTrigger.alt;
+          const atr = imgTrigger.dataset.atribucion;
+          openModal(src, alt, atr);
+        }
       });
     </script>
-
-    <!-- ============================
-       Libraries for export functionality
-       html2canvas: Render HTML to Canvas for image/PDF export
-       jsPDF: Generate PDF files from Canvas
-  ============================ -->
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   </body>
 </html>
