@@ -29978,5 +29978,25 @@
     "age_la": "Aetas Contemporanea",
     "image": "https://i.ibb.co/pBJsk0pS/claret-alpha.png",
     "image_atr": "0"
+  },
+  {
+    "id_quote": "",
+    "quote_es": "Nunca confíes en un ordenador que no puedas tirar por la ventana (o en una herramienta que no se deje configurar).",
+    "quote_la": "Numquam confide computatro quod e fenestra eicere non potes.",
+    "quote_original": "Never trust a computer you can't throw out a window.",
+    "author_es": "Steve Wozniak",
+    "reference": "Apple II User Guide (attributed)",
+    "author_la": "Stephanus Wozniak",
+    "bio_es": "Ingeniero electrónico y cofundador de Apple, creador de la Apple I y II y defensor de la ingeniería creativa.",
+    "bio_la": "Machinator electronicus et Apple co-conditor, creator Apple I et II et defensor machinationis creativae.",
+    "iso3691": "en",
+    "language_es": "Inglés",
+    "language_la": "Lingua Anglica",
+    "nation_es": "Estados Unidos",
+    "nation_la": "Civitates Foederatae Americae",
+    "age_es": "Edad Contemporánea",
+    "age_la": "Aetas Contemporanea",
+    "image": "0",
+    "image_atr": "0"
   }
 ]
