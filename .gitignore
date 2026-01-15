@@ -22,4 +22,4 @@ node_modules/
 # Generated author assets (images)
 # ------------------------------
 docs/assets/autores/
-
+.DS_Store
