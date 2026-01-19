@@ -204,7 +204,7 @@ function mostrarCita(quote) {
 
             </div>
       </figure>
-    <div>`;
+    </div>`;
 
   // Attach Event Listeners
   document.getElementById('btn-copiar').addEventListener('click', function () {
