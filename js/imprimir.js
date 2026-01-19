@@ -1,5 +1,5 @@
 /**
- * js/imprimir.js - Versión Final (Alineación Derecha + PDF Fix)
+ * js/imprimir.js - Versión Final (Alineación Derecha + PDF Fix) /
  */
 
 async function abrirEnNavegador(event, url) {
