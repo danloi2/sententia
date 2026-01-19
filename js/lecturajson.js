@@ -87,14 +87,14 @@ function mostrarCita(quote) {
   container.innerHTML = `
     <div class="w-full max-w-5xl mx-auto animate-fade-in px-4">
       <figure id="cita-print" class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col md:flex-row items-stretch min-h-[400px]" role="region" aria-label="Sententia">
-        
+
         <div class="md:w-1/3 lg:w-1/4 relative group h-64 md:h-auto overflow-hidden bg-white flex items-center justify-center p-6 lg:p-8">
           <div class="relative w-full aspect-square md:aspect-auto md:h-full max-h-[300px] overflow-hidden rounded-2xl shadow-xl shadow-primary-900/10 ring-1 ring-primary-300/40">
             <img src="${escaparHTML(
               finalImage
             )}" alt="Image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style="cursor: pointer;" data-modal-trigger="true" data-atribucion="${escaparHTML(
-    imageText
-  )}"/>
+              imageText
+            )}"/>
             <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-slate-900/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span class="text-white text-xs italic font-serif leading-tight block">${escaparHTML(
                 imageText
@@ -163,7 +163,7 @@ function mostrarCita(quote) {
             </figcaption>
 
             <div class="cita-acciones flex flex-wrap justify-end gap-3 mt-10 pt-8 border-t border-slate-50">
-              
+
               <button id="btn-copiar" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-primary-200 bg-white text-primary-700 font-semibold text-sm hover:bg-primary-50 transition-all shadow-sm">
                 <div class="w-5 h-5 shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" preserveAspectRatio="none" class="w-full h-full">
@@ -202,9 +202,9 @@ function mostrarCita(quote) {
                 </div>
               </div>
 
-            </div> 
+            </div>
       </figure>
-    div>`;
+    <div>`;
 
   // Attach Event Listeners
   document.getElementById('btn-copiar').addEventListener('click', function () {
