@@ -9,139 +9,150 @@
 ![Version](https://img.shields.io/github/v/release/danloi2/sententia?style=flat-square)
 ![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-lightgrey)
 
-**Sententia diei** es una aplicación web ligera que muestra **citas históricas en latín** con sus traducciones. Funciona completamente de forma **estática**, usando **JavaScript** para leer datos desde **JSON**.
-
-![Sententia diei](assets/sententiadiei.png)
-
----
-## 📑 Índice
-
-- [Estructura del Proyecto](#Estructura-del-Proyecto)  
-- [Cómo se generan las imágenes](#Cómo-se-generan-las-imágenes)  
-  - [Personajes](#Personajes)  
-  - [Banderas para refranes y proverbios](#Banderas-para-refranes-y-proverbios)  
-- [Cómo actualizar los datos](#Cómo-actualizar-los-datos)  
-- [Cómo ejecutar localmente](#Cómo-ejecutar-localmente)  
-- [Tecnologías Usadas](#Tecnologías-usadas)  
-- [Despliegue](#Despliegue)  
-- [Licencia](#Licencia)  
-- [Autor](#Autor)
-
-
-## Estructura del Proyecto
-```
-📂 db/                      Repositorio de datos portátil
-  📄 esaldi.xlsx           Archivo de origen de citas
-  📄 esaldi.csv            Exportado desde Excel/LibreOffice en UTF-8
-  📄 esaldi.json           Generado automáticamente usando convertir.js
-  ℹ️ convertir.js          Script que convierte CSV a JSON
-
-📂 js/                      Lógica central en JavaScript ES6
-  ⚙️ lecturajson.js        Inicialización, carga de datos y estadísticas
-  🔍 buscar.js             Motor de búsqueda con filtrado
-  📋 copiar.js             Copiado al portapapeles con formato
-  🕒 fecha.js              Fecha y hora "a la latina" con iconos y badges Bootstrap
-  ⚡ transparente.js       Convierte imágenes PNG con fondo blanco a transparente usando Sharp
-
-📂 assets/                  Recursos de la aplicación
-  📄 favicon.ico           Icono de la página
-  📂 autores/transparente  PNGs procesados con fondo transparente
-
-🌐 index.html              Interfaz de usuario construida con Bootstrap 5.3
-```
+**Sententia diei** is a lightweight web application that displays **historical Latin quotes** with their translations. It operates as a fully **static** site, using **JavaScript (ES6 Modules)** to fetch and process data from **JSON** files.
 
 ---
 
-## Cómo se generan las imágenes
+## 📑 Table of Contents
 
-Las imágenes asociadas a autores y banderas se generan mediante **Google Gemini (Nano Banana)** siguiendo prompts consistentes para mantener un estilo visual histórico y uniforme.
+* [Project Structure](https://www.google.com/search?q=%23project-structure)
+* [Local Development](https://www.google.com/search?q=%23local-development)
+* [Updating Data](https://www.google.com/search?q=%23updating-data)
+* [Image Generation](https://www.google.com/search?q=%23image-generation)
+* [Visual Style](https://www.google.com/search?q=%23visual-style)
+* [Prompts](https://www.google.com/search?q=%23prompts)
 
-### 🎨 Estilo visual
 
-- Dibujo tradicional en lápiz de color y grafito
-- Detalles finos de sombreado cruzado y texturas
-- Colores naturales y suaves
-- Líneas nítidas y bordes contrastados
-- Alta resolución (8k)
-- Fondo blanco (posteriormente eliminado por `transparente.js`)
-
-Se usan los siguientes prompts:
-
-### Personajes
-```
-A historically accurate colored portrait of '[NOMBRE DEL AUTOR]' isolated on a pure white background.
-Traditional colored pencil and graphite style, fine cross-hatching, and delicate academic shading.
-Natural skin tones and soft colors. Crisp outlines, high contrast edges, and refined classical drawing aesthetic.
-Focus on facial features and authentic historical iconography. High resolution, 8k.
-```
-
-### Banderas para refranes y proverbios
-```
-A historically accurate illustration of the '[NOMBRE DE LA BANDERA O PAÍS]' flag, isolated on a pure white background.
-Traditional colored pencil and graphite style, fine cross-hatching, and delicate academic shading on the fabric folds.
-Soft, aged colors and natural pigment tones. Crisp outlines, high contrast edges, and refined classical vexillology aesthetic.
-Focus on textile texture, authentic historical embroidery, and heraldic details. High resolution, 8k.
-```
-
-Después, mediante el script `js/transparente.js`, se eliminan los fondos blancos para generar PNGs con transparencia.
+* [Tech Stack](https://www.google.com/search?q=%23tech-stack)
+* [Deployment](https://www.google.com/search?q=%23deployment)
+* [License](https://www.google.com/search?q=%23license)
+* [Author](https://www.google.com/search?q=%23author)
 
 ---
 
-## Cómo actualizar los datos
+## Project Structure
 
-Para refrescar la base de datos:
+```
+📂 db/                     Portable data repository
+  📄 esaldi.xlsx           Source spreadsheet for quotes
+  📄 esaldi.csv            Exported from Excel/LibreOffice in UTF-8
+  📄 esaldi.json           Auto-generated using convertir.js
+  ℹ️ convertir.js          Script to convert CSV to JSON
 
-1. Exporta `esaldi.xlsx` a `esaldi.csv` en UTF-8.
-2. Ejecuta el script de conversión dentro de la carpeta `db`:
+📂 js/                     Core logic in JavaScript ES6
+  ⚙️ lecturajson.js        Initialization, data loading, and statistics
+  🔍 buscar.js             Search engine with filtering capabilities
+  📋 copiar.js             Clipboard copy functionality with formatting
+  🕒 fecha.js              "Latin-style" date and time with Tailwind-styled icons
+  ⚡ transparente.js        Converts white-background PNGs to transparent using Sharp
+
+📂 assets/                 Application resources
+  📄 favicon.ico           Site icon
+  📂 autores/transparente  Processed PNGs with transparent backgrounds
+
+🌐 index.html             UI built with Tailwind CSS 4.1
+
+```
+
+---
+
+## Local Development
+
+The project is fully integrated with **Node.js**. You do not need external servers like Python.
+
+### 1. Install dependencies
+
 ```bash
-node convertir.js
+npm install
+
 ```
 
-Esto generará automáticamente `esaldi.json` listo para la aplicación.
+### 2. Launch the local server
 
----
+This starts `live-server` and opens the project in your browser:
 
-## Cómo ejecutar localmente
-
-Al ser una aplicación basada en módulos JS y usando `fetch()`, necesitas un servidor local:
-
-- **VS Code**: Instalar la extensión **Live Server** y pulsar "Go Live".
-- **Python**: Ejecutar:
 ```bash
-python -m http.server 8000
+npm start
+
 ```
 
-- **Node.js**:
+### 3. CSS Workflow (Tailwind 4)
+
+To manage your styles with the Tailwind CSS CLI:
+
 ```bash
-npx serve
+# Build the production CSS
+npm run build:css
+
+# Watch for changes during development
+npm run watch:css
+
 ```
 
-Accede en: `http://localhost:8000` (o el puerto indicado).
+---
+
+## Updating Data
+
+To refresh the database from your source Excel file:
+
+1. Export `esaldi.xlsx` to `esaldi.csv` in UTF-8 format.
+2. Run the conversion script (uses `xlsx` and `csv-parse`):
+
+```bash
+node db/convertir.js
+
+```
 
 ---
 
-## Tecnologías usadas
+## Image Generation
 
-- **Vanilla JavaScript**: Manejo de datos asíncrono (Fetch API)
-- **JSON**: Almacenamiento de citas y metadatos
-- **Bootstrap 5.3**: Diseño responsive y componentes estéticos
-- **Bootstrap Icons**: Iconografía dinámica (sol/luna para horas romanas)
+Images for authors and flags are generated using **Google Gemini (Nano Banana)** to maintain a uniform historical aesthetic.
+
+### 🎨 Visual Style
+
+* Traditional colored pencil and graphite drawing.
+* Fine cross-hatching and academic shading.
+* High resolution (8k) on a pure white background.
+
+### Prompts
+
+**Historical Figures:**
+
+> A historically accurate colored portrait of '[AUTHOR NAME]' isolated on a pure white background. Traditional colored pencil and graphite style, fine cross-hatching, and delicate academic shading. Natural skin tones and soft colors. Crisp outlines, high contrast edges, and refined classical drawing aesthetic. High resolution, 8k.
+
+After generation, the `js/transparente.js` script uses **Sharp** to remove the white background and create clean PNGs.
 
 ---
 
-## Despliegue
+## Tech Stack
 
-Como no utiliza PHP ni SQL, **GitHub Pages** funciona perfectamente. Solo sube los archivos a un repositorio y habilita Pages en la configuración.
+* **Frontend**: Vanilla JavaScript (ES6+), Tailwind CSS 4.1.
+* **Data**: JSON (converted from XLSX/CSV).
+* **Backend/Tooling**:
+* **Node.js**: Runtime environment.
+* **Sharp**: Image processing for transparency.
+* **Live-server**: Development server with auto-reload.
+* **XLSX & CSV-Parse**: Automation for data ingestion.
+
+
 
 ---
 
-## Licencia
+## Deployment
 
-Este proyecto está bajo **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.
+Since the app is purely static, it is optimized for **GitHub Pages**. Just push your changes to the main branch and ensure Pages is pointed to your root directory.
 
 ---
 
-## Autor
+## License
 
-[![GitHub](https://img.shields.io/badge/GitHub-Daniel_Losada-181717?logo=github&logoColor=white)](https://github.com/danloi2)  
-[![Investigador EHU](https://img.shields.io/badge/Researcher-EHU-blue?logo=researchgate)](https://ekoizpen-zientifikoa.ehu.eus/investigadores/130988/detalle)
+This project is licensed under the **MIT License**. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+
+---
+
+## Author
+
+**Daniel Losada Iglesias** *University of the Basque Country / Euskal Herriko Unibertsitatea*
+
+---
