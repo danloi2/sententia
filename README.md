@@ -1,9 +1,11 @@
 # Sententia diei 🏛️
 
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript)
-![JSON](https://img.shields.io/badge/Data-JSON-lightgrey?logo=json)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript&logoColor=black)
+![JSON](https://img.shields.io/badge/Data-JSON-lightgrey?logo=json&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952b3?logo=bootstrap&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4.1-38B2AC?logo=tailwind-css&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-v20+-339933?logo=node.js&logoColor=white)
+![Sharp](https://img.shields.io/badge/Image_Processing-Sharp-00A67E?logo=sharp&logoColor=white)
 ![Version](https://img.shields.io/github/v/release/danloi2/sententia?style=flat-square)
 ![License](https://img.shields.io/badge/License-CC--BY--SA_4.0-lightgrey)
 
