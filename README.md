@@ -147,7 +147,7 @@ Since the app is purely static, it is optimized for **GitHub Pages**. Just push 
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
