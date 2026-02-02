@@ -151,8 +151,15 @@ This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE)
 
 ---
 
-## Author
+## 👥 Author
 
-**Daniel Losada Iglesias** *University of the Basque Country / Euskal Herriko Unibertsitatea*
+**Developed by Daniel Losada**
+
+[![GitHub](https://img.shields.io/badge/GitHub-danloi2-181717?style=for-the-badge&logo=github)](https://github.com/danloi2)
+[![Researcher EHU](https://img.shields.io/badge/Researcher-EHU-blue?style=for-the-badge&logo=researchgate)](https://github.com/danloi2)
+
+---
+
+_Developed with ❤️ for the educational community._
 
 ---
