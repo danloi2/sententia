@@ -29980,7 +29980,7 @@
     "image_atr": "0"
   },
   {
-    "id_quote": "",
+    "id_quote": "1500",
     "quote_es": "Nunca confíes en un ordenador que no puedas tirar por la ventana (o en una herramienta que no se deje configurar).",
     "quote_la": "Numquam confide computatro quod e fenestra eicere non potes.",
     "quote_original": "Never trust a computer you can't throw out a window.",
@@ -29997,6 +29997,26 @@
     "age_es": "Edad Contemporánea",
     "age_la": "Aetas Contemporanea",
     "image": "0",
+    "image_atr": "0"
+  },
+  {
+    "id_quote": "1501",
+    "quote_es": "Aquellos que educan bien a los niños deberían ser más honorados que los que los producen; pues estos solo les dieron la vida, aquellos el arte de vivir bien.",
+    "quote_la": "Iis qui liberos bene educant, plus honoris tribuendum est quam iis qui genuerunt; nam hi vitam modo dederunt, illi bene vivendi artem.",
+    "quote_original": "Τοὺς μὲν γὰρ γονεῖς μόνον τοῦ ζῆν αἰτίους εἶναι, τοὺς δὲ διδασκάλους τοῦ καλῶς ζῆν.",
+    "author_es": "Aristóteles",
+    "reference": "Ética a Nicómaco (atribuida) / Apophthegmata",
+    "author_la": "Aristoteles",
+    "bio_es": "Filósofo griego de la Edad Antigua, discípulo de Platón y maestro de Alejandro Magno, figura central del pensamiento lógico, ético y metafísico.",
+    "bio_la": "Philosophus Graecus Antiquitatis, discipulus Platonis et magister Alexandri Magni, pars maxima in logica, ethica et metaphysica.",
+    "iso3691": "el",
+    "language_es": "Griego",
+    "language_la": "Lingua Graeca",
+    "nation_es": "Grecia",
+    "nation_la": "Graecia",
+    "age_es": "Edad Antigua",
+    "age_la": "Antiquitas",
+    "image": "https://i.ibb.co/gZpf6w2B/aristoteles.png",
     "image_atr": "0"
   }
 ]
