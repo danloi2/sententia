@@ -138,7 +138,7 @@ async function generateThumbnail(inputPath, outputPath) {
 // MAIN PROCESS
 // ------------------------------
 async function main() {
-  const files = fs.readdirSync(ORIGINAL_DIR).filter(f => f.toLowerCase().endsWith(".png"));
+  const files = fs.readdirSync(ORIGINAL_DIR).filter(f => /\.(png|jpe?g|webp)$/i.test(f));
   console.log(`🚀 Processing ${files.length} images...`);
 
   for (const file of files) {
